@@ -1,0 +1,1 @@
+export const SHOW_REG_AND_LOG = 'SHOW_REG_AND_LOG';
