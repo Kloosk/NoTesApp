@@ -17,7 +17,14 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50vw;
+  width: 90vw;
+  @media (min-width: 768px) {
+    padding: 40px;
+    width: 60vw;
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to left, #F9B613, #0798DA) 30;
+  }
 `;
 const Error = styled.p`
  color: red;
@@ -39,7 +46,7 @@ const Label = styled.div`
   height: 80px;
   margin-bottom: 20px;
 `;
-const PInput = styled.p`
+const PInput = styled.label`
   position: absolute;
   top: 0;
   left: 0;
@@ -75,7 +82,7 @@ const Checkbox = styled.input`
   margin-right: 10px;
 `;
 const Submit = styled.button`
-  width: 50%;
+  width: 80%;
   font-size: 1.8rem;
   cursor: pointer;
   padding: 7px 0;
@@ -100,6 +107,9 @@ const Submit = styled.button`
   &:hover::after{
     transform: translateX(-50%);
   }
+   @media (min-width: 768px) {
+    width: 50%;
+  }
 `;
 const Linkk = styled(Link)`
   text-decoration-line: underline;
@@ -117,30 +127,30 @@ const Register = () => {
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
-                        <Input type="text" name="nick" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
-                        <PInput>Name</PInput>
+                        <Input type="text" id="nick" name="nick" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
+                        <PInput for="nick">Name</PInput>
                         {errors.nick && errors.nick.type === "required" && <Error role="alert">This field is required</Error>}
                         {errors.nick && errors.nick.type === "minLength" && <Error role="alert">Min length 3</Error>}
                         {errors.nick && errors.nick.type === "maxLength" && <Error role="alert">Max length 20</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="text" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
-                        <PInput>Password</PInput>
+                        <Input type="text" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
+                        <PInput for="pass" >Password</PInput>
                         {errors.password && errors.password.type === "required" && <Error role="alert">This field is required</Error>}
                         {errors.password && errors.password.type === "minLength" && <Error role="alert">Min length 6</Error>}
                         {errors.password && errors.password.type === "maxLength" && <Error role="alert" >Max length 20</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="text" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
-                        <PInput>Confirm Password</PInput>
+                        <Input type="text" id="confirmpass" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
+                        <PInput for="confirmpass">Confirm Password</PInput>
                         {errors.confirmpassword && <Error role="alert">Passwords are different</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="text" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
-                        <PInput>Email</PInput>
+                        <Input type="text" id="email" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
+                        <PInput for="email">Email</PInput>
                         {errors.email && <Error role="alert">This field is required</Error>}
                     </Label>
 
@@ -149,7 +159,6 @@ const Register = () => {
                         <p>I accept the <Linkk to="/terms">terms and conditions</Linkk></p>
                         {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
                     </Terms>
-
 
                     <Submit>Submit</Submit>
                 </Form>

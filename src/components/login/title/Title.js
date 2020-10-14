@@ -6,6 +6,7 @@ const Container = styled.h1`
   margin: 25px 0;
   letter-spacing: 1px;
   color: #F9B613;
+  background-color: #fff;
   @media (min-width: 768px) {
     font-size: 5rem;
     margin-bottom: 50px;
@@ -17,7 +18,7 @@ const Span = styled.span`
 const Title = () => {
     return (
         <Container>
-            <Span>R</Span>egister
+            <Span>L</Span>ogin
         </Container>
     );
 };
