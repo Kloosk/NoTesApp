@@ -11,7 +11,7 @@ const Container = styled.div`
 `;
 const Overlay = styled.div`
   background-color: #000;
-  width: 100%;
+  width: 100%;  
   height: 100%;
   position: absolute;
   opacity: 0.3;
@@ -20,7 +20,7 @@ const Video = () => {
     return (
         <Container>
             <Overlay/>
-            <video id="vid" autoPlay muted loop>
+            <video id="vid" muted loop>
                 <source type="video/mp4" src={notes}></source>
             </video>
         </Container>

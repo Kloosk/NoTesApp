@@ -24,7 +24,7 @@ const Span = styled.span`
 `;
 const Logo = () => {
     return (
-        <Container>
+        <Container role="banner">
             <Linkk to="/">
                 <H1>No<Span>T</Span>es</H1>
             </Linkk>
