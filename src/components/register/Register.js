@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import Logo from "../start/logo/Logo";
 import Title from "./title/Title";
+import bgReg from "../../img/bgReg.jpg"
 
 const Container = styled.div`
   width: 100vw;
@@ -12,6 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background: url(${bgReg}) center/cover no-repeat;
 `;
 const Form = styled.form`
   display: flex;
@@ -19,11 +21,7 @@ const Form = styled.form`
   align-items: center;
   width: 90vw;
   @media (min-width: 768px) {
-    padding: 40px;
     width: 60vw;
-    border-width: 3px;
-    border-style: solid;
-    border-image: linear-gradient(to left, #F9B613, #0798DA) 30;
   }
 `;
 const Error = styled.p`
@@ -51,11 +49,24 @@ const PInput = styled.label`
   top: 0;
   left: 0;
   font-size: 1.5rem;
-  width: 100%;
   height: 40px;
-  padding: 5px 0 5px 5px;
+  padding: 5px;
   transition: opacity 0.8s ease;
   opacity: 1;
+  overflow: hidden;
+  &::after{
+    content: "";
+    position: absolute;
+    bottom: 50%;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    background-color: #F9B613;
+    opacity: 0.4;
+    z-index: 1;
+    transition: transform 1s ease;
+    transform: skew(40deg) rotate(15deg) translate(100%,50%);
+  }
 `;
 const Input = styled.input`
   display: block;
@@ -69,11 +80,13 @@ const Input = styled.input`
   outline: none;
   font-size: 1.2rem;
   padding-left: 5px;
-  &:focus + ${PInput}{
-    color: #743ad5;
+  transition: border 1s ease;
+  background: transparent;
+  &:focus + ${PInput}::after{
+    transform: skew(40deg) rotate(15deg) translate(0,50%);
   }
   &:focus{
-    border-bottom: 2px solid #743ad5; 
+    border-bottom: 2px solid #F9B613; 
   }
 `;
 const Checkbox = styled.input`
@@ -100,7 +113,7 @@ const Submit = styled.button`
     left: 0;
     width: 200%;
     height: 100%;
-    z-index: -1;
+    z-index: 1;
     background: linear-gradient(to left, #F9B613, #0798DA);
     transition: transform 1s ease;
   }
@@ -114,8 +127,12 @@ const Submit = styled.button`
 const Linkk = styled(Link)`
   text-decoration-line: underline;
   text-decoration-style: solid;
-  text-decoration-color: #743ad5;
-  color: #000;
+  text-decoration-color: #F9B613;
+  color: #F9B613;
+`;
+const PZindex = styled.p`
+  position: relative;
+  z-index: 5;
 `;
 const Register = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -128,29 +145,29 @@ const Register = () => {
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
                         <Input type="text" id="nick" name="nick" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
-                        <PInput for="nick">Name</PInput>
+                        <PInput for="nick"><PZindex>Name</PZindex></PInput>
                         {errors.nick && errors.nick.type === "required" && <Error role="alert">This field is required</Error>}
                         {errors.nick && errors.nick.type === "minLength" && <Error role="alert">Min length 3</Error>}
                         {errors.nick && errors.nick.type === "maxLength" && <Error role="alert">Max length 20</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="text" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
-                        <PInput for="pass" >Password</PInput>
+                        <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
+                        <PInput for="pass" ><PZindex>Password</PZindex></PInput>
                         {errors.password && errors.password.type === "required" && <Error role="alert">This field is required</Error>}
                         {errors.password && errors.password.type === "minLength" && <Error role="alert">Min length 6</Error>}
                         {errors.password && errors.password.type === "maxLength" && <Error role="alert" >Max length 20</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="text" id="confirmpass" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
-                        <PInput for="confirmpass">Confirm Password</PInput>
+                        <Input type="password" id="confirmpass" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
+                        <PInput for="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
                         {errors.confirmpassword && <Error role="alert">Passwords are different</Error>}
                     </Label>
 
                     <Label>
                         <Input type="text" id="email" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
-                        <PInput for="email">Email</PInput>
+                        <PInput for="email"><PZindex>Email</PZindex></PInput>
                         {errors.email && <Error role="alert">This field is required</Error>}
                     </Label>
 
@@ -160,7 +177,7 @@ const Register = () => {
                         {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
                     </Terms>
 
-                    <Submit>Submit</Submit>
+                    <Submit><PZindex>Submit</PZindex></Submit>
                 </Form>
             </Container>
             </>

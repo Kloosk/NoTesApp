@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/register/title/Title.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/title/Title.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +40,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\img" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\frontend" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\notesection\note" />
@@ -60,7 +60,8 @@
       <workItem from="1602591930858" duration="13776000" />
       <workItem from="1602670467025" duration="11922000" />
       <workItem from="1602693434614" duration="630000" />
-      <workItem from="1602703271322" duration="3757000" />
+      <workItem from="1602703271322" duration="7958000" />
+      <workItem from="1602754976940" duration="1361000" />
     </task>
     <servers />
   </component>

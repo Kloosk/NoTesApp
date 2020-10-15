@@ -6,7 +6,7 @@ const Container = styled.h1`
   margin: 25px 0;
   letter-spacing: 1px;
   color: #F9B613;
-  background-color: #fff;
+  background-color: transparent;
   @media (min-width: 768px) {
     font-size: 5rem;
     margin-bottom: 50px;
