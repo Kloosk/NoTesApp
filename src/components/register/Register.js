@@ -1,10 +1,11 @@
-import React from 'react';
-import { useForm } from "react-hook-form";
+import React, {useState} from 'react';
+import { useForm} from "react-hook-form";
 import styled from 'styled-components'
-import {Link} from "react-router-dom";
+import {Link,useHistory} from "react-router-dom";
 import Logo from "../start/logo/Logo";
 import Title from "./title/Title";
 import bgReg from "../../img/bgReg.jpg"
+import axios from 'axios'
 
 const Container = styled.div`
   width: 100vw;
@@ -134,9 +135,39 @@ const PZindex = styled.p`
   position: relative;
   z-index: 5;
 `;
+const Errors = styled.div`
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+`;
+const ErrorServer = styled.p`
+ color: red;
+ font-size: 1rem;
+`;
 const Register = () => {
+    const history = useHistory();
     const { register, handleSubmit, watch, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const [resErrors,setResErrors] = useState([]);
+    const axiosPost = data =>{
+      const promise = axios.post('http://localhost:5000/register', data);
+      return promise.then(res => res.data);
+    };
+    const onSubmit = data =>{
+        axiosPost(data)
+            .then(res => {
+                if(res.pass){
+                    //pass
+                    setResErrors([]);
+                    history.push("/login");
+                }else{
+                    //return array of errors
+                    setResErrors(res.errors);
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
     return (
         <>
             <Logo/>
@@ -144,16 +175,16 @@ const Register = () => {
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
-                        <Input type="text" id="nick" name="nick" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
-                        <PInput for="nick"><PZindex>Name</PZindex></PInput>
-                        {errors.nick && errors.nick.type === "required" && <Error role="alert">This field is required</Error>}
-                        {errors.nick && errors.nick.type === "minLength" && <Error role="alert">Min length 3</Error>}
-                        {errors.nick && errors.nick.type === "maxLength" && <Error role="alert">Max length 20</Error>}
+                        <Input type="text" id="nick" name="name" aria-invalid={errors.name ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
+                        <PInput htmlFor="nick"><PZindex>Name</PZindex></PInput>
+                        {errors.name && errors.name.type === "required" && <Error role="alert">This field is required</Error>}
+                        {errors.name && errors.name.type === "minLength" && <Error role="alert">Min length 3</Error>}
+                        {errors.name && errors.name.type === "maxLength" && <Error role="alert">Max length 20</Error>}
                     </Label>
 
                     <Label>
                         <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
-                        <PInput for="pass" ><PZindex>Password</PZindex></PInput>
+                        <PInput htmlFor="pass" ><PZindex>Password</PZindex></PInput>
                         {errors.password && errors.password.type === "required" && <Error role="alert">This field is required</Error>}
                         {errors.password && errors.password.type === "minLength" && <Error role="alert">Min length 6</Error>}
                         {errors.password && errors.password.type === "maxLength" && <Error role="alert" >Max length 20</Error>}
@@ -161,13 +192,13 @@ const Register = () => {
 
                     <Label>
                         <Input type="password" id="confirmpass" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
-                        <PInput for="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
+                        <PInput htmlFor="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
                         {errors.confirmpassword && <Error role="alert">Passwords are different</Error>}
                     </Label>
 
                     <Label>
                         <Input type="text" id="email" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
-                        <PInput for="email"><PZindex>Email</PZindex></PInput>
+                        <PInput htmlFor="email"><PZindex>Email</PZindex></PInput>
                         {errors.email && <Error role="alert">This field is required</Error>}
                     </Label>
 
@@ -177,6 +208,9 @@ const Register = () => {
                         {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
                     </Terms>
 
+                    <Errors>
+                        {resErrors && resErrors.map(err => <ErrorServer>{err.msg}</ErrorServer>)}
+                    </Errors>
                     <Submit><PZindex>Submit</PZindex></Submit>
                 </Form>
             </Container>

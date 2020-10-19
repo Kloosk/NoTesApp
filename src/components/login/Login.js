@@ -1,9 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import styled from 'styled-components'
 import Logo from "../start/logo/Logo";
 import Title from "./title/Title";
 import {useForm} from "react-hook-form";
 import bgReg from "../../img/bgReg.jpg"
+import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -25,7 +27,7 @@ const Form = styled.form`
 `;
 const Error = styled.p`
  color: red;
- font-size: 1rem;
+ font-size: 1.2rem;
  position: absolute;
  top: 102%;
 `;
@@ -114,9 +116,37 @@ const PZindex = styled.p`
   position: relative;
   z-index: 5;
 `;
+const Errors = styled.div`
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+`;
+const ErrorServer = styled.p`
+ color: red;
+ font-size: 1.2rem;
+`;
 const Login = () => {
+    const history = useHistory();
+    const [loginError,setLoginError] = useState([]);
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const axiosPost = data =>{
+        const promise = axios.post('http://localhost:5000/login', data);
+        return promise.then(res => res.data);
+    };
+    const onSubmit = data =>{
+        axiosPost(data)
+            .then(res => {
+                if(res.error){
+                    setLoginError(res.info);
+                }else{
+                    setLoginError(res.info);
+                    history.push("/dashboard");
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
     return (
         <>
             <Logo/>
@@ -124,17 +154,19 @@ const Login = () => {
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
-                        <Input type="text" id="nick" name="nick" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true})} />
-                        <PInput for="nick"><PZindex>Name</PZindex></PInput>
+                        <Input type="text" id="nick" name="email" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true})} />
+                        <PInput htmlFor="nick"><PZindex>Email</PZindex></PInput>
                         {errors.nick && <Error role="alert">This field is required</Error>}
                     </Label>
 
                     <Label>
                         <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true})}/>
-                        <PInput for="pass"><PZindex>Password</PZindex></PInput>
+                        <PInput htmlFor="pass"><PZindex>Password</PZindex></PInput>
                         {errors.password && <Error role="alert">This field is required</Error>}
                     </Label>
-
+                    <Errors>
+                        {loginError && <ErrorServer>{loginError.message}</ErrorServer>}
+                    </Errors>
                     <Submit><PZindex>Log In</PZindex></Submit>
                 </Form>
             </Container>
