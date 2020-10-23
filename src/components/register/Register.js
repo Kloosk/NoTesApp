@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import { useForm} from "react-hook-form";
 import styled from 'styled-components'
 import {Link,useHistory} from "react-router-dom";
 import Logo from "../start/logo/Logo";
 import Title from "./title/Title";
 import bgReg from "../../img/bgReg.jpg"
-import axios from 'axios'
+import {useDispatch, useSelector} from "react-redux";
+import {registerUser} from "../../redux/auth/authActions";
 
 const Container = styled.div`
   width: 100vw;
@@ -146,30 +147,21 @@ const ErrorServer = styled.p`
 `;
 const Register = () => {
     const history = useHistory();
+    const dispatch = useDispatch();
+    const resErrors = useSelector(state => state.auth.error);
+    console.log(resErrors);
     const { register, handleSubmit, watch, errors } = useForm();
-    const [resErrors,setResErrors] = useState([]);
-    const axiosPost = data =>{
-      const promise = axios.post('http://localhost:5000/register', data);
-      return promise.then(res => res.data);
-    };
     const onSubmit = data =>{
-        axiosPost(data)
-            .then(res => {
-                if(res.pass){
-                    //pass
-                    setResErrors([]);
-                    history.push("/login");
-                }else{
-                    //return array of errors
-                    setResErrors(res.errors);
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        dispatch(registerUser(data,history));
     };
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    useEffect(() => {
+        if (isAuthenticated) {
+            history.push("/dashboard"); // push user to dashboard when they login
+        }
+    },[isAuthenticated]);
     return (
-        <>
+        isAuthenticated ? null : <>
             <Logo/>
             <Container>
                 <Title/>
@@ -191,9 +183,9 @@ const Register = () => {
                     </Label>
 
                     <Label>
-                        <Input type="password" id="confirmpass" name="confirmpassword"  aria-invalid={errors.confirmpassword ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
+                        <Input type="password" id="confirmpass" name="password2"  aria-invalid={errors.password2 ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
                         <PInput htmlFor="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
-                        {errors.confirmpassword && <Error role="alert">Passwords are different</Error>}
+                        {errors.password2 && <Error role="alert">Passwords are different</Error>}
                     </Label>
 
                     <Label>
@@ -209,7 +201,7 @@ const Register = () => {
                     </Terms>
 
                     <Errors>
-                        {resErrors && resErrors.map(err => <ErrorServer>{err.msg}</ErrorServer>)}
+                        {resErrors.errors && resErrors.errors.map(err => <ErrorServer>{err}</ErrorServer>)}
                     </Errors>
                     <Submit><PZindex>Submit</PZindex></Submit>
                 </Form>

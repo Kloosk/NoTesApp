@@ -1,11 +1,12 @@
-import React,{useState} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import Logo from "../start/logo/Logo";
 import Title from "./title/Title";
 import {useForm} from "react-hook-form";
 import bgReg from "../../img/bgReg.jpg"
-import axios from "axios";
 import {useHistory} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {loginUser} from "../../redux/auth/authActions";
 
 const Container = styled.div`
   width: 100vw;
@@ -127,35 +128,27 @@ const ErrorServer = styled.p`
 `;
 const Login = () => {
     const history = useHistory();
-    const [loginError,setLoginError] = useState([]);
+    const dispatch = useDispatch();
+    const loginError = useSelector(state => state.auth.error);
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    useEffect(() => {
+        if (isAuthenticated) {
+            history.push("/dashboard"); // push user to dashboard when they login
+        }
+    },[isAuthenticated]);
     const { register, handleSubmit, errors } = useForm();
-    const axiosPost = data =>{
-        const promise = axios.post('http://localhost:5000/login', data);
-        return promise.then(res => res.data);
-    };
     const onSubmit = data =>{
-        axiosPost(data)
-            .then(res => {
-                if(res.error){
-                    setLoginError(res.info);
-                }else{
-                    setLoginError(res.info);
-                    history.push("/dashboard");
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
+        dispatch(loginUser(data));
     };
     return (
-        <>
+        isAuthenticated ? null : <>
             <Logo/>
             <Container>
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
-                        <Input type="text" id="nick" name="email" aria-invalid={errors.nick ? "true" : "false"} ref={register({required: true})} />
-                        <PInput htmlFor="nick"><PZindex>Email</PZindex></PInput>
+                        <Input type="text" id="email" name="email" aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
+                        <PInput htmlFor="email"><PZindex>Email</PZindex></PInput>
                         {errors.nick && <Error role="alert">This field is required</Error>}
                     </Label>
 
@@ -165,7 +158,7 @@ const Login = () => {
                         {errors.password && <Error role="alert">This field is required</Error>}
                     </Label>
                     <Errors>
-                        {loginError && <ErrorServer>{loginError.message}</ErrorServer>}
+                        {loginError && <ErrorServer>{loginError.errors}</ErrorServer>}
                     </Errors>
                     <Submit><PZindex>Log In</PZindex></Submit>
                 </Form>

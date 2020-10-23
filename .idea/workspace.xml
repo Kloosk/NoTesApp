@@ -4,8 +4,12 @@
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +38,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../notes/notestest" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -42,6 +46,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\img" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\frontend" />
@@ -67,6 +72,14 @@
       <workItem from="1602770371917" duration="7026000" />
       <workItem from="1603097084976" duration="3472000" />
       <workItem from="1603114471652" duration="2259000" />
+      <workItem from="1603134315179" duration="57000" />
+      <workItem from="1603189265243" duration="2242000" />
+      <workItem from="1603195188971" duration="3556000" />
+      <workItem from="1603275082422" duration="2641000" />
+      <workItem from="1603378538723" duration="2823000" />
+      <workItem from="1603391949050" duration="1678000" />
+      <workItem from="1603443383415" duration="1744000" />
+      <workItem from="1603465956610" duration="11350000" />
     </task>
     <servers />
   </component>
@@ -74,11 +87,11 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1602763074407">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1603472603561">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602763074407" />
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1602519267502" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603195199358" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603472603561" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
