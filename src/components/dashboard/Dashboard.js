@@ -1,33 +1,44 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {logoutUser} from "../../redux/auth/authActions";
-import {Link,useHistory} from "react-router-dom";
-const Container = styled.div`
+import {useHistory} from "react-router-dom";
+import None from "./none/None";
+import Logo from "../start/logo/Logo";
+import AllNotes from "./allNotes/allNotes";
+import Menu from "./menu/Menu";
+import {dashClose} from "../../redux";
 
+const Container = styled.div`
+ @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
+  width: 100vw;
+  min-height: 100vh;
 `;
+
 const Dashboard = () => {
-    const history = useHistory();
-    axios.get('/api/users/dashboard')
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    const user = useSelector(state => state.auth.user);
     const dispatch = useDispatch();
-    console.log(user);
-    const logout = () => {
-        dispatch(logoutUser());
-        history.push("/logout");
+    const [data,setData] = useState([]);
+    useEffect(() => {
+        axios
+            .get("/api/users/dashboard", {
+                headers: {
+                    'auth-token': localStorage.getItem("jwtToken")
+                }})
+            .then(res => setData(res.data.data))
+            .catch(err => console.log(err));
+    },[]);
+    const closeMenu = () => {
+        dispatch(dashClose());
     };
     return (
-        <Container>
-            Hi
-            <button onClick={logout}>LOGOUT</button>
-        </Container>
+        <>
+            <Logo/>
+            <Menu/>
+            <Container onClick={closeMenu}>
+                {data.length > 0 ? <AllNotes data={data}/> : <None/>}
+            </Container>
+        </>
     );
 };
 

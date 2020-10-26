@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/register/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/register/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,13 @@
       <workItem from="1603378538723" duration="2823000" />
       <workItem from="1603391949050" duration="1678000" />
       <workItem from="1603443383415" duration="1744000" />
-      <workItem from="1603465956610" duration="11350000" />
+      <workItem from="1603465956610" duration="11524000" />
+      <workItem from="1603485514789" duration="300000" />
+      <workItem from="1603639303299" duration="2491000" />
+      <workItem from="1603657916321" duration="77000" />
+      <workItem from="1603658894271" duration="207000" />
+      <workItem from="1603711026374" duration="2287000" />
+      <workItem from="1603716295812" duration="12041000" />
     </task>
     <servers />
   </component>
@@ -87,19 +91,19 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1603472603561">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1603716382930">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603195199358" />
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603472603561" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603716382930" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602604696843" />
-    <state x="372" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1602597478628">
+    <state x="372" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1603727346734">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="372" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1602597478628" />
-    <state x="372" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1602521312537" />
+    <state x="372" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603727346734" />
   </component>
 </project>
