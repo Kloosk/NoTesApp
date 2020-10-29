@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import Btn from "./Btn/Btn";
+import Btn from "./btn/Btn";
 import SubMenu from "./submenu/SubMenu";
 
 const Container = styled.nav`

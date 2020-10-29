@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import Video from "./video/Video";
 import Btn from "./btn/Btn";
-import Logo from "./logo/Logo";
+import Logo from "../logo/Logo";
 import NoteSection from "./notesection/NoteSection";
 import LogAndReg from "./logandreg/LogAndReg";
 

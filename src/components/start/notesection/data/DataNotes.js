@@ -33,7 +33,7 @@ export const DataNotes = [
         border: "2px solid #2E4BF2",
         font:"'Chilanka', cursive",
         titleTxt:"Simple",
-        descTxt:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet consectetur cumque debitis dolorem fuga impedit ipsum modi? Accusantium, deserunt, excepturi?"
+        descTxt:"Keep all your plans in one place."
     },
     {
         color:"#151226",

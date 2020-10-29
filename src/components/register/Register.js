@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useForm} from "react-hook-form";
 import styled from 'styled-components'
 import {Link,useHistory} from "react-router-dom";
-import Logo from "../start/logo/Logo";
+import Logo from "../logo/Logo";
 import Title from "./title/Title";
 import bgReg from "../../img/bgReg.jpg"
 import {useDispatch, useSelector} from "react-redux";

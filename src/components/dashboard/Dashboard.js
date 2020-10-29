@@ -1,11 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import axios from "axios";
-import {useDispatch, useSelector} from "react-redux";
-import {logoutUser} from "../../redux/auth/authActions";
-import {useHistory} from "react-router-dom";
+import {useDispatch} from "react-redux";
 import None from "./none/None";
-import Logo from "../start/logo/Logo";
+import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
 import Menu from "./menu/Menu";
 import {dashClose} from "../../redux";
@@ -14,6 +12,7 @@ const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
   width: 100vw;
   min-height: 100vh;
+  overflow-x: hidden;
 `;
 
 const Dashboard = () => {

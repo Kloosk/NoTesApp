@@ -1,32 +1,27 @@
 import React from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
+import logo from '../../img/logo.png'
 
 const Container = styled.nav`
   font-family: 'Chilanka', cursive;
   position: absolute;
-  top: 20px;
-  left: 35px;
+  top: 5px;
+  left: 0;
   cursor: pointer;
 `;
 const Linkk = styled(Link)`
   color: #fff;
   text-decoration: none;
 `;
-const H1 = styled.h1`
-  font-size: 3rem;
-  color: #F9B613;
-  letter-spacing: 1px;
-`;
-const Span = styled.span`
-  font-size: 3.1rem;
-  color: #0798DA;
+const Img = styled.img`
+  width: 150px;
 `;
 const Logo = () => {
     return (
         <Container role="banner">
             <Linkk to="/">
-                <H1>No<Span>T</Span>es</H1>
+                <Img src={logo} alt="logo"/>
             </Linkk>
         </Container>
     );

@@ -59,6 +59,7 @@ const Desc = styled.div`
   border-top: ${props => props.border};
   padding: 10px 5px 0 15px;
   height: 80%;
+  width: 100%;
 `;
 const P = styled.p`
   position: absolute;

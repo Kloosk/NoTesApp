@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components'
-import Logo from "../start/logo/Logo";
+import Logo from "../logo/Logo";
 import Title from "./title/Title";
 import {useForm} from "react-hook-form";
 import bgReg from "../../img/bgReg.jpg"

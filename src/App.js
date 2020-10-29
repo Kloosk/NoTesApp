@@ -10,6 +10,8 @@ import setAuthToken from "./utils/setAuthToken";
 import {useDispatch} from "react-redux";
 import {setCurrentUser,logoutUser} from "./redux/auth/authActions";
 import PrivateRoute from "./components/privateroutes/PrivateRoutes";
+import AddNote from "./components/addNote/AddNote";
+import Authors from "./components/authors/Authors";
 
 function App() {
     const dispatch = useDispatch();
@@ -47,7 +49,11 @@ function App() {
                 <Route exact path="/logout">
                     <Logout/>
                 </Route>
+                <Route exact path="/authors">
+                    <Authors/>
+                </Route>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                <PrivateRoute exact path="/add" component={AddNote} />
             </Switch>
           </Router>
       </>
