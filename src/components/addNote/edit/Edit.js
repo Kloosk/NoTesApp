@@ -19,6 +19,7 @@ const StepFirst = styled.div`
  transform: ${props => `translateX(${props.move}vw)`};
  position: absolute;
  left: 100vw;
+ padding: 0 5vw;
 `;
 const StepTwice = styled.div`
   width: 100vw;
@@ -26,6 +27,7 @@ const StepTwice = styled.div`
  transform: ${props => `translateX(${props.move}vw)`};
  position: absolute;
  left: 200vw;
+ padding: 0 5vw;
 `;
 const StepThird = styled.div`
  left: 300vw;
@@ -33,6 +35,7 @@ const StepThird = styled.div`
  transition: transform 0.5s ease; 
  transform: ${props => `translateX(${props.move}vw)`};
  position: absolute;
+ padding: 0 5vw;
 `;
 const StepFourth = styled.div`
  left: 400vw;
@@ -44,59 +47,83 @@ const StepFourth = styled.div`
 const Flex = styled.div`
   display: flex;
   align-items: center;
+  margin: 15px 0;
+  padding: 10px 0;
+  border-bottom: 2px solid #F9B613;
 `;
 const Left = styled.button`
   background: none;
   border: none;
   padding: 2px;
   display: ${props => props.leftArrow ? 'block' : 'none'};
+  cursor: pointer;
+  :hover{
+    transform: translateX(-2px);
+  }
 `;
 const Right = styled.button`
   background: none;
   border: none;
   padding: 2px;
   display: ${props => props.rightArrow ? 'block' : 'none'};
+  cursor: pointer;
+  :hover{
+    transform: translateX(2px);
+  }
 `;
 const Svg = styled.svg`
   width: 40px;
   height: 40px;
+  color: #F9B613;
 `;
 const BtnColor = styled.button`
   background-color: red;
   width: 40px;
   height: 25px;
+  cursor: pointer;
   border: none;
+  :hover{
+    transform: translateY(1px);
+  }
 `;
 const P = styled.p`
-  font-size: 1.3rem;
-  margin: 0 10px 15px 0;
+  font-size: 1.5rem;
+  margin: 0 10px 0 0;
+  color: #F9B613;
+  width: 120px;
 `;
 const BtnSize = styled.button`
-  border: 2px solid #000;
+  border: 2px solid #F9B613;
   background: none;
-  color: #000;
-  padding: 7px 14px;
+  color: #F9B613;
+  font-size: 1.4rem;
+  width: 45px;
+  height: 30px;
+  cursor: pointer;
+  :hover{
+    transform: translateY(1px);
+  }
 `;
 const Num = styled.p`
-  font-size: 1.3rem;
-  color: #000;
-  margin: 0 5px;
+  font-size: 1.8rem;
+  color: #F9B613;
+  margin: 0 10px;
 `;
 const H1 = styled.h1`
   font-size: 2rem;
   letter-spacing: 1px;
   text-align: center;
+  color: #F9B613;
 `;
 //Zero
 const Center = styled.div`
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
-const Linkk = styled(Link)`
 
-`;
 const Button = styled.button`
   font-size: 1.2rem;
   margin: 3px 0;
@@ -143,7 +170,12 @@ const Arrows = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 5vw;
 `;
+const Span = styled.span`
+  color: #0798DA;
+`;
+
 const Edit = () => {
     const [move,setMove] = useState(0);
     const [rightArrow,setRightArrow] = useState(true);
@@ -175,56 +207,62 @@ const Edit = () => {
                 <StepZero move={move}>
                     <Center>
                         <Button>Generate</Button>
-                        <Linkk to="/touse"><Button>Use</Button></Linkk>
+                        <Link to="/touse"><Button>Use</Button></Link>
                         <Button onClick={moveRight}>Create own</Button>
                         <Button>Add</Button>
                     </Center>
                 </StepZero>
 
                 <StepFirst move={move}>
-                        <H1>Title</H1>
+                        <H1><Span>T</Span>itle</H1>
                         <Flex>
-                            <P>Background</P>
+                            <P><Span>B</Span>ackground</P>
                             <BtnColor></BtnColor>
                         </Flex>
                         <Flex>
-                            <P>Color</P>
+                            <P><Span>C</Span>olor</P>
                             <BtnColor></BtnColor>
                         </Flex>
                         <Flex>
-                            <P>Size</P>
+                            <P><Span>S</Span>ize</P>
                             <BtnSize>-</BtnSize>
-                            <Num>1</Num>
+                            <Num>1.0</Num>
                             <BtnSize>+</BtnSize>
                         </Flex>
                 </StepFirst>
 
                 <StepTwice move={move}>
-                    <H1>Description</H1>
+                    <H1><Span>D</Span>escription</H1>
                     <Flex>
-                        <P>Background</P>
+                        <P><Span>B</Span>ackground</P>
                         <BtnColor></BtnColor>
                     </Flex>
                     <Flex>
-                        <P>Color</P>
+                        <P><Span>C</Span>olor</P>
                         <BtnColor></BtnColor>
                     </Flex>
                     <Flex>
-                        <P>Size</P>
+                        <P><Span>S</Span>ize</P>
                         <BtnSize>-</BtnSize>
-                        <Num>1</Num>
+                        <Num>1.0</Num>
                         <BtnSize>+</BtnSize>
                     </Flex>
                 </StepTwice>
 
                 <StepThird move={move}>
-                    <H1>General</H1>
-                    <Flex>Border</Flex>
-                    <Flex>Font</Flex>
+                    <H1><Span>G</Span>eneral</H1>
+                    <Flex>
+                        <P><Span>B</Span>order</P>
+                        <BtnColor></BtnColor>
+                    </Flex>
+                    <Flex>
+                        <P><Span>F</Span>ont</P>
+                        <P>Arial</P>
+                    </Flex>
                 </StepThird>
 
                 <StepFourth move={move}>
-                    <H1>Is everything correct?</H1>
+                    <H1><Span>I</Span>s everything correct?</H1>
                     <Center>
                         <Button>Edit</Button>
                         <Button>Add</Button>

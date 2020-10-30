@@ -3,7 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,11 +45,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\addNote\noteEdit\inputTitle" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\img" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\frontend" />
-      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\notesection\note" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -87,7 +92,9 @@
       <workItem from="1603812004033" duration="7647000" />
       <workItem from="1603874628026" duration="11725000" />
       <workItem from="1603965859099" duration="9085000" />
-      <workItem from="1603977305033" duration="1988000" />
+      <workItem from="1603977305033" duration="2263000" />
+      <workItem from="1604054199578" duration="473000" />
+      <workItem from="1604093940331" duration="5928000" />
     </task>
     <servers />
   </component>
@@ -113,11 +120,11 @@
     </state>
     <state x="2071" y="0" width="1595" height="778" maximized="true" key="dock-window-1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603890443814" />
     <state x="642" y="107" width="1595" height="778" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1603965872205" />
-    <state x="136" y="248" key="run.anything.popup" timestamp="1603969824228">
+    <state x="136" y="248" key="run.anything.popup" timestamp="1604096847030">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="136" y="248" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1603969824228" />
-    <state x="136" y="248" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1603729094799" />
+    <state x="136" y="248" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1604096847030" />
     <state x="372" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1603729093859">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

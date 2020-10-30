@@ -1,0 +1,10 @@
+export const SET_TITLE = 'SET_TITLE';
+export const SET_DESC = 'SET_DESC';
+export const SET_TITLE_BG = 'SET_TITLE_BG';
+export const SET_TITLE_COLOR = 'SET_TITLE_COLOR';
+export const SET_TITLE_SIZE = 'SET_TITLE_SIZE';
+export const SET_DESC_BG = 'SET_DESC_BG';
+export const SET_DESC_COLOR = 'SET_DESC_COLOR';
+export const SET_DESC_SIZE = 'SET_DESC_SIZE';
+export const SET_FONT = 'SET_FONT';
+export const SET_BORDER = 'SET_BORDER';
