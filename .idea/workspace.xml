@@ -3,12 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +94,7 @@
       <workItem from="1603965859099" duration="9085000" />
       <workItem from="1603977305033" duration="2263000" />
       <workItem from="1604054199578" duration="473000" />
-      <workItem from="1604093940331" duration="5928000" />
+      <workItem from="1604093940331" duration="8367000" />
     </task>
     <servers />
   </component>

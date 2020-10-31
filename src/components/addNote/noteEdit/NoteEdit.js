@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styled from 'styled-components'
-import randomNote from "../data/randomNote";
 import InputTitle from "./inputTitle/InputTitle";
 import InputDesc from "./inputDesc/InputDesc";
+import {useSelector} from "react-redux";
 
 const Container = styled.div`
   width: 80vw;
@@ -17,19 +17,14 @@ const Container = styled.div`
   }
 `;
 const NoteEdit = () => {
-    const [randomData,setRandomData] = useState({});
-    useEffect(() => {
-        setRandomData(randomNote());
-    },[]);
-    if(randomData) {
-        const {title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize} = randomData;
-        return (
-            <Container border={border}>
-                <InputTitle/>
-                <InputDesc/>
-            </Container>
-        );
-    }else return null
+    const border = useSelector(state => state.note.border);
+    return (
+        <Container border={border}>
+            <InputTitle/>
+            <InputDesc/>
+        </Container>
+    );
+
 
 };
 

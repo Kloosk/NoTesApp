@@ -1,53 +1,63 @@
 import{SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
 
-export const setDesc = () => {
+export const setDesc = payload => {
   return{
-      type: SET_DESC
+      type: SET_DESC,
+      payload
   }
 };
-export const setBorder= () => {
+export const setBorder= payload => {
     return{
-        type: SET_BORDER
+        type: SET_BORDER,
+        payload
     }
 };
-export const setDescBg = () => {
+export const setDescBg = payload => {
     return{
-        type: SET_DESC_BG
+        type: SET_DESC_BG,
+        payload
     }
 };
-export const setDescColor = () => {
+export const setDescColor = payload => {
     return{
-        type: SET_DESC_COLOR
+        type: SET_DESC_COLOR,
+        payload
     }
 };
-export const setDescSize = () => {
+export const setDescSize = payload => {
     return{
-        type: SET_DESC_SIZE
+        type: SET_DESC_SIZE,
+        payload
     }
 };
-export const setFont = () => {
+export const setFont = payload => {
     return{
-        type: SET_FONT
+        type: SET_FONT,
+        payload
     }
 };
-export const setTitle = () => {
+export const setTitle = payload => {
     return{
-        type: SET_TITLE
+        type: SET_TITLE,
+        payload
     }
 };
-export const setTitleColor = () => {
+export const setTitleColor = payload => {
     return{
-        type: SET_TITLE_COLOR
+        type: SET_TITLE_COLOR,
+        payload
     }
 };
-export const setTitleBg = () => {
+export const setTitleBg = payload => {
     return{
-        type: SET_TITLE_BG
+        type: SET_TITLE_BG,
+        payload
     }
 };
-export const setTitleSize = () => {
+export const setTitleSize = payload => {
     return{
-        type: SET_TITLE_SIZE
+        type: SET_TITLE_SIZE,
+        payload
     }
 };
 

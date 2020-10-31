@@ -1,6 +1,6 @@
 import{SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
 
-const initialState =   {
+const initialState = {
     title:"Title",
     text: "Your text",
     titleColor:"#000",
@@ -19,6 +19,25 @@ const NoteEditReducer = (state=initialState,action) => {
             return{
                 ...state,
                 text: action.payload
+            }
+        }
+        case SET_TITLE:{
+            return{
+                ...state,
+                title: action.payload
+            }
+        }
+        case SET_TITLE_SIZE:{
+            console.log(action.payload);
+            return{
+                ...state,
+                titleSize: state.titleSize+action.payload
+            }
+        }
+        case SET_DESC_SIZE:{
+            return{
+                ...state,
+                textSize: state.textSize+action.payload
             }
         }
         default: return state

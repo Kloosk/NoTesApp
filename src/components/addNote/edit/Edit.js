@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setDescSize, setTitleSize} from "../../../redux";
 
 const Container = styled.div`
   width: 500vw;
@@ -196,6 +198,19 @@ const Edit = () => {
             setRightArrow(true);
         }
     };
+    const dispatch = useDispatch();
+    const titleDec = () => {
+        dispatch(setTitleSize(-0.1));
+    };
+    const titleInc = () => {
+        dispatch(setTitleSize(0.1));
+    };
+    const descInc = () => {
+        dispatch(setDescSize(-0.1));
+    };
+    const descDec = () => {
+        dispatch(setDescSize(0.1));
+    };
     return (
         <>
             <Arrows move={move}>
@@ -225,9 +240,9 @@ const Edit = () => {
                         </Flex>
                         <Flex>
                             <P><Span>S</Span>ize</P>
-                            <BtnSize>-</BtnSize>
+                            <BtnSize onClick={titleDec}>-</BtnSize>
                             <Num>1.0</Num>
-                            <BtnSize>+</BtnSize>
+                            <BtnSize onClick={titleInc}>+</BtnSize>
                         </Flex>
                 </StepFirst>
 
@@ -243,9 +258,9 @@ const Edit = () => {
                     </Flex>
                     <Flex>
                         <P><Span>S</Span>ize</P>
-                        <BtnSize>-</BtnSize>
+                        <BtnSize onClick={descDec}>-</BtnSize>
                         <Num>1.0</Num>
-                        <BtnSize>+</BtnSize>
+                        <BtnSize onClick={descInc}>+</BtnSize>
                     </Flex>
                 </StepTwice>
 
