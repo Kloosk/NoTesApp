@@ -13,7 +13,6 @@ const Container = styled.div`
   margin-top: 13vh;
 `;
 const AddNote = () => {
-
     return (
         <>
             <Logo/>

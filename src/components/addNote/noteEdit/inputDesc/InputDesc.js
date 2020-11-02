@@ -8,7 +8,7 @@ const Container = styled(Textarea)`
   width: 100%;
   color: ${props => props.textcolor};
   background: ${props => props.textbg};
-  font-size: ${props => props.textsize};
+  font-size: ${props => props.textsize}rem;
   border: none;
   resize: none;
   outline: none;

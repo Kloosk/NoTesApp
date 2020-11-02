@@ -10,6 +10,7 @@
     "is-empty": "^1.2.0",
     "jwt-decode": "^3.0.0",
     "react": "^16.13.1",
+    "react-color": "^2.19.3",
     "react-dom": "^16.13.1",
     "react-expanding-textarea": "^2.2.3",
     "react-hook-form": "^6.9.2",

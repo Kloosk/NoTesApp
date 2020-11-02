@@ -9,7 +9,7 @@ const initialState = {
     textBg:"#fff",
     border: "#000",
     font:"Arial",
-    textSize: 1,
+    textSize: 1.0,
     titleSize: 1.2
 };
 
@@ -38,6 +38,42 @@ const NoteEditReducer = (state=initialState,action) => {
             return{
                 ...state,
                 textSize: state.textSize+action.payload
+            }
+        }
+        case SET_TITLE_BG:{
+            return{
+                ...state,
+                titleBg: action.payload
+            }
+        }
+        case SET_TITLE_COLOR:{
+            return{
+                ...state,
+                titleColor: action.payload
+            }
+        }
+        case SET_DESC_COLOR:{
+            return{
+                ...state,
+                textColor: action.payload
+            }
+        }
+        case SET_DESC_BG:{
+            return{
+                ...state,
+                textBg: action.payload
+            }
+        }
+        case SET_BORDER:{
+            return{
+                ...state,
+                border: action.payload
+            }
+        }
+        case SET_FONT:{
+            return{
+                ...state,
+                font: action.payload
             }
         }
         default: return state
