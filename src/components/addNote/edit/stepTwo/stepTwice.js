@@ -71,11 +71,18 @@ const StepTwice = ({move}) => {
         dispatch(setDescSize(-0.1));
     };
     const [show,setShow] = useState(false);
+    const [showBg,setShowBg] = useState(false);
     const handleColor = () => {
         setShow(true);
         setTimeout(() =>{
             setShow(false);
         },500);
+    };
+    const handleColorBg = () => {
+        setShowBg(true);
+        setTimeout(() =>{
+            setShowBg(false);
+        },100);
     };
     return (
         <Container move={move}>
@@ -87,8 +94,8 @@ const StepTwice = ({move}) => {
             </Flex>
             <Flex>
                 <P><Span>C</Span>olor</P>
-                <BtnColor color={textColor} onClick={handleColor}></BtnColor>
-                <ColorPicker show={show} func={setDescColor}/>
+                <BtnColor color={textColor} onClick={handleColorBg}></BtnColor>
+                <ColorPicker show={showBg} func={setDescColor}/>
             </Flex>
             <Flex>
                 <P><Span>S</Span>ize</P>

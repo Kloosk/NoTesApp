@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
+import {rightTrue, setMove} from "../../../../redux";
+import {useDispatch} from "react-redux";
 
 const Container = styled.div`
  left: 400vw;
@@ -55,11 +57,16 @@ const Button = styled.button`
   }
 `;
 const StepFourth = ({move}) => {
+    const dispatch = useDispatch();
+    const handleMove = () => {
+        dispatch(setMove(-100));
+        dispatch(rightTrue());
+    };
     return (
         <Container move={move}>
             <H1><Span>I</Span>s everything correct?</H1>
             <Center>
-                <Button>Edit</Button>
+                <Button onClick={handleMove}>Edit</Button>
                 <Button>Add</Button>
             </Center>
         </Container>

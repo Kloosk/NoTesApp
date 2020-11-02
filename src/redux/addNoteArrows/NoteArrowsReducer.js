@@ -1,4 +1,4 @@
-import {SET_MOVE, LEFT_FALSE, LEFT_RIGHT, RIGHT_FALSE, RIGHT_TRUE, LEFT_TRUE} from "./NoteArrowsTypes";
+import {SET_MOVE, LEFT_FALSE, RIGHT_FALSE, RIGHT_TRUE, LEFT_TRUE} from "./NoteArrowsTypes";
 
 const initialState = {
   move: 0,

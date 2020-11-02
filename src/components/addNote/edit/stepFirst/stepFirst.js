@@ -72,11 +72,18 @@ const StepFirst = ({move}) => {
         dispatch(setTitleSize(0.1));
     };
     const [show,setShow] = useState(false);
+    const [showBg,setShowBg] = useState(false);
     const handleColor = () => {
         setShow(true);
         setTimeout(() =>{
             setShow(false);
-        },500);
+        },100);
+    };
+    const handleColorBg = () => {
+        setShowBg(true);
+        setTimeout(() =>{
+            setShowBg(false);
+        },100);
     };
     return (
         <Container move={move}>
@@ -89,8 +96,8 @@ const StepFirst = ({move}) => {
             </Flex>
             <Flex>
                 <P><Span>C</Span>olor</P>
-                <BtnColor color={titleColor} onClick={handleColor}></BtnColor>
-                <ColorPicker func={setTitleColor}/>
+                <BtnColor color={titleColor} onClick={handleColorBg}></BtnColor>
+                <ColorPicker show={showBg} func={setTitleColor}/>
             </Flex>
             <Flex>
                 <P><Span>S</Span>ize</P>

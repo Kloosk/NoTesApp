@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/AddNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/AddNote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/stepFirst/stepFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/stepFirst/stepFirst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/stepFourth/StepFourth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/stepFourth/StepFourth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/stepThird/stepThird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/stepThird/stepThird.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/edit/stepTwo/stepTwice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/edit/stepTwo/stepTwice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/addNoteArrows/NoteArrowsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/addNoteArrows/NoteArrowsReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +102,7 @@
       <workItem from="1604158458416" duration="5527000" />
       <workItem from="1604239594095" duration="595000" />
       <workItem from="1604320964262" duration="2890000" />
-      <workItem from="1604340542986" duration="8199000" />
+      <workItem from="1604340542986" duration="13604000" />
     </task>
     <servers />
   </component>

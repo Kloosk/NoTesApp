@@ -8,7 +8,7 @@ const initialState = {
     textColor:"#000",
     textBg:"#fff",
     border: "#000",
-    font:"Arial",
+    font:"Lato",
     textSize: 1.0,
     titleSize: 1.2
 };

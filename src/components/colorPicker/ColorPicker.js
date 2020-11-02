@@ -10,6 +10,7 @@ const Container = styled.div`
  transform: translateX(-50%);
  display: ${props => props.display ? 'block' : 'none'};
  border: 2px solid #000;
+ z-index: 6;
 `;
 const Exit = styled.button`
  position: absolute;

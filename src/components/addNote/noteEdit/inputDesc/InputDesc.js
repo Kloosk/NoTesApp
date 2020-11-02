@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
-import {setDesc} from "../../../../redux";
+import {rightTrue, setDesc, setMove} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled(Textarea)`
@@ -9,6 +9,7 @@ const Container = styled(Textarea)`
   color: ${props => props.textcolor};
   background: ${props => props.textbg};
   font-size: ${props => props.textsize}rem;
+  font-family: ${props => props.font};
   border: none;
   resize: none;
   outline: none;
@@ -17,12 +18,16 @@ const Container = styled(Textarea)`
 `;
 const InputDesc = () => {
     const dispatch = useDispatch();
-    const {textSize,textColor,textBg} = useSelector(state => state.note);
+    const {textSize,textColor,textBg,font} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
     };
+    const handleMove = () => {
+        dispatch(setMove(-200));
+        dispatch(rightTrue());
+    };
     return (
-        <Container textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue="Your text" maxLength="1000" onChange={handleChange}/>
+        <Container onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue="Your text" maxLength="1000" onChange={handleChange}/>
     )
 };
 export default InputDesc
