@@ -4,6 +4,8 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {leftTrue, rightFalse, rightTrue, setMove, setObj} from "../../../../redux";
 import {genereateOne} from "../../../../data/Data";
+import axios from "axios";
+import {useHistory} from 'react-router-dom';
 
 const Container =styled.div`
   width: 100vw;
@@ -51,8 +53,10 @@ const Button = styled.button`
   }
 `;
 const StepZero = () => {
+    const history = useHistory();
     const dispatch = useDispatch();
     const move = useSelector(state => state.arrows.move);
+    const data = useSelector(state => state.note);
     const moveRight = () => {
         dispatch(setMove(move-100));
         if(move === -300) dispatch(rightFalse());
@@ -64,13 +68,24 @@ const StepZero = () => {
     const handleGenerate = () => {
         dispatch(setObj(genereateOne()));
     };
+    const sendData = () => {
+        axios
+            .post("/api/users/add", data,{
+                headers: {
+                    'auth-token': localStorage.getItem("jwtToken")
+                }})
+            .then(res => {
+                history.push('/dashboard');
+            })
+            .catch(err => console.log(err));
+    };
     return (
         <Container move={move}>
             <Center>
                 <Button onClick={handleGenerate}>Generate</Button>
                 <Link to="/touse"><Button>Use</Button></Link>
                 <Button onClick={moveRight}>Create own</Button>
-                <Button>Add</Button>
+                <Button onClick={sendData}>Add</Button>
             </Center>
         </Container>
     );

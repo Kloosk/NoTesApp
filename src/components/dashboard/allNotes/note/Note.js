@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 20px;
   @media (min-width: 768px) {
-    width: auto;
+    width: 100%;
   }
 `;
 const Title = styled.div`
@@ -29,9 +29,10 @@ const H1 = styled.h1`
   font-size: ${props => props.titleSize}rem;
 `;
 const Desc = styled.div`
+  min-height: 170px;
   padding: 10px;
   width: 100%;
-  background: ${props => props.titleBg};
+  background: ${props => props.textBg};
 `;
 const P = styled.p`
   color: ${props => props.textColor};

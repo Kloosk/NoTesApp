@@ -8,7 +8,7 @@ const Container = styled.div`
  top: 0;
  left: 50%;
  transform: translateX(-50%);
- display: ${props => props.display ? 'block' : 'none'};
+ display: ${props => props.displayy ? 'block' : 'none'};
  border: 2px solid #000;
  z-index: 6;
 `;
@@ -38,7 +38,7 @@ const ColorPicker = ({func,show}) => {
         setDisplay(false);
     };
     return (
-        <Container display={display}>
+        <Container displayy={display}>
             <Exit onClick={exitPicker}>&times;</Exit>
             <SketchPicker color={bg} onChangeComplete={handleChangeComplete}/>
         </Container>
