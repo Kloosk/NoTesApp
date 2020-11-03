@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import Edit from "./edit/Edit";
+import {useDispatch, useSelector} from "react-redux";
+import {fontOff} from "../../redux";
 
 const Container = styled.div`
   width: 100vw;
@@ -13,10 +15,12 @@ const Container = styled.div`
   margin-top: 13vh;
 `;
 const AddNote = () => {
+    const dispatch = useDispatch();
+    const font = useSelector(state => state.fontmenu.menu);
     return (
         <>
             <Logo/>
-            <Container>
+            <Container onClick={() => {font && dispatch(fontOff())}}>
                 <NoteEdit/>
                 <Edit/>
             </Container>

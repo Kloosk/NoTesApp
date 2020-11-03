@@ -8,3 +8,4 @@ export const SET_DESC_COLOR = 'SET_DESC_COLOR';
 export const SET_DESC_SIZE = 'SET_DESC_SIZE';
 export const SET_FONT = 'SET_FONT';
 export const SET_BORDER = 'SET_BORDER';
+export const SET_OBJ = 'SET_OBJ';

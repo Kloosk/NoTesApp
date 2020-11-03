@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {leftTrue, rightFalse, rightTrue, setMove} from "../../../../redux";
+import {leftTrue, rightFalse, rightTrue, setMove, setObj} from "../../../../redux";
+import {genereateOne} from "../../../../data/Data";
 
 const Container =styled.div`
   width: 100vw;
@@ -60,11 +61,13 @@ const StepZero = () => {
             dispatch(leftTrue());
         }
     };
-
+    const handleGenerate = () => {
+        dispatch(setObj(genereateOne()));
+    };
     return (
         <Container move={move}>
             <Center>
-                <Button>Generate</Button>
+                <Button onClick={handleGenerate}>Generate</Button>
                 <Link to="/touse"><Button>Use</Button></Link>
                 <Button onClick={moveRight}>Create own</Button>
                 <Button>Add</Button>

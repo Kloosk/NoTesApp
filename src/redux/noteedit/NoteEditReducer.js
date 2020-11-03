@@ -1,4 +1,16 @@
-import{SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
+import {
+    SET_DESC,
+    SET_BORDER,
+    SET_DESC_BG,
+    SET_DESC_COLOR,
+    SET_DESC_SIZE,
+    SET_FONT,
+    SET_TITLE,
+    SET_TITLE_BG,
+    SET_TITLE_COLOR,
+    SET_TITLE_SIZE,
+    SET_OBJ
+} from "./NoteEditTypes";
 
 const initialState = {
     title:"Title",
@@ -10,7 +22,7 @@ const initialState = {
     border: "#000",
     font:"Lato",
     textSize: 1.0,
-    titleSize: 1.2
+    titleSize: 1.7
 };
 
 const NoteEditReducer = (state=initialState,action) => {
@@ -76,6 +88,7 @@ const NoteEditReducer = (state=initialState,action) => {
                 font: action.payload
             }
         }
+        case SET_OBJ: return action.payload
         default: return state
     }
 };

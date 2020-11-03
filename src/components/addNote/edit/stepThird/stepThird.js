@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setBorder, setFont} from "../../../../redux";
+import {fontOff, fontOn, setBorder, setFont} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled.div`
@@ -79,6 +79,8 @@ const FontMenu = styled.div`
   border: 1px solid #F9B613;
   padding: 5px 10px;
   background-color:#fff;
+  height: 250px;
+  overflow-y: auto;
 `;
 const Btn = styled.div`
   width: 100%;
@@ -99,8 +101,8 @@ const Btn = styled.div`
 `;
 const StepThird = ({move}) => {
     const dispatch = useDispatch();
+    const fontMenu = useSelector(state => state.fontmenu.menu);
     const {border,font} = useSelector(state => state.note);
-    const [fontMenu,setFontMenu] = useState(false);
     const [show,setShow] = useState(false);
     const handleColor = () => {
         setShow(true);
@@ -109,7 +111,7 @@ const StepThird = ({move}) => {
         },500);
     };
     const handleFont = () => {
-        setFontMenu(prevState => !prevState);
+        fontMenu ? dispatch(fontOff()) : dispatch(fontOn());
     };
     return (
         <Container move={move}>

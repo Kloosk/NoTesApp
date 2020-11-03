@@ -1,4 +1,4 @@
-import{SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
+import{SET_OBJ,SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
 
 export const setDesc = payload => {
   return{
@@ -59,6 +59,12 @@ export const setTitleSize = payload => {
         type: SET_TITLE_SIZE,
         payload
     }
+};
+export const setObj = payload => {
+  return{
+      type: SET_OBJ,
+      payload
+  }
 };
 
 

@@ -12,6 +12,7 @@ import {setCurrentUser,logoutUser} from "./redux/auth/authActions";
 import PrivateRoute from "./components/privateroutes/PrivateRoutes";
 import AddNote from "./components/addNote/AddNote";
 import Authors from "./components/authors/Authors";
+import Touse from "./components/touse/Touse";
 
 function App() {
     const dispatch = useDispatch();
@@ -51,6 +52,9 @@ function App() {
                 </Route>
                 <Route exact path="/authors">
                     <Authors/>
+                </Route>
+                <Route exact path="/touse">
+                    <Touse/>
                 </Route>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add" component={AddNote} />
