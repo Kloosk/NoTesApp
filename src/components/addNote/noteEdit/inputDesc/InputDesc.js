@@ -21,13 +21,14 @@ const InputDesc = () => {
     const {textSize,textColor,textBg,font} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
+
     };
     const handleMove = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
     };
     return (
-        <Container onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue="Your text" maxLength="1000" onChange={handleChange}/>
+        <Container spellcheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue="Your text" maxLength="1000" onBlur={handleChange}/>
     )
 };
 export default InputDesc

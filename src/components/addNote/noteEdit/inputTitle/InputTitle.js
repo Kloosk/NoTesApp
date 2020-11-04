@@ -27,7 +27,7 @@ const InputTitle = () => {
         dispatch(rightTrue());
     };
     return (
-        <Container onClick={handleMove} font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue="Title" maxLength="30" onChange={handleChange}/>
+        <Container spellcheck="false" onClick={handleMove} font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue="Title" maxLength="30" onBlur={handleChange}/>
     )
 };
 export default InputTitle

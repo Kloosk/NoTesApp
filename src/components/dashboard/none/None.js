@@ -53,7 +53,7 @@ const None = () => {
     return (
         <Container>
             <H1><Span>L</Span>ooks like you don't have any no<Span>T</Span>es.</H1>
-            <Linkk to="/edit"><Btn>Add now</Btn></Linkk>
+            <Linkk to="/add"><Btn>Add now</Btn></Linkk>
         </Container>
     );
 };

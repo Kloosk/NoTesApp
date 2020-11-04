@@ -11,6 +11,12 @@ const Container = styled.div`
  position: absolute;
  left: 200vw;
  padding: 0 5vw;
+ @media (min-width: 768px) {
+    position: static;
+    width: 100%;
+    transition: none;
+    transform: none;
+ }
 `;
 const P = styled.p`
   font-size: 1.5rem;
@@ -50,6 +56,9 @@ const Flex = styled.div`
   margin: 15px 0;
   padding: 10px 0;
   border-bottom: 2px solid #F9B613;
+  @media (min-width: 768px) {
+    position: relative;
+  }
 `;
 const BtnColor = styled.button`
   background-color: ${props => props.color};

@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
   margin-bottom: 20px;
   @media (min-width: 768px) {
-    width: auto;
+    width: 80%;
   }
 `;
 const NoteEdit = () => {

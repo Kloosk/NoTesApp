@@ -7,6 +7,7 @@ import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
 import Menu from "./menu/Menu";
 import {dashClose} from "../../redux";
+import Nav from "../nav/Nav";
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
@@ -33,6 +34,7 @@ const Dashboard = () => {
     return (
         <>
             <Logo/>
+            <Nav/>
             <Menu/>
             <Container onClick={closeMenu}>
                 {data.length > 0 ? <AllNotes data={data}/> : <None/>}

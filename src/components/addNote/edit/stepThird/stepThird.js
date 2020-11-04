@@ -11,6 +11,12 @@ const Container = styled.div`
  transform: ${props => `translateX(${props.move}vw)`};
  position: absolute;
  padding: 0 5vw;
+  @media (min-width: 768px) {
+    position: static;
+    width: 100%;
+    transition: none;
+    transform: none;
+ }
 `;
 const H1 = styled.h1`
   font-size: 2rem;
@@ -27,6 +33,9 @@ const Flex = styled.div`
   margin: 15px 0;
   padding: 10px 0;
   border-bottom: 2px solid #F9B613;
+  @media (min-width: 768px) {
+   position: relative;
+}
 `;
 const BtnColor = styled.button`
   background-color: ${props => props.color};
@@ -67,6 +76,9 @@ const Svg = styled.svg`
     ${Button}:hover{
     transform: translateY(1px);
     }
+   @media (min-width: 768px) {
+      transform: rotate(180deg);
+    }
 `;
 const FontMenu = styled.div`
   position: absolute;
@@ -81,6 +93,11 @@ const FontMenu = styled.div`
   background-color:#fff;
   height: 250px;
   overflow-y: auto;
+  @media (min-width: 768px) {
+    overflow: hidden;
+    height: 300px;
+    top: -300px;
+  }
 `;
 const Btn = styled.div`
   width: 100%;

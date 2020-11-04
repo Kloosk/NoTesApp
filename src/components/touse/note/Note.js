@@ -11,9 +11,9 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
   @media (min-width: 768px) {
-    width: auto;
+    width: 100%;
+    cursor: pointer;
   }
 `;
 const Title = styled.div`
@@ -36,6 +36,11 @@ const Desc = styled.div`
   padding: 10px;
   width: 100%;
   background: ${props => props.textbg};
+  @media (min-width: 768px) {
+    height: 100%;
+    cursor: pointer;
+
+  }
 `;
 const P = styled.p`
   color: ${props => props.textcolor};

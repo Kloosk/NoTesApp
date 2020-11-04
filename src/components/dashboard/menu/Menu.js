@@ -8,6 +8,9 @@ const Container = styled.nav`
   top: 12px;
   right: 5px;
   z-index: 3;
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 const Menu = () => {

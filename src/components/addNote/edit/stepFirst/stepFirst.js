@@ -12,6 +12,12 @@ const Container = styled.div`
  position: absolute;
  left: 100vw;
  padding: 0 5vw;
+ @media (min-width: 768px) {
+    position: static;
+    width: 100%;
+    transition: none;
+    transform: none;
+ }
 `;
 const P = styled.p`
   font-size: 1.5rem;
@@ -51,6 +57,9 @@ const Flex = styled.div`
   margin: 15px 0;
   padding: 10px 0;
   border-bottom: 2px solid #F9B613;
+  @media (min-width: 768px) {
+    position: relative;
+  }
 `;
 const BtnColor = styled.button`
   background-color: ${props => props.color};
@@ -91,13 +100,13 @@ const StepFirst = ({move}) => {
             <Flex>
                 <P><Span>B</Span>ackground</P>
                 <BtnColor color={titleBg} onClick={handleColor}></BtnColor>
-                <ColorPicker show={show} func={setTitleBg}/>
+                <ColorPicker toppos={true} show={show} func={setTitleBg}/>
 
             </Flex>
             <Flex>
                 <P><Span>C</Span>olor</P>
                 <BtnColor color={titleColor} onClick={handleColorBg}></BtnColor>
-                <ColorPicker show={showBg} func={setTitleColor}/>
+                <ColorPicker toppos={true} show={showBg} func={setTitleColor}/>
             </Flex>
             <Flex>
                 <P><Span>S</Span>ize</P>

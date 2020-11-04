@@ -4,8 +4,7 @@ import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {leftTrue, rightFalse, rightTrue, setMove, setObj} from "../../../../redux";
 import {genereateOne} from "../../../../data/Data";
-import axios from "axios";
-import {useHistory} from 'react-router-dom';
+import SendBtn from "../../sendBtn/SendBtn";
 
 const Container =styled.div`
   width: 100vw;
@@ -14,6 +13,15 @@ const Container =styled.div`
   position: absolute;
   left: 0;
   margin-top: 50px;
+  @media (min-width: 768px) {
+    position: static;
+    width: 100%;
+    transform: none;
+    transition: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 const Center = styled.div`
   margin-top: 50px;
@@ -21,6 +29,12 @@ const Center = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  @media (min-width: 768px) {
+    margin-top: 0;
+    width: 50vw;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const Button = styled.button`
@@ -51,12 +65,16 @@ const Button = styled.button`
     opacity: 1;
     transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
   }
+   @media (min-width: 768px) {
+    display: ${props => props.show ? 'none' : 'block'};
+   }
+`;
+const Linkk = styled(Link)`
+  text-decoration: none;
 `;
 const StepZero = () => {
-    const history = useHistory();
     const dispatch = useDispatch();
     const move = useSelector(state => state.arrows.move);
-    const data = useSelector(state => state.note);
     const moveRight = () => {
         dispatch(setMove(move-100));
         if(move === -300) dispatch(rightFalse());
@@ -68,24 +86,14 @@ const StepZero = () => {
     const handleGenerate = () => {
         dispatch(setObj(genereateOne()));
     };
-    const sendData = () => {
-        axios
-            .post("/api/users/add", data,{
-                headers: {
-                    'auth-token': localStorage.getItem("jwtToken")
-                }})
-            .then(res => {
-                history.push('/dashboard');
-            })
-            .catch(err => console.log(err));
-    };
+
     return (
         <Container move={move}>
             <Center>
-                <Button onClick={handleGenerate}>Generate</Button>
-                <Link to="/touse"><Button>Use</Button></Link>
-                <Button onClick={moveRight}>Create own</Button>
-                <Button onClick={sendData}>Add</Button>
+                <Button show={false} onClick={handleGenerate}>Generate</Button>
+                <Linkk to="/touse"><Button>Use</Button></Linkk>
+                <Button show={true} onClick={moveRight}>Create own</Button>
+                <SendBtn/>
             </Center>
         </Container>
     );

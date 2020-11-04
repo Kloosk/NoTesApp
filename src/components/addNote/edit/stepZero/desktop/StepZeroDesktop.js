@@ -1,36 +1,23 @@
 import React from 'react';
 import styled from 'styled-components'
-import {rightTrue, setMove} from "../../../../redux";
+import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import SendBtn from "../../sendBtn/SendBtn";
+import {setObj} from "../../../../../redux";
+import {genereateOne} from "../../../../../data/Data";
+import SendBtn from "../../../sendBtn/SendBtn";
 
 const Container = styled.div`
- left: 400vw;
- width: 100vw;
- transition: transform 0.5s ease; 
- transform: ${props => `translateX(${props.move}vw)`};
- position: absolute;
-  @media (min-width: 768px) {
-    display: none;
- }
-`;
-const H1 = styled.h1`
-  font-size: 2rem;
-  letter-spacing: 1px;
-  text-align: center;
-  color: #F9B613;
-`;
-const Span = styled.span`
-  color: #0798DA;
-`;
-const Center = styled.div`
-  margin-top: 50px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 `;
-
+const Center = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Button = styled.button`
   font-size: 1.2rem;
   margin: 3px 0;
@@ -39,9 +26,12 @@ const Button = styled.button`
   border: 2px solid #F9B613;
   color: #F9B613;
   position: relative;
-  min-width: 150px;
+  width: 100px;
   cursor: pointer;
   overflow: hidden;
+  &:last-child{
+    margin-left: 5px;
+  }
   &::before{
     z-index: -1;
     content: '';
@@ -59,22 +49,27 @@ const Button = styled.button`
     opacity: 1;
     transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
   }
+   @media (min-width: 768px) {
+    display: ${props => props.show ? 'none' : 'block'};
+ }
 `;
-const StepFourth = ({move}) => {
+const Linkk = styled(Link)`
+  text-decoration: none;
+`;
+const StepZeroDesktop = () => {
     const dispatch = useDispatch();
-    const handleMove = () => {
-        dispatch(setMove(-100));
-        dispatch(rightTrue());
+    const handleGenerate = () => {
+        dispatch(setObj(genereateOne()));
     };
     return (
-        <Container move={move}>
-            <H1><Span>I</Span>s everything correct?</H1>
+        <Container>
             <Center>
-                <Button onClick={handleMove}>Edit</Button>
-                <SendBtn/>
+                <Button onClick={handleGenerate}>Random</Button>
+                <Linkk to="/touse"><Button>Use</Button></Linkk>
             </Center>
+            <SendBtn/>
         </Container>
     );
 };
 
-export default StepFourth;
+export default StepZeroDesktop;
