@@ -1,13 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import Edit from "./edit/Edit";
 import {useDispatch, useSelector} from "react-redux";
-import {fontOff} from "../../redux";
-import Menu from "../dashboard/menu/Menu";
+import {dashClose, fontOff, setObj} from "../../redux";
+import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./edit/stepZero/desktop/StepZeroDesktop";
+import {genereateOne} from "../../data/Data";
 
 const Container = styled.div`
   width: 100vw;
@@ -36,13 +37,24 @@ const Desktop = styled.div`
 const AddNote = () => {
     const dispatch = useDispatch();
     const font = useSelector(state => state.fontmenu.menu);
+    useEffect(() => {
+        const obj = JSON.parse(localStorage.getItem('noteSave'));
+        if(obj !== null){
+            dispatch(setObj(obj));
+        }else dispatch(setObj(genereateOne()));
+
+    },[]);
+    const handleClick = () => {
+        dispatch(dashClose()); // close mobile menu
+        if(font) dispatch(fontOff());
+    };
     return (
         <>
             <Logo/>
             <Menu/>
-            <Nav/>
+            <Nav num={1}/>
             <Desktop><StepZeroDesktop/></Desktop>
-            <Container onClick={() => {font && dispatch(fontOff())}}>
+            <Container onClick={handleClick}>
                 <NoteEdit/>
                 <Edit/>
             </Container>

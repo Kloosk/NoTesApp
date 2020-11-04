@@ -40,13 +40,10 @@ const SendBtn = () => {
     const history = useHistory();
     const data = useSelector(state => state.note);
     const sendData = () => {
-        axios
-            .post("/api/users/add", data,{
-                headers: {
-                    'auth-token': localStorage.getItem("jwtToken")
-                }})
+        axios.post("/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
-                history.push('/dashboard');
+                localStorage.removeItem('noteSave');// delete own style note
+                history.push("/dashboard");
             })
             .catch(err => console.log(err));
     };

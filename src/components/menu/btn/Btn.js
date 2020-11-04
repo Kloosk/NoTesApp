@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, dashOpen} from "../../../../redux";
+import {dashClose, dashOpen} from "../../../redux";
 
 const Container = styled.button`
   padding: 5px;

@@ -5,9 +5,15 @@ import {useDispatch} from "react-redux";
 import {setObj} from "../../../../../redux";
 import {genereateOne} from "../../../../../data/Data";
 import SendBtn from "../../../sendBtn/SendBtn";
+import SaveBtn from "../../../saveBtn/saveBtn";
 
 const Container = styled.div`
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const Column = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,11 +69,14 @@ const StepZeroDesktop = () => {
     };
     return (
         <Container>
-            <Center>
-                <Button onClick={handleGenerate}>Random</Button>
-                <Linkk to="/touse"><Button>Use</Button></Linkk>
-            </Center>
-            <SendBtn/>
+            <Column>
+                <Center>
+                    <Button onClick={handleGenerate}>Random</Button>
+                    <Linkk to="/touse"><Button>Use</Button></Linkk>
+                </Center>
+                <SendBtn/>
+            </Column>
+            <SaveBtn/>
         </Container>
     );
 };

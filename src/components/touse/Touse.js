@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import {notesExample} from "../../data/Data";
 import Note from "./note/Note"
-import Menu from "../dashboard/menu/Menu";
+import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 
 const Container = styled.div`

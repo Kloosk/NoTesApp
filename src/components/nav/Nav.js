@@ -5,9 +5,10 @@ import {Link} from "react-router-dom";
 const Container = styled.div`
   display: none;
   @media (min-width: 768px) {
+  overflow: hidden;
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 2px;
+  top: 2px;
   display: flex;
   align-items: center;
   }
@@ -17,8 +18,8 @@ const Linkk = styled(Link)`
 `;
 const Btn = styled.button`
   border: 2px solid #F9B613;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
   background: none;
   padding: 10px;
@@ -26,12 +27,16 @@ const Btn = styled.button`
   border-radius: 50%;
 `;
 const Svg = styled.svg`
+  overflow: hidden;
   color: #F9B613;
+  ${Btn}:hover &{
+    transform: scale(1.1);
+  }
 `;
-const Nav = () => {
+const Nav = ({num}) => {
     return (
         <Container>
-            <Linkk to="/add">
+            <Linkk to="/add" style={{display: num===1 && 'none'}}>
                 <Btn>
                     <Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></Svg>
                 </Btn>

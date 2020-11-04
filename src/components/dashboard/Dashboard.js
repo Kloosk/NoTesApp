@@ -5,7 +5,7 @@ import {useDispatch} from "react-redux";
 import None from "./none/None";
 import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
-import Menu from "./menu/Menu";
+import Menu from "../menu/Menu";
 import {dashClose} from "../../redux";
 import Nav from "../nav/Nav";
 
