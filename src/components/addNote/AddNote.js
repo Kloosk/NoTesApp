@@ -2,13 +2,13 @@ import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
-import Edit from "./edit/Edit";
 import {useDispatch, useSelector} from "react-redux";
 import {dashClose, fontOff, setObj} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
-import StepZeroDesktop from "./edit/stepZero/desktop/StepZeroDesktop";
+import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
+import NoteOptions from "./noteOptions/NoteOptions";
 
 const Container = styled.div`
   width: 100vw;
@@ -56,7 +56,7 @@ const AddNote = () => {
             <Desktop><StepZeroDesktop/></Desktop>
             <Container onClick={handleClick}>
                 <NoteEdit/>
-                <Edit/>
+                <NoteOptions/>
             </Container>
         </>
     );

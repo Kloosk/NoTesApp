@@ -4,6 +4,7 @@ import {rightTrue, setMove} from "../../../../redux";
 import {useDispatch} from "react-redux";
 import SendBtn from "../../sendBtn/SendBtn";
 import SaveBtn from "../../saveBtn/saveBtn";
+import SubmitEdit from "../../../edit/submitEdit/SubmitEdit";
 
 const Container = styled.div`
  left: 400vw;
@@ -61,7 +62,7 @@ const Button = styled.button`
     transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
   }
 `;
-const StepFourth = ({move}) => {
+const StepFourth = ({move,edit}) => {
     const dispatch = useDispatch();
     const handleMove = () => {
         dispatch(setMove(-100));
@@ -72,7 +73,8 @@ const StepFourth = ({move}) => {
             <H1><Span>I</Span>s everything correct?</H1>
                 <Center>
                     <Button onClick={handleMove}>Edit</Button>
-                    <SendBtn/>
+                    <SendBtn edit={edit}/>
+                    <SubmitEdit edit={edit}/>
                     <SaveBtn/>
                 </Center>
 

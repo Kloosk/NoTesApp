@@ -13,6 +13,7 @@ import PrivateRoute from "./components/privateroutes/PrivateRoutes";
 import AddNote from "./components/addNote/AddNote";
 import Authors from "./components/authors/Authors";
 import Touse from "./components/touse/Touse";
+import Edit from "./components/edit/Edit";
 
 function App() {
     const dispatch = useDispatch();
@@ -56,8 +57,8 @@ function App() {
                 <Route exact path="/touse">
                     <Touse/>
                 </Route>
-                <Route exact path="/edit/:id">
-                    <Touse/>
+                <Route path="/edit/:id">
+                    <Edit/>
                 </Route>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add" component={AddNote} />

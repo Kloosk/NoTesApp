@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {leftTrue, rightFalse, rightTrue, setMove, setObj} from "../../../../redux";
 import {genereateOne} from "../../../../data/Data";
 import SendBtn from "../../sendBtn/SendBtn";
+import SubmitEdit from "../../../edit/submitEdit/SubmitEdit";
 
 const Container =styled.div`
   width: 100vw;
@@ -72,7 +73,7 @@ const Button = styled.button`
 const Linkk = styled(Link)`
   text-decoration: none;
 `;
-const StepZero = () => {
+const StepZero = ({edit}) => {
     const dispatch = useDispatch();
     const move = useSelector(state => state.arrows.move);
     const moveRight = () => {
@@ -93,7 +94,8 @@ const StepZero = () => {
                 <Button show={false} onClick={handleGenerate}>Generate</Button>
                 <Linkk to="/touse"><Button>Use</Button></Linkk>
                 <Button show={true} onClick={moveRight}>Create own</Button>
-                <SendBtn/>
+                <SendBtn edit={edit}/>
+                <SubmitEdit edit={edit}/>
             </Center>
         </Container>
     );

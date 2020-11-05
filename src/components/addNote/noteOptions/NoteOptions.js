@@ -65,7 +65,7 @@ const Arrows = styled.div`
   }
 `;
 
-const Edit = () => {
+const NoteOptions = ({edit}) => {
     const dispatch = useDispatch();
     const {move,right,left} = useSelector(state => state.arrows);
     const moveRight = () => {
@@ -93,11 +93,11 @@ const Edit = () => {
             </Arrows>
 
             <ContainerMobile>
-                <StepZero/>
+                <StepZero edit={edit}/>
                 <StepFirst move={move}/>
                 <StepTwice move={move}/>
                 <StepThird move={move}/>
-                <StepFourth move={move}/>
+                <StepFourth move={move} edit={edit}/>
             </ContainerMobile>
 
             <Container>
@@ -109,4 +109,4 @@ const Edit = () => {
     );
 };
 
-export default Edit;
+export default NoteOptions;

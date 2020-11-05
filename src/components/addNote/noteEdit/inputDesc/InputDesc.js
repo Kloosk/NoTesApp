@@ -18,7 +18,7 @@ const Container = styled(Textarea)`
 `;
 const InputDesc = () => {
     const dispatch = useDispatch();
-    const {textSize,textColor,textBg,font} = useSelector(state => state.note);
+    const {textSize,textColor,textBg,font,text} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
 
@@ -28,7 +28,7 @@ const InputDesc = () => {
         dispatch(rightTrue());
     };
     return (
-        <Container spellCheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue="Your text" maxLength="1000" onBlur={handleChange}/>
+        <Container spellCheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text} maxLength="1000" onBlur={handleChange}/>
     )
 };
 export default InputDesc

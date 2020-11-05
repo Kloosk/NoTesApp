@@ -5,7 +5,7 @@ import {useHistory} from "react-router-dom";
 import {useSelector} from "react-redux";
 
 const Container = styled.button`
-  display: ${props => props.edit ? 'none' : 'block'};
+  display: ${props => props.edit ? 'block' : 'none'};
   font-size: 1.2rem;
   margin: 3px 0;
   padding: 7px 14px;
@@ -37,20 +37,20 @@ const Container = styled.button`
     transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
   }
 `;
-const SendBtn = ({edit}) => {
+const SubmitEdit = ({edit}) => {
     const history = useHistory();
     const data = useSelector(state => state.note);
     const sendData = () => {
         axios.post("/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
-                localStorage.removeItem('noteSave');// delete own style note
                 history.push("/dashboard");
             })
             .catch(err => console.log(err));
     };
+
     return (
-        <Container edit={edit} onClick={sendData}>Add</Container>
+        <Container edit={edit} onClick={sendData}>Done</Container>
     );
 };
 
-export default SendBtn;
+export default SubmitEdit;
