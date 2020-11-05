@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {rightTrue, setMove} from "../../../../redux";
 import {useDispatch} from "react-redux";
 import SendBtn from "../../sendBtn/SendBtn";
+import SaveBtn from "../../saveBtn/saveBtn";
 
 const Container = styled.div`
  left: 400vw;
@@ -69,10 +70,12 @@ const StepFourth = ({move}) => {
     return (
         <Container move={move}>
             <H1><Span>I</Span>s everything correct?</H1>
-            <Center>
-                <Button onClick={handleMove}>Edit</Button>
-                <SendBtn/>
-            </Center>
+                <Center>
+                    <Button onClick={handleMove}>Edit</Button>
+                    <SendBtn/>
+                    <SaveBtn/>
+                </Center>
+
         </Container>
     );
 };

@@ -51,7 +51,7 @@ const AddNote = () => {
     return (
         <>
             <Logo/>
-            <Menu/>
+            <Menu num={1}/>
             <Nav num={1}/>
             <Desktop><StepZeroDesktop/></Desktop>
             <Container onClick={handleClick}>

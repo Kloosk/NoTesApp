@@ -34,8 +34,8 @@ const Dashboard = () => {
     return (
         <>
             <Logo/>
-            <Nav/>
-            <Menu/>
+            <Nav num={2}/>
+            <Menu num={2}/>
             <Container onClick={closeMenu}>
                 {data.length > 0 ? <AllNotes data={data}/> : <None/>}
             </Container>

@@ -13,11 +13,11 @@ const Container = styled.nav`
   }
 `;
 
-const Menu = () => {
+const Menu = ({num}) => {
     return (
         <Container>
             <Btn/>
-            <SubMenu/>
+            <SubMenu num={num}/>
         </Container>
     );
 };

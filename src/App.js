@@ -56,6 +56,9 @@ function App() {
                 <Route exact path="/touse">
                     <Touse/>
                 </Route>
+                <Route exact path="/edit/:id">
+                    <Touse/>
+                </Route>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add" component={AddNote} />
             </Switch>
