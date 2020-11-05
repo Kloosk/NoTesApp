@@ -41,7 +41,7 @@ const SubmitEdit = ({edit}) => {
     const history = useHistory();
     const data = useSelector(state => state.note);
     const sendData = () => {
-        axios.post("/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+        axios.post("/api/users/edit", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 history.push("/dashboard");
             })

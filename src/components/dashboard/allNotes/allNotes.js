@@ -19,7 +19,7 @@ const Container = styled.div`
    align-items: start;
    padding: 0 5vw;
    grid-gap: 5vw;
-   grid-template-columns: repeat(3,1fr);
+   grid-template-columns: repeat(3, 1fr);
   }
 `;
 const Welcome = styled.h1`
