@@ -4,3 +4,4 @@ export {setObj,setDesc,setDescBg,setBorder,setDescColor,setDescSize,setFont,setT
 export {setMove,leftFalse,leftTrue,rightFalse,rightTrue} from './addNoteArrows/NoteArrowsActions'
 export {fontOff,fontOn} from './fontMenu/fontMenuActions'
 export {alertOff,alertOn} from './alertDelete/alertDeleteActions'
+export {menuDesktopClose,menuDesktopOpen} from './menuDesktop/menuDesktopActions'

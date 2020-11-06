@@ -6,7 +6,7 @@ import None from "./none/None";
 import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
 import Menu from "../menu/Menu";
-import {dashClose} from "../../redux";
+import {dashClose, menuDesktopClose} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 
@@ -15,6 +15,7 @@ const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  user-select: ${props => props.select ? 'none' : 'auto'};
 `;
 const Overlay = styled.div`
   position: fixed;
@@ -30,6 +31,7 @@ const Overlay = styled.div`
 `;
 const Dashboard = () => {
     const {alert} = useSelector(state => state.alert);
+    const [select,setSelect] = useState(false);
     const dispatch = useDispatch();
     const [data,setData] = useState([]);
     useEffect(() => {
@@ -40,9 +42,15 @@ const Dashboard = () => {
                 }})
             .then(res => setData(res.data.data))
             .catch(err => console.log(err));
+
+        if(localStorage.getItem('selecttext') !== null){
+            setSelect(true);
+        }else setSelect(false);
     },[]);
+
     const closeMenu = () => {
         dispatch(dashClose());
+        dispatch(menuDesktopClose())
     };
     return (
         <>
@@ -50,7 +58,7 @@ const Dashboard = () => {
             <AlertDelete/>
             <Nav num={2}/>
             <Menu num={2}/>
-            <Container onClick={closeMenu}>
+            <Container onClick={closeMenu} select={select}>
                 {data.length > 0 ? <AllNotes data={data}/> : <None/>}
             </Container>
             <Overlay alert={alert}/>

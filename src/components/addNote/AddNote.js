@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, setObj} from "../../redux";
+import {dashClose, fontOff, menuDesktopClose, setObj} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
@@ -45,19 +45,24 @@ const AddNote = () => {
 
     },[]);
     const handleClick = () => {
-        dispatch(dashClose()); // close mobile menu
         if(font) dispatch(fontOff());
+    };
+    const closeMenu = () => {
+        dispatch(dashClose());
+        dispatch(menuDesktopClose())
     };
     return (
         <>
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>
+            <div onClick={closeMenu}>
             <Desktop><StepZeroDesktop/></Desktop>
             <Container onClick={handleClick}>
                 <NoteEdit/>
                 <NoteOptions/>
             </Container>
+            </div>
         </>
     );
 };

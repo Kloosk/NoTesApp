@@ -5,6 +5,8 @@ import {notesExample} from "../../data/Data";
 import Note from "./note/Note"
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
+import {dashClose, menuDesktopClose} from "../../redux";
+import {useDispatch} from "react-redux";
 
 const Container = styled.div`
   width: 100vw;
@@ -30,13 +32,18 @@ const Span = styled.span`
   color: #0798DA;
 `;
 const Touse = () => {
+    const dispatch = useDispatch();
+   const closeMenu = () => {
+        dispatch(dashClose());
+        dispatch(menuDesktopClose())
+    };
     return (
         <>
             <Logo/>
             <Menu/>
             <Nav/>
             <H1><Span>C</Span>hoose</H1>
-            <Container>
+            <Container onClick={closeMenu}>
                 {notesExample.map((el,i) => <Note key={i} title={el.title} text={el.text} titlecolor={el.titleColor} titlebg={el.titleBg} textcolor={el.textColor} textbg={el.textBg} border={el.border} font={el.font} textsize={el.textSize} titlesize={el.titleSize}/>)}
             </Container>
         </>

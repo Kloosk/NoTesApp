@@ -6,6 +6,7 @@ import NoteEditReducer from "./noteedit/NoteEditReducer";
 import noteArrowReducer from "./addNoteArrows/NoteArrowsReducer";
 import fontMenuReducer from "./fontMenu/fontMenuReducer";
 import alertDeleteReducer from "./alertDelete/alertDeleteReducer";
+import menuDesktopReducer from "./menuDesktop/menuDesktopReducer";
 
 const rootReducer = combineReducers({
     startnow: startNowReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
     arrows: noteArrowReducer,
     fontmenu: fontMenuReducer,
     alert: alertDeleteReducer,
+    menudesktop: menuDesktopReducer,
 
 });
 

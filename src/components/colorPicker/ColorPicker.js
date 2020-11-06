@@ -53,6 +53,7 @@ const ColorPicker = ({func,show,toppos}) => {
     const exitPicker = () => {
         setDisplay(false);
     };
+
     return (
         <>
             <ContainerMobile displayy={display}>
