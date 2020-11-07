@@ -52,6 +52,7 @@ const Edit = () => {
                 },
             })
             .then(res => {
+                console.log(res);
                 dispatch(setObj(res.data.data));
                 setLoad(true);
             })

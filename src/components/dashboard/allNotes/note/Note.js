@@ -2,45 +2,16 @@ import React from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import DeleteBtn from "../deleteBtn/DeleteBtn";
+import Textarea from "react-expanding-textarea";
 
 const Container = styled.div`
-  width: 80vw;
   min-height: 200px;
   border: 2px solid ${props => props.border};
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 20px;
   position: relative;
-  @media (min-width: 768px) {
-    width: 100%;
-  }
-`;
-const Title = styled.div`
-  min-height: 30px;
-  padding: 5px;
-  width: 100%;
-  text-align: center;
-  background: ${props => props.titleBg};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const H1 = styled.h1`
-  color: ${props => props.titleColor};
-  font-family: ${props => props.font};
-  font-size: ${props => props.titleSize}rem;
-`;
-const Desc = styled.div`
-  min-height: 170px;
-  padding: 10px;
-  width: 100%;
-  background: ${props => props.textBg};
-`;
-const P = styled.p`
-  color: ${props => props.textColor};
-  font-family: ${props => props.font};
-  font-size: ${props => props.textSize}rem;
+  margin: 30px;
 `;
 const Options = styled.div`
   position: absolute;
@@ -73,6 +44,30 @@ const Svg = styled.svg`
     transform: scale(1.2);
   }
 `;
+const Desc = styled(Textarea)`
+  width: 100%;
+  color: ${props => props.textcolor};
+  background: ${props => props.textbg};
+  font-size: ${props => props.textsize}rem;
+  font-family: ${props => props.font};
+  border: none;
+  resize: none;
+  outline: none;
+  min-height: 170px;
+  padding: 15px 5px 5px 5px;
+`;
+const Title = styled(Textarea)`
+  width: 100%;
+  color: ${props => props.titlecolor};
+  background: ${props => props.titlebg};
+  font-size: ${props => props.titlesize}rem;
+  font-family: ${props => props.font};
+  text-align: center;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 5px;
+`;
 const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num}) => {
     return (
         <Container border={border}>
@@ -84,12 +79,9 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSi
                     </Btn>
                 </Link>
             </Options>
-            <Title titleBg={titleBg}>
-                <H1 titleColor={titleColor} titleSize={titleSize} font={font}>{title}</H1>
-            </Title>
-            <Desc textBg={textBg}>
-                <P textColor={textColor} font={font} textSize={textSize}>{text}</P>
-            </Desc>
+
+            <Title readonly disabled spellCheck="false" font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
+            <Desc readonly disabled spellCheck="false" font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
         </Container>
     );
 };
