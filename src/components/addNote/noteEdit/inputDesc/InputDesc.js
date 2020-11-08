@@ -28,7 +28,7 @@ const InputDesc = () => {
         dispatch(rightTrue());
     };
     return (
-        <Container spellCheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text} maxLength="1000" onBlur={handleChange}/>
+        <Container spellCheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text} maxLength="800" onBlur={handleChange}/>
     )
 };
 export default InputDesc

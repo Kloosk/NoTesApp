@@ -20,7 +20,7 @@ const Video = () => {
     return (
         <Container>
             <Overlay/>
-            <video id="vid" muted loop>
+            <video id="vid" muted loop autoPlay>
                 <source type="video/mp4" src={notes}></source>
             </video>
         </Container>

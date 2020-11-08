@@ -43,22 +43,56 @@ const Element = styled.div`
 const P = styled.p`
   font-size: 1.4rem;
 `;
+const Label = styled.label`
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+`;
+const Span = styled.span`
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #af4c4c;
+  transition: .3s;
+  border-radius: 34px;
+  &::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  transition: .3s;
+  border-radius: 50%;
+  }
+`;
 const Input = styled.input`
-  width: 25px;
-  height: 25px;
-  margin-left: 10px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  &:checked + ${Span}{
+    background-color: #4caf50;
+  }
+  &:checked + ${Span}:before {
+  transform: translateX(26px);
+  }
 `;
 const MenuDesktop = () => {
-    // const autosave = useRef(null);
+    const autosave = useRef(null);
     const deletealert = useRef(null);
     const selecttext = useRef(null);
 
     const open = useSelector(state => state.menudesktop.open);
 
     useEffect(() => {
-        // if(localStorage.getItem('autosave') !== null){
-        //     autosave.current.checked = true;
-        // }
+        if(localStorage.getItem('autosave') !== null){
+            autosave.current.checked = true;
+        }
         if(localStorage.getItem('alertdelete') !== null){
             deletealert.current.checked = true;
         }
@@ -75,13 +109,13 @@ const MenuDesktop = () => {
         }
     };
 
-    // const handleAutosave = () => {
-    //     if(autosave.current.checked === true){
-    //         localStorage.setItem('autosave','true')
-    //     }else{
-    //         localStorage.removeItem('autosave');
-    //     }
-    // };
+    const handleAutosave = () => {
+        if(autosave.current.checked === true){
+            localStorage.setItem('autosave','true')
+        }else{
+            localStorage.removeItem('autosave');
+        }
+    };
 
     const handleSelectText = () => {
         if(selecttext.current.checked === true){
@@ -97,15 +131,24 @@ const MenuDesktop = () => {
         <Container open={open}>
             <Element>
                 <P>Delete alert</P>
-                <Input onClick={handleDeleteAlert} ref={deletealert} type="checkbox"/>
+                <Label>
+                        <Input type="checkbox" onClick={handleDeleteAlert} ref={deletealert}/>
+                        <Span></Span>
+                </Label>
             </Element>
-            {/*<Element>*/}
-            {/*    <P>Autosave</P>*/}
-            {/*    <Input onClick={handleAutosave} ref={autosave} type="checkbox"/>*/}
-            {/*</Element>*/}
+            <Element>
+                <P>Autosave</P>
+                <Label>
+                    <Input type="checkbox" onClick={handleAutosave} ref={autosave} />
+                    <Span></Span>
+                </Label>
+            </Element>
             <Element>
                 <P>Select text note</P>
-                <Input onClick={handleSelectText} ref={selecttext} type="checkbox"/>
+                <Label>
+                    <Input type="checkbox" onClick={handleSelectText} ref={selecttext} />
+                    <Span></Span>
+                </Label>
             </Element>
         </Container>
     );

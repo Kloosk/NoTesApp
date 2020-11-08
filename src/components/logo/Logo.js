@@ -16,6 +16,9 @@ const Linkk = styled(Link)`
 `;
 const Img = styled.img`
   width: 150px;
+  @media(min-width: 768px){
+    width: 210px;
+  }
 `;
 const Logo = () => {
     return (

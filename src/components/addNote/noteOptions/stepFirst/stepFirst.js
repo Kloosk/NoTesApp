@@ -75,7 +75,9 @@ const StepFirst = ({move}) => {
     const dispatch = useDispatch();
     const {titleSize,titleBg,titleColor} = useSelector(state => state.note);
     const titleDec = () => {
-        dispatch(setTitleSize(-0.1));
+        if(titleSize >= 0.2) {
+            dispatch(setTitleSize(-0.1));
+        }
     };
     const titleInc = () => {
         dispatch(setTitleSize(0.1));

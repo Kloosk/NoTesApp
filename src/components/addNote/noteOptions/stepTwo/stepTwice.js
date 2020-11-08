@@ -77,7 +77,9 @@ const StepTwice = ({move}) => {
         dispatch(setDescSize(0.1));
     };
     const descDec = () => {
-        dispatch(setDescSize(-0.1));
+        if(textSize >= 0.2) {
+            dispatch(setDescSize(-0.1));
+        }
     };
     const [show,setShow] = useState(false);
     const [showBg,setShowBg] = useState(false);

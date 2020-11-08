@@ -4,10 +4,6 @@ import Note from "./note/Note";
 import { useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 
-const breakpointColumnsObj = {
-    default: 4,
-};
-
 const Container = styled(Masonry)`
   display: flex;
   width: auto;
