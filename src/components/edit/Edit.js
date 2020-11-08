@@ -10,6 +10,7 @@ import Nav from "../nav/Nav";
 import SubmitEdit from "./submitEdit/SubmitEdit";
 import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
+import Loading from "../loading/Loading";
 
 const Container = styled.div`
   width: 100vw;
@@ -63,7 +64,7 @@ const Edit = () => {
         if(font) dispatch(fontOff());
     };
     return (
-        load && <>
+        load ? <>
             <Logo/>
             <Menu/>
             <Nav/>
@@ -74,7 +75,7 @@ const Edit = () => {
                 <NoteEdit/>
                 <NoteOptions edit={true}/>
             </Container>
-        </>
+        </> : <Loading/>
     );
 };
 
