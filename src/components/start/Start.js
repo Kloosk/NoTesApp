@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import Video from "./video/Video";
 import Btn from "./btn/Btn";
 import Logo from "../logo/Logo";
 import NoteSection from "./notesection/NoteSection";
 import LogAndReg from "./logandreg/LogAndReg";
+import {useSelector} from "react-redux";
+import {useHistory} from "react-router-dom";
 
 const Container = styled.div`
   width: 100vw;
@@ -13,6 +15,13 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const Start = () => {
+    const history = useHistory();
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    useEffect(() => {
+        if (isAuthenticated) {
+            history.push("/dashboard"); // push user to dashboard when they login
+        }
+    },[isAuthenticated]);
     return (
         <Container>
             <Video/>
