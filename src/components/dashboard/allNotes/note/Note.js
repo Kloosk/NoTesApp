@@ -67,6 +67,7 @@ const Title = styled(Textarea)`
   resize: none;
   outline: none;
   padding: 5px;
+  min-height: 30px;
 `;
 const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num}) => {
     return (
@@ -80,8 +81,8 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSi
                 </Link>
             </Options>
 
-            <Title readonly disabled spellCheck="false" font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readonly disabled spellCheck="false" font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
+            <Title readOnly disabled spellCheck="false" font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
+            <Desc readOnly disabled spellCheck="false" font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
         </Container>
     );
 };

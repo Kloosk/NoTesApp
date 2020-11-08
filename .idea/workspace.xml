@@ -7,7 +7,6 @@
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/allNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/allNotes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/Edit.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -37,6 +37,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../notes/notestest" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -111,7 +112,12 @@
       <workItem from="1604695576409" duration="1096000" />
       <workItem from="1604704828984" duration="69000" />
       <workItem from="1604704899599" duration="602000" />
-      <workItem from="1604753021733" duration="5898000" />
+      <workItem from="1604753021733" duration="6605000" />
+      <workItem from="1604772016856" duration="1733000" />
+      <workItem from="1604774114660" duration="884000" />
+      <workItem from="1604777701812" duration="683000" />
+      <workItem from="1604778550497" duration="227000" />
+      <workItem from="1604833705263" duration="2266000" />
     </task>
     <servers />
   </component>
@@ -123,11 +129,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603729069426" />
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1604762183467">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1604833786934">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604762183467" />
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604704896736" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1604833786934" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604777896284" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
