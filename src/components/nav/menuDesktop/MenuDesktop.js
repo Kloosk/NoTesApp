@@ -16,7 +16,7 @@ padding: 10px;
   @media(min-width: 768px){
       z-index: 20;
       display: ${props => props.open ? 'flex' : 'none'};
-      width: 250px;
+      width:300px;
       position: absolute;
       top: 55px;
       right: 5px;
