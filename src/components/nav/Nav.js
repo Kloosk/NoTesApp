@@ -31,6 +31,7 @@ const Btn = styled.button`
   padding: 10px;
   position: relative;
   border-radius: 50%;
+  overflow: hidden;
 `;
 const Svg = styled.svg`
   overflow: hidden;

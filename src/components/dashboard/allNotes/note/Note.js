@@ -12,7 +12,6 @@ const Container = styled.div`
   flex-direction: column;
   position: relative;
   margin: 30px;
-  height: auto;
 `;
 const Options = styled.div`
   position: absolute;

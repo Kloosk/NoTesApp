@@ -8,9 +8,10 @@ import Loading from "../../loading/Loading";
 const Container = styled(Masonry)`
   display: flex;
   width: auto;
-  margin: 0 20px;
+  margin: 0 13px;
 `;
 const Welcome = styled.h1`
+  width: 100%;
   margin: 13vh 0 5vh 0;
   text-align: center;
   font-size: 2.2rem;
