@@ -14,6 +14,8 @@ const Container = styled.div`
   top: 2px;
   display: flex;
   align-items: flex-start;
+  height: auto;
+  width: auto;
   }
 `;
 const Linkk = styled(Link)`

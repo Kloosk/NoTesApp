@@ -27,11 +27,14 @@ const AllNotes = ({data}) => {
         });
         setLoad(true);
     },[]);
+    const bigFirstLetter = name => {
+        return name.charAt(0).toUpperCase() + name.slice(1);
+    };
     if(load) {
         if (width > 992) {
             return (
                 <>
-                    <Welcome>Hi {name}</Welcome>
+                    <Welcome>Hi {bigFirstLetter(name)}</Welcome>
                     <Container breakpointCols={{default: 3}} columnClassName="">
                         {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
                                                    titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
