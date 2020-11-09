@@ -46,8 +46,12 @@ const P = styled.p`
 const Label = styled.label`
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 40px;
+  height: 20px;
+  @media(min-width: 768px){
+     width: 60px;
+     height: 34px;
+  }
 `;
 const Span = styled.span`
   position: absolute;
@@ -62,13 +66,20 @@ const Span = styled.span`
   &::before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 20px;
+  width: 20px;
   left: 4px;
-  bottom: 4px;
+  bottom: 0;
   background-color: #fff;
   transition: .3s;
   border-radius: 50%;
+  }
+  @media(min-width: 768px){
+   &::before {
+    height: 26px;
+    width: 26px;
+    bottom: 4px;
+    }
   }
 `;
 const Input = styled.input`
@@ -79,8 +90,14 @@ const Input = styled.input`
     background-color: #4caf50;
   }
   &:checked + ${Span}:before {
-  transform: translateX(26px);
+  transform: translateX(14px);
   }
+  @media(min-width: 768px){
+    &:checked + ${Span}:before {
+    transform: translateX(26px);
+  }
+  }
+  
 `;
 const MenuDesktop = () => {
     const autosave = useRef(null);

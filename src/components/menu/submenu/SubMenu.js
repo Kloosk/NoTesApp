@@ -10,7 +10,7 @@ const Container = styled.div`
   position: absolute;
   top: 103%;
   right: 0;
-  width: 60vw;
+  width: 70vw;
   height: 50vh;
   border: 2px solid #000;
   background-color: #fff;
