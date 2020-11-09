@@ -1,15 +1,16 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, menuDesktopClose, setObj, TouseFalse, TouseTrue} from "../../redux";
+import {dashClose, fontOff, menuDesktopClose, setObj, TouseFalse} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
+import Loading from "../loading/Loading";
 
 const Bg = styled.div`
   position: absolute;
@@ -46,6 +47,7 @@ const Desktop = styled.div`
 `;
 const AddNote = () => {
     const dispatch = useDispatch();
+    const [load,setLoad] = useState(false);
     const toUse = useSelector(state => state.touse.touse);
     const font = useSelector(state => state.fontmenu.menu);
     useEffect(() => {
@@ -56,6 +58,7 @@ const AddNote = () => {
             dispatch(setObj(genereateOne()));
         }
         toUse && dispatch(TouseFalse());
+        setLoad(true);
     },[]);
     const handleClick = () => {
         if(font) dispatch(fontOff());
@@ -65,7 +68,7 @@ const AddNote = () => {
         dispatch(menuDesktopClose())
     };
     return (
-        <Bg>
+       load ? <Bg>
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>
@@ -76,7 +79,7 @@ const AddNote = () => {
                 <NoteOptions/>
             </Container>
             </div>
-        </Bg>
+        </Bg> : <Loading/>
     );
 };
 

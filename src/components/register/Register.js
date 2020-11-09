@@ -7,6 +7,7 @@ import Title from "./title/Title";
 import bgReg from "../../img/bgReg.jpg"
 import {useDispatch, useSelector} from "react-redux";
 import {registerUser} from "../../redux/auth/authActions";
+import LinkLogin from "./link/LinkLogin";
 
 const Container = styled.div`
   width: 100vw;
@@ -163,6 +164,7 @@ const Register = () => {
     return (
         isAuthenticated ? null : <>
             <Logo/>
+            <LinkLogin/>
             <Container>
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>

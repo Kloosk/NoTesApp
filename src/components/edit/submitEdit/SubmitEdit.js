@@ -32,7 +32,7 @@ const Container = styled.button`
     width: 10%;
     background-color: #0798DA;
   }
-  &:hover::before{
+  :hover::before{
     opacity: 1;
     transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
   }

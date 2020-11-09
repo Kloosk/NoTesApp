@@ -69,7 +69,6 @@ const Dashboard = () => {
                 {data.length > 0 ? <AllNotes data={data}/> : <None/>}
             </Container>
             <Overlay alert={alert}/>
-
         </> : <Loading/>
     );
 };

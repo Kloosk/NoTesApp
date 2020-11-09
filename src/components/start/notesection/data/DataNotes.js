@@ -6,7 +6,7 @@ export const DataNotes = [
         border: "2px solid #F2E205",
         font:"Arial",
         titleTxt:"Make",
-        descTxt:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, officia?"
+        descTxt:"Don't forget."
     },
     {
         color:"#151226",
@@ -15,7 +15,7 @@ export const DataNotes = [
         border: "2px solid #151226",
         font:"Century",
         titleTxt:"Your",
-        descTxt:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, officia?"
+        descTxt:"Create according to your own rules."
     },
     {
         color:"#151226",
@@ -24,7 +24,7 @@ export const DataNotes = [
         border: "2px solid #151226",
         font:"Consolas",
         titleTxt:"Life",
-        descTxt:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, officia?"
+        descTxt:"Don't limit yourself"
     },
     {
         color:"#2E4BF2",

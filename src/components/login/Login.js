@@ -7,6 +7,7 @@ import bgReg from "../../img/bgReg.jpg"
 import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {loginUser} from "../../redux/auth/authActions";
+import LinkReg from "./link/LinkReg";
 
 const Container = styled.div`
   width: 100vw;
@@ -143,6 +144,7 @@ const Login = () => {
     return (
         isAuthenticated ? null : <>
             <Logo/>
+            <LinkReg/>
             <Container>
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>

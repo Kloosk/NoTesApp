@@ -1,18 +1,7 @@
 import React, {useState} from 'react';
-import styled,{keyframes} from 'styled-components'
+import styled from 'styled-components'
 import {useSelector} from "react-redux";
 
-const translateIn = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  50%{
-    transform: translateX(-60px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-`;
 const Container = styled.button`
   border: 2px solid #F9B613;
   width: 50px;

@@ -18,8 +18,15 @@ const Container = styled.div`
   }
   @media (min-width: 768px) {
    display: none;
+   &:nth-child(5){
+    display: flex;
+    transition: transform 1s ease;
+    transform: ${props => props.startnow && "translateY(200%)"};
+   }
    &:nth-child(4){
     display: flex;
+    transition: transform 1s ease;
+    transform: ${props => props.startnow && "translateY(200%)"};
    }
   }
   @media (min-width: 992px){
