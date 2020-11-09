@@ -3,12 +3,22 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, menuDesktopClose, setObj} from "../../redux";
+import {dashClose, fontOff, menuDesktopClose, setObj, TouseFalse, TouseTrue} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
+import bg from "../../img/bgReg.jpg"
+
+const Bg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: url(${bg}) center/cover no-repeat;
+`;
 
 const Container = styled.div`
   width: 100vw;
@@ -36,13 +46,16 @@ const Desktop = styled.div`
 `;
 const AddNote = () => {
     const dispatch = useDispatch();
+    const toUse = useSelector(state => state.touse.touse);
     const font = useSelector(state => state.fontmenu.menu);
     useEffect(() => {
         const obj = JSON.parse(localStorage.getItem('noteSave'));
-        if(obj !== null){
+        if(obj !== null && toUse === false){
             dispatch(setObj(obj));
-        }else dispatch(setObj(genereateOne()));
-
+        }else if(toUse === false){
+            dispatch(setObj(genereateOne()));
+        }
+        toUse && dispatch(TouseFalse());
     },[]);
     const handleClick = () => {
         if(font) dispatch(fontOff());
@@ -52,7 +65,7 @@ const AddNote = () => {
         dispatch(menuDesktopClose())
     };
     return (
-        <>
+        <Bg>
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>
@@ -63,7 +76,7 @@ const AddNote = () => {
                 <NoteOptions/>
             </Container>
             </div>
-        </>
+        </Bg>
     );
 };
 

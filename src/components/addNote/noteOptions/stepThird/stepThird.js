@@ -62,7 +62,7 @@ const PBtn = styled.p`
 const Button = styled.button`
   display: flex;
   border: none;
-  background: #fff;
+  background: #E6E7E1;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -90,7 +90,7 @@ const FontMenu = styled.div`
   justify-content: center;
   border: 1px solid #F9B613;
   padding: 5px 10px;
-  background-color:#fff;
+  background-color: #E6E7E1;
   height: 250px;
   overflow-y: auto;
   @media (min-width: 768px) {
@@ -103,7 +103,7 @@ const Btn = styled.div`
   width: 100%;
   font-family: ${props => props.font};
   border-bottom: 2px solid #F9B613;
-  background: #fff;
+  background-color: #E6E7E1;
   color: #F9B613;
   font-size: 1.5rem;
   text-align: center;

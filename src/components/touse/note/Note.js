@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
-import {setObj} from "../../../redux";
+import {setObj, TouseTrue} from "../../../redux";
 import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
@@ -63,6 +63,7 @@ const Note = ({title,text,titlecolor,titlebg,textcolor,textbg,border,font,textsi
             textSize: textsize,
             titleSize: titlesize
         };
+        dispatch(TouseTrue());
         dispatch(setObj(obj));
         history.push("/add");
     };

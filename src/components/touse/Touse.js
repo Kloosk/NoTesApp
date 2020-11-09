@@ -7,6 +7,16 @@ import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
+import bg from "../../img/bgReg.jpg"
+
+const Bg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: url(${bg}) center/cover no-repeat;
+`;
 
 const Container = styled.div`
   width: 100vw;
@@ -38,7 +48,7 @@ const Touse = () => {
         dispatch(menuDesktopClose())
     };
     return (
-        <>
+        <Bg>
             <Logo/>
             <Menu/>
             <Nav/>
@@ -46,7 +56,7 @@ const Touse = () => {
             <Container onClick={closeMenu}>
                 {notesExample.map((el,i) => <Note key={i} title={el.title} text={el.text} titlecolor={el.titleColor} titlebg={el.titleBg} textcolor={el.textColor} textbg={el.textBg} border={el.border} font={el.font} textsize={el.textSize} titlesize={el.titleSize}/>)}
             </Container>
-        </>
+        </Bg>
     );
 };
 

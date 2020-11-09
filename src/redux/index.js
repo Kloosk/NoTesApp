@@ -5,3 +5,4 @@ export {setMove,leftFalse,leftTrue,rightFalse,rightTrue} from './addNoteArrows/N
 export {fontOff,fontOn} from './fontMenu/fontMenuActions'
 export {alertOff,alertOn} from './alertDelete/alertDeleteActions'
 export {menuDesktopClose,menuDesktopOpen} from './menuDesktop/menuDesktopActions'
+export {TouseFalse,TouseTrue} from './touse/ToUseActions'

@@ -39,10 +39,10 @@ const Linkk = styled(Link)`
   text-decoration: none;
   transition: transform 0.9s 0.4s ease;
   &:nth-child(1){
-    transform: ${props => props.startnow ? 'translateX(0)' : 'translateX(-100vw)'}; 
+    transform: ${props => props.startnoww ? 'translateX(0)' : 'translateX(-100vw)'}; 
   }
   &:last-child{
-    transform: ${props => props.startnow ? 'translateX(0)' : 'translateX(100vw)'}; 
+    transform: ${props => props.startnoww ? 'translateX(0)' : 'translateX(100vw)'}; 
   }
 `;
 const P = styled.p`
@@ -50,7 +50,7 @@ const P = styled.p`
   color: #0798DA;
   font-size: 1.5rem;
   transition: opacity 0.5s 1.5s ease;
-  opacity: ${props => props.startnow ? 1 : 0};
+  opacity: ${props => props.startnoww ? 1 : 0};
   @media (min-width: 768px) {
     margin: 0 30px;
     font-size: 4rem;
@@ -62,10 +62,10 @@ const Span = styled.span`
 const LogAndReg = () => {
     const startnow = useSelector(state => state.startnow.startnow);
     return (
-        <Container>
-            <Linkk startnow={startnow} to="/login"><Btn>Login</Btn></Linkk>
-            <P startnow={startnow}><Span>O</Span>R</P>
-            <Linkk startnow={startnow} to="/register"><Btn>Register</Btn></Linkk>
+       <Container>
+            <Linkk startnoww={startnow} to="/login"><Btn>Login</Btn></Linkk>
+            <P startnoww={startnow}><Span>O</Span>R</P>
+            <Linkk startnoww={startnow} to="/register"><Btn>Register</Btn></Linkk>
         </Container>
     );
 };

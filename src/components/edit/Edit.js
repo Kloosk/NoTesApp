@@ -11,6 +11,16 @@ import SubmitEdit from "./submitEdit/SubmitEdit";
 import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
+import bg from "../../img/bgReg.jpg"
+
+const Bg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  background: url(${bg}) center/cover no-repeat;
+`;
 
 const Container = styled.div`
   width: 100vw;
@@ -64,7 +74,7 @@ const Edit = () => {
         if(font) dispatch(fontOff());
     };
     return (
-        load ? <>
+        load ? <Bg>
             <Logo/>
             <Menu/>
             <Nav/>
@@ -75,7 +85,7 @@ const Edit = () => {
                 <NoteEdit/>
                 <NoteOptions edit={true}/>
             </Container>
-        </> : <Loading/>
+        </Bg> : <Loading/>
     );
 };
 

@@ -9,12 +9,15 @@ import Menu from "../menu/Menu";
 import {dashClose, menuDesktopClose} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
+import Loading from "../loading/Loading";
+import bg from "../../img/bgReg.jpg"
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
   width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
+  background: url(${bg}) center/cover no-repeat;
   user-select: ${props => props.select ? 'none' : 'auto'};
 `;
 const Overlay = styled.div`
@@ -30,6 +33,7 @@ const Overlay = styled.div`
   display: ${props => props.alert ? 'block' : 'none'};
 `;
 const Dashboard = () => {
+    const [load,setLoad] = useState(false);
     const {alert} = useSelector(state => state.alert);
     const [select,setSelect] = useState(false);
     const dispatch = useDispatch();
@@ -40,7 +44,10 @@ const Dashboard = () => {
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken")
                 }})
-            .then(res => setData(res.data.data))
+            .then(res => {
+                setData(res.data.data);
+                setLoad(true);
+            })
             .catch(err => console.log(err));
 
         if(localStorage.getItem('selecttext') !== null){
@@ -53,7 +60,7 @@ const Dashboard = () => {
         dispatch(menuDesktopClose())
     };
     return (
-        <>
+        load ? <>
             <Logo/>
             <AlertDelete/>
             <Nav num={2}/>
@@ -62,7 +69,8 @@ const Dashboard = () => {
                 {data.length > 0 ? <AllNotes data={data}/> : <None/>}
             </Container>
             <Overlay alert={alert}/>
-        </>
+
+        </> : <Loading/>
     );
 };
 
