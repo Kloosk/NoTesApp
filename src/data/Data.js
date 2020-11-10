@@ -2,6 +2,66 @@ export const notesExample = [
     {
         title:"Title",
         text: "Your text",
+        titleColor:"#FFFFFF",
+        titleBg: "linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        textColor:"#FFFFFF",
+        textBg:"linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
+        border: "#000000",
+        font:"Lato",
+        textSize: 1.0,
+        titleSize: 2
+    },
+    {
+        title:"Title",
+        text: "Your text",
+        titleColor:"#fd1d1d",
+        titleBg: "linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+        textColor:"#fd1d1d",
+        textBg:"linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)",
+        border: "#000000",
+        font:"Lato",
+        textSize: 1.0,
+        titleSize: 2
+    },
+    {
+        title:"Title",
+        text: "Your text",
+        titleColor:"#000000",
+        titleBg: "linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);",
+        textColor:"#000000",
+        textBg:"linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);",
+        border: "#000000",
+        font:"Lato",
+        textSize: 2,
+        titleSize: 3
+    },
+    {
+        title:"Title",
+        text: "Your text",
+        titleColor:"#ffffff",
+        titleBg: "radial-gradient(circle, rgba(255,0,91,1) 0%, rgba(0,14,255,1) 100%);",
+        textColor:"#ffffff",
+        textBg:"radial-gradient(circle, rgba(255,0,91,1) 0%, rgba(0,14,255,1) 100%);",
+        border: "#ffffff",
+        font:"Lato",
+        textSize: 1.2,
+        titleSize: 2
+    },
+    {
+        title:"Title",
+        text: "Your text",
+        titleColor:"#00000",
+        titleBg: "radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);",
+        textColor:"#00000",
+        textBg:"radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);",
+        border: "#00000",
+        font:"Lato",
+        textSize: 1.0,
+        titleSize: 2
+    },
+    {
+        title:"Title",
+        text: "Your text",
         titleColor:"#2E4BF2",
         titleBg: "#F2F2F2",
         textColor:"#2E4BF2",
@@ -65,7 +125,40 @@ export const notesExample = [
         textColor:"#F20505",
         textBg:"#150773",
         border: "#F20505",
-        font:"Henny Penny",
+        font:"Lato",
+        textSize: 1.0,
+        titleSize: 2
+    },{
+        title:"Title",
+        text: "Your text",
+        titleColor:"#40122B",
+        titleBg: "#2A2F8C",
+        textColor:"#40122B",
+        textBg:"#2983A6",
+        border: "#40122B",
+        font:"Lato",
+        textSize: 1.0,
+        titleSize: 2
+    },{
+        title:"Title",
+        text: "Your text",
+        titleColor:"#152526",
+        titleBg: "#F2EA7E",
+        textColor:"#BFA27E",
+        textBg:"#152526",
+        border: "#8C7764",
+        font:"Lato",
+        textSize: 1.5,
+        titleSize: 2.2
+    },{
+        title:"Title",
+        text: "Your text",
+        titleColor:"#1B2B40",
+        titleBg: "#F28DEB",
+        textColor:"#1B2B40",
+        textBg:"#B673BF",
+        border: "#F2B6C6",
+        font:"Lato",
         textSize: 1.0,
         titleSize: 2
     }

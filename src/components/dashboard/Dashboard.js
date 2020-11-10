@@ -14,10 +14,13 @@ import bg from "../../img/bgReg.jpg"
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
-  width: 100vw;
   min-height: 100vh;
   overflow-x: hidden;
-  background: url(${bg}) center/cover no-repeat;
+  background-image: url(${bg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
   user-select: ${props => props.select ? 'none' : 'auto'};
 `;
 const Overlay = styled.div`

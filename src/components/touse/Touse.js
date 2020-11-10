@@ -13,9 +13,12 @@ const Bg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
   min-height: 100vh;
-  background: url(${bg}) center/cover no-repeat;
+  background-image: url(${bg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
 `;
 
 const Container = styled.div`
@@ -23,7 +26,7 @@ const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 15px;
-  margin-top: 10vh;
+  margin: 10vh 0;
   justify-items: center;
   @media (min-width: 768px) {
     grid-template-columns: repeat(3,1fr);

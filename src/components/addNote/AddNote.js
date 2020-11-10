@@ -19,15 +19,16 @@ const Bg = styled.div`
   width: 100vw;
   min-height: 100vh;
   background: url(${bg}) center/cover no-repeat;
+  overflow-x: hidden;
 `;
 
 const Container = styled.div`
-  width: 100vw;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 13vh;
+  overflow: hidden !important;
   @media (min-width: 768px) {
     min-height: auto;
     margin: 0;

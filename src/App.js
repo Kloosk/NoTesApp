@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {HashRouter as Router, Switch, Route} from "react-router-dom";
 import Start from "./components/start/Start";
 import Register from "./components/register/Register";
 import Login from "./components/login/Login";
@@ -54,14 +54,10 @@ function App() {
                 <Route exact path="/authors">
                     <Authors/>
                 </Route>
-                <Route exact path="/touse">
-                    <Touse/>
-                </Route>
-                <Route path="/edit/:id">
-                    <Edit/>
-                </Route>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <PrivateRoute exact path="/add" component={AddNote} />
+                <PrivateRoute exact path="/edit/:id" component={Edit} />
+                <PrivateRoute exact path="/touse" component={Touse} />
             </Switch>
           </Router>
       </>

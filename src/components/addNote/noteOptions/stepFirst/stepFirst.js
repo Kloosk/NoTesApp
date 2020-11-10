@@ -27,7 +27,7 @@ const P = styled.p`
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
-  background: none;
+  background: #E6E7E1;
   color: #F9B613;
   font-size: 1.4rem;
   width: 45px;

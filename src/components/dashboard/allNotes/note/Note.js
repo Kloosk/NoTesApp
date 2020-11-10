@@ -22,7 +22,6 @@ const Options = styled.div`
   transform: translate(-100%,-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   ${Container}:hover &{
     opacity: 1;
@@ -54,7 +53,7 @@ const Desc = styled(Textarea)`
   resize: none;
   outline: none;
   min-height: 170px;
-  padding: 15px 5px 5px 5px;
+  padding: 15px 10px 10px 10px;
 `;
 const Title = styled(Textarea)`
   width: 100%;

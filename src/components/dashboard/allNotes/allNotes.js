@@ -12,7 +12,7 @@ const Container = styled(Masonry)`
 `;
 const Welcome = styled.h1`
   width: 100%;
-  margin: 13vh 0 5vh 0;
+  margin-top: 12vh;
   text-align: center;
   font-size: 2.2rem;
   color: #F9B613;

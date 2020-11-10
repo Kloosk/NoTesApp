@@ -10,7 +10,7 @@ const Container = styled.div`
   @media (min-width: 768px) {
   overflow: hidden;
   position: absolute;
-  right: 2px;
+  right: 15px;
   top: 2px;
   display: flex;
   align-items: flex-start;

@@ -7,7 +7,7 @@ const Container = styled.button`
   width: 50px;
   height: 50px;
   cursor: pointer;
-  background: none;
+  background: #E8EAE3;
   padding: 10px;
   display: flex;
   align-items: center;

@@ -7,7 +7,7 @@ const Container = styled.div`
  position: static;
 z-index: 20;
 width: 100%;
-background-color: #fff;
+background-color: #E8EAE3;
 color: #F9B613;
 flex-direction: column;
 align-items: center;
@@ -22,7 +22,7 @@ padding: 10px;
       right: 5px;
       border-radius: 14px;
       border: 4px solid #F9B613; 
-      background-color: #fff;
+      background-color: #E8EAE3;
       color: #F9B613;
       flex-direction: column;
       align-items: center;

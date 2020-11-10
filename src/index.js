@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   html{
+      scroll-behavior: smooth;
      ::-webkit-scrollbar {
      width: 14px;
      height: 14px;
@@ -30,9 +31,6 @@ const GlobalStyle = createGlobalStyle`
      box-shadow: inset 7px 10px 12px #f0f0f0;
 }
   }
-  div{
-    overflow-x: hidden !important;
-  } 
 `;
 
 ReactDOM.render(

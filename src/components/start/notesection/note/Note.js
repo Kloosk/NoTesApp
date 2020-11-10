@@ -82,9 +82,8 @@ const PDesc = styled.p`
 `;
 const Note = ({color,bgColor,bgTitle,font,titleTxt,descTxt,border}) => {
     const startnow = useSelector(state => state.startnow.startnow);
-    console.log(startnow);
     return (
-        <Container startnow={startnow} border={border} font={font} color={color}>
+        <Container startnow={startnow ? 1 : 0} border={border} font={font} color={color}>
             <Title bgTitle={bgTitle}><P>{titleTxt}</P></Title>
             <Desc border={border} bgColor={bgColor}><PDesc>{descTxt}</PDesc></Desc>
         </Container>

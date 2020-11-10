@@ -8,7 +8,13 @@ import {GET_ERRORS,SET_CURRENT_USER,USER_LOADING} from "./authTypes";
 export const registerUser = (userData, history) => dispatch => {
     axios
         .post("/api/users/register", userData)
-        .then(res => history.push("/login")) // re-direct to login on successful register
+        .then(res => {
+            dispatch({
+                type: GET_ERRORS,
+                payload: []
+            });
+            history.push("/login");
+        }) // re-direct to login on successful register
         .catch(err =>
             dispatch({
                 type: GET_ERRORS,

@@ -62,7 +62,6 @@ const P = styled.p`
   }
 `;
 const Btn = () => {
-    console.log("Btn render");
     const dispatch = useDispatch();
     return (
         <Container onClick={() => dispatch(show())}><P data-test="startBtnTxt">Start now</P></Container>

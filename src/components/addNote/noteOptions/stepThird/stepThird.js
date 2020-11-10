@@ -91,7 +91,7 @@ const FontMenu = styled.div`
   border: 1px solid #F9B613;
   padding: 5px 10px;
   background-color: #E6E7E1;
-  height: 250px;
+  height: 150px;
   overflow-y: auto;
   @media (min-width: 768px) {
     overflow: hidden;

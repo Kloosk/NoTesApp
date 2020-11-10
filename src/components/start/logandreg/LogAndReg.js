@@ -63,9 +63,9 @@ const LogAndReg = () => {
     const startnow = useSelector(state => state.startnow.startnow);
     return (
        <Container>
-            <Linkk startnoww={startnow} to="/login"><Btn>Login</Btn></Linkk>
-            <P startnoww={startnow}><Span>O</Span>R</P>
-            <Linkk startnoww={startnow} to="/register"><Btn>Register</Btn></Linkk>
+            <Linkk to="/login" startnoww={startnow ? 1 : 0} ><Btn>Login</Btn></Linkk>
+            <P startnoww={startnow ? 1 : 0}><Span>O</Span>R</P>
+            <Linkk to="/register" startnoww={startnow ? 1 : 0} ><Btn>Register</Btn></Linkk>
         </Container>
     );
 };

@@ -150,7 +150,6 @@ const Register = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     const resErrors = useSelector(state => state.auth.error);
-    console.log(resErrors);
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data =>{
         dispatch(registerUser(data,history));
@@ -203,7 +202,7 @@ const Register = () => {
                     </Terms>
 
                     <Errors>
-                        {resErrors.errors && resErrors.errors.map(err => <ErrorServer>{err}</ErrorServer>)}
+                        {resErrors.errors && resErrors.errors.map((err,i) => <ErrorServer key={i}>{err}</ErrorServer>)}
                     </Errors>
                     <Submit><PZindex>Submit</PZindex></Submit>
                 </Form>

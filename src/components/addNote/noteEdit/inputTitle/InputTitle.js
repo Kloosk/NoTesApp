@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
 import {useDispatch, useSelector} from "react-redux";

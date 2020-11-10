@@ -13,7 +13,7 @@ const Container = styled.div`
   width: 70vw;
   height: 50vh;
   border: 2px solid #000;
-  background-color: #fff;
+  background-color: #E8EAE3;
   z-index: 2;
   display: ${props => props.open ? 'block' : 'none'};
  @media (min-width: 768px) {

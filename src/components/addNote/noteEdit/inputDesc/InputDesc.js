@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
 import {rightTrue, setDesc, setMove} from "../../../../redux";
@@ -21,7 +21,6 @@ const InputDesc = () => {
     const {textSize,textColor,textBg,font,text} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
-
     };
     const handleMove = () => {
         dispatch(setMove(-200));
