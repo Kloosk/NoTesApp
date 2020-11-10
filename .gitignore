@@ -9,7 +9,10 @@
 
 # production
 /build
-
+#firebase
+.firebaserc
+.firebase
+firebase.json
 # misc
 .DS_Store
 .env.local
@@ -23,4 +26,4 @@ yarn-error.log*
 package-lock.json
 # file: ~/.gitignore_global
 .DS_Store
-.idea
+.idea/workspace.xml
