@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/sendBtn/SendBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/sendBtn/SendBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/Dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/deleteBtn/DeleteBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/deleteBtn/DeleteBtn.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/Edit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/edit/submitEdit/SubmitEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/submitEdit/SubmitEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/authors/Authors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/authors/Authors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/start/video/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/start/video/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/start/video/file/notes.mp4" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/start/video/file" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -49,12 +44,15 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\video\file" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\video\file" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\public" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\loading\gif" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\edit" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components" />
-      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\data" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -135,7 +133,7 @@
       <workItem from="1605012694479" duration="2001000" />
       <workItem from="1605040581379" duration="133000" />
       <workItem from="1605041883703" duration="945000" />
-      <workItem from="1605131349812" duration="2200000" />
+      <workItem from="1605131349812" duration="3448000" />
     </task>
     <servers />
   </component>
@@ -147,10 +145,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="186" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1603729069426" />
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605132662590">
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605134668648">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605132662590" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605134668648" />
     <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1605040713441">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
