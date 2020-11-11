@@ -2,27 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/precache-manifest.0daaba25faa63bcd9f62768b3de27f9d.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/service-worker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/2.b2b92abc.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/2.b2b92abc.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/2.b2b92abc.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/main.19b6ec2f.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/main.19b6ec2f.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/runtime-main.81b02d15.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/js/runtime-main.81b02d15.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/media/bgReg.0de73fa5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/media/load.a53b2004.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/media/logo.92051c41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/static/media/notes.17ebea61.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/auth/authActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/auth/authActions.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +127,8 @@
       <workItem from="1605007427274" duration="220000" />
       <workItem from="1605012694479" duration="2001000" />
       <workItem from="1605040581379" duration="133000" />
+      <workItem from="1605041883703" duration="945000" />
+      <workItem from="1605131349812" duration="879000" />
     </task>
     <servers />
   </component>

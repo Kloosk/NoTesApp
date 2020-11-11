@@ -24,7 +24,6 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.0"
   },
-  "proxy": "https://notesappserver.herokuapp.com",
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"

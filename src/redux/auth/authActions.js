@@ -7,7 +7,7 @@ import {GET_ERRORS,SET_CURRENT_USER,USER_LOADING} from "./authTypes";
 // Register User
 export const registerUser = (userData, history) => dispatch => {
     axios
-        .post("/api/users/register", userData)
+        .post("https://notesappserver.herokuapp.com/api/users/register", userData)
         .then(res => {
             dispatch({
                 type: GET_ERRORS,
@@ -25,7 +25,7 @@ export const registerUser = (userData, history) => dispatch => {
 // Login - get user token
 export const loginUser = userData => dispatch => {
     axios
-        .post("/api/users/login", userData)
+        .post("https://notesappserver.herokuapp.com/api/users/login", userData)
         .then(res => {
             // Save to localStorage
             const { token } = res.data;
