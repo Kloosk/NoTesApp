@@ -43,7 +43,7 @@ const Dashboard = () => {
     const [data,setData] = useState([]);
     useEffect(() => {
         axios
-            .get("/api/users/dashboard", {
+            .get("https://notesappserver.herokuapp.com/api/users/dashboard", {
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken")
                 }})

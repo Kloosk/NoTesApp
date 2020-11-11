@@ -54,7 +54,7 @@ const AlertDelete = () => {
     const check = useRef(null);
     const {id,alert} = useSelector(state => state.alert);
     const decisionYes = () => {
-        axios.post("/api/users/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+        axios.post("https://notesappserver.herokuapp.com/api/users/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 if(check.current.checked){
                    localStorage.setItem('alertdelete', 'true');

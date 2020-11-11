@@ -56,7 +56,7 @@ const Edit = () => {
     const [load,setLoad] = useState(false);
     useEffect(() => {
         axios
-            .get("/api/users/edit", {
+            .get("https://notesappserver.herokuapp.com/api/users/edit", {
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken"),
                     'id': id

@@ -25,7 +25,7 @@ const DeleteBtn = ({id}) => {
 
     const handleDelete = () => {
         if(localStorage.getItem('alertdelete') === 'true'){
-            axios.post("/api/users/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+            axios.post("https://notesappserver.herokuapp.com/api/users/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
                 .then(res => {
                    window.location.reload();
                 })

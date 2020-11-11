@@ -41,7 +41,7 @@ const SendBtn = ({edit}) => {
     const history = useHistory();
     const data = useSelector(state => state.note);
     const sendData = () => {
-        axios.post("/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+        axios.post("https://notesappserver.herokuapp.com/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 localStorage.removeItem('noteSave');// delete own style note
                 history.push("/dashboard");
