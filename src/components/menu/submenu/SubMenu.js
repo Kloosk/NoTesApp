@@ -89,7 +89,7 @@ const SubMenu = ({num}) => {
                 </Element>
             </Linkk>
             <H1>Settings</H1>
-            <MenuDesktop/>
+            <MenuDesktop mobile={true}/>
         </Container>
     );
 };

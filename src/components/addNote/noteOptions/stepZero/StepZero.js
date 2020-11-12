@@ -13,7 +13,6 @@ const Container =styled.div`
   transform: ${props => `translateX(${props.move}vw)`};
   position: absolute;
   left: 0;
-  margin-top: 50px;
   @media (min-width: 768px) {
     position: static;
     width: 100%;

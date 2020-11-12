@@ -31,13 +31,18 @@ const Exit = styled.button`
  position: absolute;
  left: 102%;
  top: -2px;
- width: 60px;
- height: 60px;
+ width: 30px;
+ height: 30px;
  border: 2px solid #000;
  color: #F9B613;
- font-size: 3rem;
+ font-size: 1.5rem;
  background: #fff;
  cursor: pointer;
+ @media (min-width: 768px) {
+   width: 60px;
+   height: 60px;
+   font-size: 3rem;
+  }
 `;
 const ColorPicker = ({func,show,toppos}) => {
     const [display,setDisplay] = useState(false);

@@ -22,7 +22,9 @@ const P = styled.p`
   font-size: 1.5rem;
   margin: 0 10px 0 0;
   color: #F9B613;
-  width: 120px;
+  @media (min-width: 768px) {
+    width: 120px;
+ }
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
@@ -104,7 +106,7 @@ const StepTwice = ({move}) => {
                 <ColorPicker show={show} func={setDescBg}/>
             </Flex>
             <Flex>
-                <P><Span>C</Span>olor</P>
+                <P><Span>T</Span>ext</P>
                 <BtnColor color={textColor} onClick={handleColorBg}></BtnColor>
                 <ColorPicker show={showBg} func={setDescColor}/>
             </Flex>

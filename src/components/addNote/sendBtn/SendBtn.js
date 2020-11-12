@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {setMove} from "../../../redux";
 
 const Container = styled.button`
   display: ${props => props.edit ? 'none' : 'block'};
@@ -39,12 +40,14 @@ const Container = styled.button`
 `;
 const SendBtn = ({edit}) => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const data = useSelector(state => state.note);
     const sendData = () => {
         axios.post("https://notesappserver.herokuapp.com/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 localStorage.removeItem('noteSave');// delete own style note
                 history.push("/dashboard");
+                dispatch(setMove(0));
             })
             .catch(err => console.log(err));
     };

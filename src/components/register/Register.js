@@ -10,13 +10,23 @@ import {registerUser} from "../../redux/auth/authActions";
 import LinkLogin from "./link/LinkLogin";
 
 const Container = styled.div`
+  padding: 8vh 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: url(${bgReg}) center/cover no-repeat;
+  background-image: url(${bgReg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  @media (min-width: 768px) {
+    margin: 0;
+    background: url(${bgReg}) center/cover no-repeat;
+  }
+  
 `;
 const Form = styled.form`
   display: flex;

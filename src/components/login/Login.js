@@ -11,12 +11,25 @@ import LinkReg from "./link/LinkReg";
 
 const Container = styled.div`
   width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(${bgReg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  @media (min-width: 768px) {
+  width: 100vw;
   height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: url(${bgReg}) center/cover no-repeat;
+  }
 `;
 const Form = styled.form`
   display: flex;

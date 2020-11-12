@@ -23,7 +23,9 @@ const P = styled.p`
   font-size: 1.5rem;
   margin: 0 10px 0 0;
   color: #F9B613;
-  width: 120px;
+  @media (min-width: 768px) {
+    width: 120px;
+ }
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
@@ -106,7 +108,7 @@ const StepFirst = ({move}) => {
 
             </Flex>
             <Flex>
-                <P><Span>C</Span>olor</P>
+                <P><Span>T</Span>ext</P>
                 <BtnColor color={titleColor} onClick={handleColorBg}></BtnColor>
                 <ColorPicker toppos={true} show={showBg} func={setTitleColor}/>
             </Flex>

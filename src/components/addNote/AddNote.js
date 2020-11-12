@@ -12,23 +12,31 @@ import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 
-const Bg = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  min-height: 100vh;
-  background: url(${bg}) center/cover no-repeat;
+const Div = styled.div`
+  position: relative;
   overflow-x: hidden;
+  background-image: url(${bg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh; 
+  padding-top: 11vh;
+  width: 100vw;
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+  }
 `;
-
 const Container = styled.div`
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 13vh;
-  overflow: hidden !important;
+  width: 100vw;
   @media (min-width: 768px) {
     min-height: auto;
     margin: 0;
@@ -69,7 +77,7 @@ const AddNote = () => {
         dispatch(menuDesktopClose())
     };
     return (
-       load ? <Bg>
+       load ? <Div>
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>
@@ -80,7 +88,7 @@ const AddNote = () => {
                 <NoteOptions/>
             </Container>
             </div>
-        </Bg> : <Loading/>
+        </Div> : <Loading/>
     );
 };
 

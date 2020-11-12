@@ -32,7 +32,7 @@ padding: 10px;
   
 `;
 const Element = styled.div`
-  display: flex;
+  display: ${props => props.mobile ? 'none' : 'flex'};
   width: 90%;
   align-items: center;
   justify-content: space-between;
@@ -99,7 +99,7 @@ const Input = styled.input`
   }
   
 `;
-const MenuDesktop = () => {
+const MenuDesktop = ({mobile}) => {
     const autosave = useRef(null);
     const deletealert = useRef(null);
     const selecttext = useRef(null);
@@ -160,7 +160,7 @@ const MenuDesktop = () => {
                     <Span></Span>
                 </Label>
             </Element>
-            <Element>
+            <Element mobile={mobile}>
                 <P>Select text note</P>
                 <Label>
                     <Input type="checkbox" onClick={handleSelectText} ref={selecttext} />
