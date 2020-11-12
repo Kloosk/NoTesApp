@@ -21,7 +21,7 @@ const Div = styled.div`
   background-position: center;
   background-size: cover;
   min-height: 100vh; 
-  padding-top: 11vh;
+  padding-top: 13vh;
   width: 100vw;
   @media (min-width: 768px) {
     position: absolute;

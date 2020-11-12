@@ -14,12 +14,24 @@ import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
 
 const Bg = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
+  overflow-x: hidden;
+  background-image: url(${bg});
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh; 
+  padding-top: 13vh;
   width: 100vw;
-  min-height: 100vh;
-  background: url(${bg}) center/cover no-repeat;
+  @media (min-width: 768px) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+  }
 `;
 
 const Container = styled.div`
