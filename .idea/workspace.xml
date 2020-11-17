@@ -3,8 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/AddNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/AddNote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/NoteEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputDesc/InputDesc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteEdit/inputTitle/InputTitle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/allNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/allNotes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditTypes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +44,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/start/video/file" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -133,7 +143,12 @@
       <workItem from="1605040581379" duration="133000" />
       <workItem from="1605041883703" duration="945000" />
       <workItem from="1605131349812" duration="4313000" />
-      <workItem from="1605210419302" duration="6522000" />
+      <workItem from="1605210419302" duration="6799000" />
+      <workItem from="1605293489960" duration="1910000" />
+      <workItem from="1605445892147" duration="2160000" />
+      <workItem from="1605538270286" duration="72000" />
+      <workItem from="1605608523356" duration="4794000" />
+      <workItem from="1605613862667" duration="893000" />
     </task>
     <servers />
   </component>
@@ -149,11 +164,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605134668648" />
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1605040713441">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1605613554023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605040713441" />
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605014512632" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1605613554023" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605538335861" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -10,15 +10,16 @@ const Container = styled(Textarea)`
   background: ${props => props.titlebg};
   font-size: ${props => props.titlesize}rem;
   font-family: ${props => props.font};
+  text-transform: ${props => props.titletransform};
   text-align: center;
   border: none;
   resize: none;
   outline: none;
   padding: 5px;
 `;
-const InputTitle = () => {
+const InputTitle = ({edit}) => {
     const dispatch = useDispatch();
-    const {titleColor,titleBg,titleSize,font,title} = useSelector(state => state.note);
+    const {titleColor,titleBg,titleSize,font,title,titleTransform} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setTitle(e.target.value));
     };
@@ -26,8 +27,18 @@ const InputTitle = () => {
         dispatch(setMove(-100));
         dispatch(rightTrue());
     };
-    return (
-        <Container spellCheck="false" onClick={handleMove} font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} placeholder={title} maxLength="50" onBlur={handleChange}/>
-    )
+    if(edit){
+        return (
+            <Container spellCheck="false" onClick={handleMove} titletransform={titleTransform} font={font}
+                       titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}
+                       maxLength="50" onBlur={handleChange}/>
+        )
+    }else {
+        return (
+            <Container spellCheck="false" onClick={handleMove} titletransform={titleTransform} font={font}
+                       titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} placeholder={title}
+                       maxLength="50" onBlur={handleChange}/>
+        )
+    }
 };
 export default InputTitle

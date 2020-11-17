@@ -10,15 +10,16 @@ const Container = styled(Textarea)`
   background: ${props => props.textbg};
   font-size: ${props => props.textsize}rem;
   font-family: ${props => props.font};
+  text-transform: ${props => props.texttransform};
   border: none;
   resize: none;
   outline: none;
   min-height: 170px;
   padding: 15px 5px 5px 5px;
 `;
-const InputDesc = () => {
+const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
-    const {textSize,textColor,textBg,font,text} = useSelector(state => state.note);
+    const {textSize,textColor,textBg,font,text,textTransform} = useSelector(state => state.note);
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
     };
@@ -26,8 +27,18 @@ const InputDesc = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
     };
-    return (
-        <Container spellCheck="false" onClick={handleMove} font={font} textsize={textSize} textcolor={textColor} textbg={textBg} placeholder={text} maxLength="800" onBlur={handleChange}/>
-    )
+    if(edit){
+        return (
+            <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                       textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text} maxLength="800"
+                       onBlur={handleChange}/>
+        )
+    }else {
+        return (
+            <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                       textsize={textSize} textcolor={textColor} textbg={textBg} placeholder={text} maxLength="800"
+                       onBlur={handleChange}/>
+        )
+    }
 };
 export default InputDesc

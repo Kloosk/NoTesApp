@@ -37,7 +37,7 @@ const AllNotes = ({data}) => {
                 <>
                     <Welcome>Hi {bigFirstLetter(name)}</Welcome>
                     <Container breakpointCols={{default: 3}} columnClassName="">
-                        {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                        {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
                                                    titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                    border={el.border} font={el.font} textSize={el.textSize}
                                                    titleSize={el.titleSize} num={el.num}/>)}
@@ -50,6 +50,7 @@ const AllNotes = ({data}) => {
                     <Welcome>Hi {name}</Welcome>
                     <Container breakpointCols={{default: 2}} columnClassName="">
                         {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                                                   titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                    titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                    border={el.border} font={el.font} textSize={el.textSize}
                                                    titleSize={el.titleSize} num={el.num}/>)}
@@ -62,6 +63,7 @@ const AllNotes = ({data}) => {
                     <Welcome>Hi {name}</Welcome>
                     <Container breakpointCols={{default: 1}} columnClassName="">
                         {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                                                   titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                    titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                    border={el.border} font={el.font} textSize={el.textSize}
                                                    titleSize={el.titleSize} num={el.num}/>)}

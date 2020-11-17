@@ -49,6 +49,7 @@ const Desc = styled(Textarea)`
   background: ${props => props.textbg};
   font-size: ${props => props.textsize}rem;
   font-family: ${props => props.font};
+  text-transform: ${props => props.texttransform};
   border: none;
   resize: none;
   outline: none;
@@ -61,6 +62,7 @@ const Title = styled(Textarea)`
   background: ${props => props.titlebg};
   font-size: ${props => props.titlesize}rem;
   font-family: ${props => props.font};
+  text-transform: ${props => props.titletransform};
   text-align: center;
   border: none;
   resize: none;
@@ -68,7 +70,7 @@ const Title = styled(Textarea)`
   padding: 5px;
   min-height: 30px;
 `;
-const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num}) => {
+const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num,titleTransform,textTransform}) => {
     return (
         <Container border={border}>
             <Options>
@@ -80,8 +82,8 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSi
                 </Link>
             </Options>
 
-            <Title readOnly disabled spellCheck="false" font={font} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readOnly disabled spellCheck="false" font={font} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
+            <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
+            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
         </Container>
     );
 };

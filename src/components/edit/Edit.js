@@ -93,7 +93,7 @@ const Edit = () => {
                 <SubmitEdit edit={true}/>
             </Desktop>
             <Container onClick={handleClick}>
-                <NoteEdit/>
+                <NoteEdit edit={true}/>
                 <NoteOptions edit={true}/>
             </Container>
         </Bg> : <Loading/>

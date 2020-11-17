@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setTitleBg, setTitleColor, setTitleSize} from "../../../../redux";
+import {setTitleBg, setTitleColor, setTitleSize, setTitleTransform} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled.div`
@@ -56,8 +56,7 @@ const Span = styled.span`
 const Flex = styled.div`
   display: flex;
   align-items: center;
-  margin: 15px 0;
-  padding: 10px 0;
+  padding: 15px 0;
   border-bottom: 2px solid #F9B613;
   @media (min-width: 768px) {
     position: relative;
@@ -73,9 +72,45 @@ const BtnColor = styled.button`
     transform: translateY(1px);
   }
 `;
+const BtnTransform = styled.button`
+  border: ${props => props.leter ? '2px solid #000000' : '2px solid #F9B613'};
+  background: #E6E7E1;
+  color: #F9B613;
+  font-size: 1.4rem;
+  width: 65px;
+  height: 30px;
+  cursor: pointer;
+  margin: 2px 2px;
+  outline: none;
+`;
+const FlexTransform = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
+const Divide = styled.div`
+  display: flex;
+`;
 const StepFirst = ({move}) => {
     const dispatch = useDispatch();
-    const {titleSize,titleBg,titleColor} = useSelector(state => state.note);
+    const {titleSize,titleBg,titleColor,titleTransform} = useSelector(state => state.note);
+    //it changes border of selected transform
+    const [letter,setLetter] = useState(0);
+    useEffect(() => {
+        if(titleTransform === "uppercase"){
+            setLetter(2);
+        }else if(titleTransform === "lowercase"){
+            setLetter(1);
+        }else if(titleTransform === "capitalize"){
+            setLetter(3);
+        }else{
+            setLetter(0);
+        }
+
+    },[titleTransform]);
+    ///////
     const titleDec = () => {
         if(titleSize >= 0.2) {
             dispatch(setTitleSize(-0.1));
@@ -117,6 +152,19 @@ const StepFirst = ({move}) => {
                 <BtnSize onClick={titleDec}>-</BtnSize>
                 <Num>{titleSize.toFixed(1)}</Num>
                 <BtnSize onClick={titleInc}>+</BtnSize>
+            </Flex>
+            <Flex>
+                <P><Span>T</Span>ransform</P>
+                <FlexTransform>
+                <Divide>
+                    <BtnTransform leter={letter===0 ? true : false} onClick={() => {dispatch(setTitleTransform("initial"))}}>Aa</BtnTransform>
+                    <BtnTransform leter={letter===1 ? true : false} onClick={() => {dispatch(setTitleTransform("lowercase"))}}>aa</BtnTransform>
+                </Divide>
+                <Divide>
+                    <BtnTransform leter={letter===2 ? true : false} onClick={() => {dispatch(setTitleTransform("uppercase"))}}>AA</BtnTransform>
+                    <BtnTransform leter={letter===3 ? true : false} onClick={() => {dispatch(setTitleTransform("capitalize"))}}>AaAa</BtnTransform>
+                </Divide>
+                </FlexTransform>
             </Flex>
         </Container>
     );

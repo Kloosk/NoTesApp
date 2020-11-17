@@ -16,12 +16,12 @@ const Container = styled.div`
     width: 80%;
   }
 `;
-const NoteEdit = () => {
+const NoteEdit = ({edit}) => {
     const border = useSelector(state => state.note.border);
     return (
         <Container border={border}>
-            <InputTitle/>
-            <InputDesc/>
+            <InputTitle edit={edit}/>
+            <InputDesc edit={edit}/>
         </Container>
     );
 

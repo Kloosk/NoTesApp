@@ -9,6 +9,8 @@ import {
     SET_TITLE_BG,
     SET_TITLE_COLOR,
     SET_TITLE_SIZE,
+    SET_DESC_TRANSFORM,
+    SET_TITLE_TRANSFORM,
     SET_OBJ
 } from "./NoteEditTypes";
 
@@ -22,7 +24,9 @@ const initialState = {
     border: "#000",
     font:"Lato",
     textSize: 1.0,
-    titleSize: 1.7
+    titleSize: 1.7,
+    titleTransform: "initial",
+    textTransform: "initial",
 };
 
 const NoteEditReducer = (state=initialState,action) => {
@@ -88,7 +92,19 @@ const NoteEditReducer = (state=initialState,action) => {
                 font: action.payload
             }
         }
-        case SET_OBJ: return action.payload
+        case SET_DESC_TRANSFORM:{
+            return{
+                ...state,
+                textTransform: action.payload
+            }
+        }
+        case SET_TITLE_TRANSFORM:{
+            return{
+                ...state,
+                titleTransform: action.payload
+            }
+        }
+        case SET_OBJ: return action.payload;
         default: return state
     }
 };

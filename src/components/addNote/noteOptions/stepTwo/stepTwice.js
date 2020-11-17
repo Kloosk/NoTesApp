@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setDescBg, setDescColor, setDescSize} from "../../../../redux";
+import {setDescBg, setDescColor, setDescSize, setTextTransform} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled.div`
@@ -72,9 +72,45 @@ const BtnColor = styled.button`
     transform: translateY(1px);
   }
 `;
+const BtnTransform = styled.button`
+  border: ${props => props.leter ? '2px solid #000000' : '2px solid #F9B613'};
+  background: #E6E7E1;
+  color: #F9B613;
+  font-size: 1.4rem;
+  width: 65px;
+  height: 30px;
+  cursor: pointer;
+  margin: 2px 2px;
+  outline: none;
+`;
+const FlexTransform = styled.div`
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+`;
+const Divide = styled.div`
+  display: flex;
+`;
 const StepTwice = ({move}) => {
     const dispatch = useDispatch();
-    const {textSize,textBg,textColor} = useSelector(state => state.note);
+    const {textSize,textBg,textColor,textTransform} = useSelector(state => state.note);
+    //it changes border of selected transform
+    const [letter,setLetter] = useState(0);
+    useEffect(() => {
+        if(textTransform === "uppercase"){
+            setLetter(2);
+        }else if(textTransform === "lowercase"){
+            setLetter(1);
+        }else if(textTransform === "capitalize"){
+            setLetter(3);
+        }else{
+            setLetter(0);
+        }
+
+    },[textTransform]);
+    ///////
     const descInc = () => {
         dispatch(setDescSize(0.1));
     };
@@ -115,6 +151,19 @@ const StepTwice = ({move}) => {
                 <BtnSize onClick={descDec}>-</BtnSize>
                 <Num>{textSize.toFixed(1)}</Num>
                 <BtnSize onClick={descInc}>+</BtnSize>
+            </Flex>
+            <Flex>
+                <P><Span>T</Span>ransform</P>
+                <FlexTransform>
+                    <Divide>
+                        <BtnTransform leter={letter===0 ? true : false} onClick={() => {dispatch(setTextTransform("initial"))}}>Aa</BtnTransform>
+                        <BtnTransform leter={letter===1 ? true : false} onClick={() => {dispatch(setTextTransform("lowercase"))}}>aa</BtnTransform>
+                    </Divide>
+                    <Divide>
+                        <BtnTransform leter={letter===2 ? true : false} onClick={() => {dispatch(setTextTransform("uppercase"))}}>AA</BtnTransform>
+                        <BtnTransform leter={letter===3 ? true : false} onClick={() => {dispatch(setTextTransform("capitalize"))}}>AaAa</BtnTransform>
+                    </Divide>
+                </FlexTransform>
             </Flex>
         </Container>
     );
