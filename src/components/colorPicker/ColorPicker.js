@@ -3,6 +3,7 @@ import { SketchPicker } from 'react-color'
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 
+
 const ContainerMobile = styled.div`
  position: absolute;
  top: 0;

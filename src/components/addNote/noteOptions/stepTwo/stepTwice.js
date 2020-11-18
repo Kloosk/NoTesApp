@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setDescBg, setDescColor, setDescSize, setTextTransform} from "../../../../redux";
+import {setDescBg, setDescColor, setDescSize, setTextTransform, setTitleBg} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
+import LinearPicker from "../../../linearPicker/LinearPicker";
 
 const Container = styled.div`
  width: 100vw;
@@ -63,14 +64,18 @@ const Flex = styled.div`
   }
 `;
 const BtnColor = styled.button`
-  background-color: ${props => props.color};
-  width: 40px;
+  width: auto;
   height: 25px;
-  cursor: pointer;
+  padding: 1px 3px;
   border: 1px solid #F9B613;
+  color: #F9B613;
+  background: #E9EAE4;
+  font-size: 1rem; 
+  cursor: pointer;
+  margin-right: 10px;
   :hover{
     transform: translateY(1px);
-  }
+  } 
 `;
 const BtnTransform = styled.button`
   border: ${props => props.leter ? '2px solid #000000' : '2px solid #F9B613'};
@@ -121,6 +126,7 @@ const StepTwice = ({move}) => {
     };
     const [show,setShow] = useState(false);
     const [showBg,setShowBg] = useState(false);
+    const [showBgLinear,setShowBgLinear] = useState(false);
     const handleColor = () => {
         setShow(true);
         setTimeout(() =>{
@@ -133,17 +139,25 @@ const StepTwice = ({move}) => {
             setShowBg(false);
         },100);
     };
+    const handleColorLinear = () => {
+        setShowBgLinear(true);
+        setTimeout(() =>{
+            setShowBgLinear(false);
+        },100);
+    };
     return (
         <Container move={move}>
             <H1><Span>D</Span>escription</H1>
             <Flex>
                 <P><Span>B</Span>ackground</P>
-                <BtnColor color={textBg} onClick={handleColor}></BtnColor>
+                <BtnColor onClick={handleColor}>Color</BtnColor>
+                <BtnColor onClick={handleColorLinear}>Gradient</BtnColor>
                 <ColorPicker show={show} func={setDescBg}/>
+                <LinearPicker toppos={true} show={showBgLinear} func={setDescBg}/>
             </Flex>
             <Flex>
                 <P><Span>T</Span>ext</P>
-                <BtnColor color={textColor} onClick={handleColorBg}></BtnColor>
+                <BtnColor onClick={handleColorBg}>Color</BtnColor>
                 <ColorPicker show={showBg} func={setDescColor}/>
             </Flex>
             <Flex>

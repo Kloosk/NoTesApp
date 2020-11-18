@@ -11,6 +11,7 @@ import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
+import LinearPicker from "../linearPicker/LinearPicker";
 
 const Div = styled.div`
   position: relative;
