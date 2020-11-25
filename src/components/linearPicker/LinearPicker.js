@@ -83,8 +83,13 @@ const LinearPicker = ({func,show,toppos}) => {
     const handleChangeComplete = e => {
         if(current===0){
             setColor1(e.hex);
-        }else setColor2(e.hex);
-        dispatch(func(`linear-gradient(to right, ${color1}, ${color2})`));
+            dispatch(func(`linear-gradient(to right, ${e.hex}, ${color2})`));
+        }else
+        {
+            setColor2(e.hex);
+            dispatch(func(`linear-gradient(to right, ${color1}, ${e.hex})`));
+        }
+
         setBg(e.hex);
     };
     const exitPicker = () => {
