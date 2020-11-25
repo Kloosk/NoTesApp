@@ -5,8 +5,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/linearPicker/LinearPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearPicker/LinearPicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Data.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Data.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +146,7 @@
       <workItem from="1605702947048" duration="4322000" />
       <workItem from="1605713091348" duration="5524000" />
       <workItem from="1605992474285" duration="594000" />
-      <workItem from="1606303913204" duration="3174000" />
+      <workItem from="1606303913204" duration="6930000" />
     </task>
     <servers />
   </component>

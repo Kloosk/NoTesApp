@@ -45,13 +45,23 @@ const Exit = styled.button`
    font-size: 3rem;
   }
 `;
-const ColorPicker = ({func,show,toppos}) => {
+const ColorPicker = ({func,show,toppos,normalcolor}) => {
     const [display,setDisplay] = useState(false);
     const dispatch = useDispatch();
     const [bg,setBg] = useState("#fff");
     useEffect(() =>{
-        show && setDisplay(true);
+        if(show) {
+            setDisplay(true);
+            dispatch(func(bg));
+        }
     },[show]);
+    useEffect(() => {
+       if(normalcolor !== undefined){
+           if(normalcolor.length <= 7){
+               setBg(normalcolor);
+           }
+       }
+    },[normalcolor]);
     const handleChangeComplete = e => {
       dispatch(func(e.hex));
       setBg(e.hex);

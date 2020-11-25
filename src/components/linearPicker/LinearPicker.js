@@ -78,6 +78,9 @@ const LinearPicker = ({func,show,toppos,linearcolor}) => {
    const [color2,setColor2] = useState("#ffffff");
    const [current,setCurrent] = useState(0);
    useEffect(() => {
+       if(show) dispatch(func(`linear-gradient(to right,${color1},${color2})`));
+   },[show]);
+   useEffect(() => {
        if(linearcolor.length > 7){
             setColor1(linearcolor.substr(25,7));
             setColor2(linearcolor.substr(33,7));
@@ -93,7 +96,6 @@ const LinearPicker = ({func,show,toppos,linearcolor}) => {
         {
             dispatch(func(`linear-gradient(to right,${color1},${e.hex})`));
         }
-
         setBg(e.hex);
     };
     const exitPicker = () => {

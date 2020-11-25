@@ -152,7 +152,7 @@ const StepFirst = ({move}) => {
                 <P><Span>B</Span>ackground</P>
                 <BtnColor color={titleBg} onClick={handleColor}>Color</BtnColor>
                 <BtnColor color={titleBg} onClick={handleColorLinear}>Gradient</BtnColor>
-                <ColorPicker toppos={true} show={show} func={setTitleBg}/>
+                <ColorPicker toppos={true} show={show} func={setTitleBg} normalcolor={titleBg}/>
                 <LinearPicker toppos={true} show={showBgLinear} func={setTitleBg} linearcolor={titleBg}/>
             </Flex>
             <Flex>

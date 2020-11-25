@@ -55,6 +55,7 @@ const Desc = styled(Textarea)`
   outline: none;
   min-height: 170px;
   padding: 15px 10px 10px 10px;
+  overflow-x: hidden;
 `;
 const Title = styled(Textarea)`
   width: 100%;
@@ -69,6 +70,7 @@ const Title = styled(Textarea)`
   outline: none;
   padding: 5px;
   min-height: 30px;
+  overflow-x: hidden;
 `;
 const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num,titleTransform,textTransform}) => {
     return (
