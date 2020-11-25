@@ -70,24 +70,28 @@ const CurrentColor = styled.div`
   height: 25px;
   margin: 0 2px;
 `;
-const LinearPicker = ({func,show,toppos}) => {
+const LinearPicker = ({func,show,toppos,linearcolor}) => {
    const dispatch = useDispatch();
    const [display,setDisplay] = useState(false);
    const [bg,setBg] = useState("#fff");
-   const [color1,setColor1] = useState("red");
-   const [color2,setColor2] = useState("blue");
+   const [color1,setColor1] = useState("#ffffff");
+   const [color2,setColor2] = useState("#ffffff");
    const [current,setCurrent] = useState(0);
+   useEffect(() => {
+       if(linearcolor.length > 7){
+            setColor1(linearcolor.substr(25,7));
+            setColor2(linearcolor.substr(33,7));
+       }
+   },[linearcolor]);
     useEffect(() =>{
         show && setDisplay(true);
     },[show]);
     const handleChangeComplete = e => {
         if(current===0){
-            setColor1(e.hex);
-            dispatch(func(`linear-gradient(to right, ${e.hex}, ${color2})`));
+            dispatch(func(`linear-gradient(to right,${e.hex},${color2})`));
         }else
         {
-            setColor2(e.hex);
-            dispatch(func(`linear-gradient(to right, ${color1}, ${e.hex})`));
+            dispatch(func(`linear-gradient(to right,${color1},${e.hex})`));
         }
 
         setBg(e.hex);
@@ -107,7 +111,7 @@ const LinearPicker = ({func,show,toppos}) => {
                 <Exit onClick={exitPicker}>&times;</Exit>
                 <PickColor>
                     <ChooseColor current={current} onClick={handleChooseColor1} choosecolor={color1}></ChooseColor>
-                    <CurrentColor color={`linear-gradient(to right, ${color1}, ${color2})`}/>
+                    <CurrentColor color={`linear-gradient(to right,${color1},${color2})`}/>
                     <ChooseColor2 current={current} onClick={handleChooseColor2} choosecolor={color2}></ChooseColor2>
                 </PickColor>
                 <SketchPicker color={bg} onChangeComplete={handleChangeComplete}/>

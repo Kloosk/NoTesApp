@@ -153,7 +153,7 @@ const StepTwice = ({move}) => {
                 <BtnColor onClick={handleColor}>Color</BtnColor>
                 <BtnColor onClick={handleColorLinear}>Gradient</BtnColor>
                 <ColorPicker show={show} func={setDescBg}/>
-                <LinearPicker toppos={true} show={showBgLinear} func={setDescBg}/>
+                <LinearPicker toppos={true} show={showBgLinear} func={setDescBg} linearcolor={textBg}/>
             </Flex>
             <Flex>
                 <P><Span>T</Span>ext</P>
