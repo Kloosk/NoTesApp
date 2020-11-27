@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import {useDispatch} from "react-redux";
-import {setObj} from "../../../../../redux";
+import {setTemplate} from "../../../../../redux";
 import {genereateOne} from "../../../../../data/Data";
 import SendBtn from "../../../sendBtn/SendBtn";
 import SaveBtn from "../../../saveBtn/saveBtn";
@@ -65,7 +65,7 @@ const Linkk = styled(Link)`
 const StepZeroDesktop = () => {
     const dispatch = useDispatch();
     const handleGenerate = () => {
-        dispatch(setObj(genereateOne()));
+        dispatch(setTemplate(genereateOne()));
     };
     return (
         <Container>

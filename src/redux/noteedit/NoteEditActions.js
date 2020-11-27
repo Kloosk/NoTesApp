@@ -1,4 +1,19 @@
-import{SET_DESC_TRANSFORM,SET_TITLE_TRANSFORM,SET_OBJ,SET_DESC,SET_BORDER,SET_DESC_BG,SET_DESC_COLOR,SET_DESC_SIZE,SET_FONT,SET_TITLE,SET_TITLE_BG,SET_TITLE_COLOR,SET_TITLE_SIZE} from "./NoteEditTypes";
+import {
+    SET_DESC_TRANSFORM,
+    SET_TITLE_TRANSFORM,
+    SET_OBJ,
+    SET_DESC,
+    SET_BORDER,
+    SET_DESC_BG,
+    SET_DESC_COLOR,
+    SET_DESC_SIZE,
+    SET_FONT,
+    SET_TITLE,
+    SET_TITLE_BG,
+    SET_TITLE_COLOR,
+    SET_TITLE_SIZE,
+    SET_TEMPLATE
+} from "./NoteEditTypes";
 
 export const setDesc = payload => {
   return{
@@ -78,6 +93,13 @@ export const setTextTransform = payload => {
         payload
     }
 };
+export const setTemplate = payload => {
+    return{
+        type: SET_TEMPLATE,
+        payload
+    }
+};
+
 
 
 

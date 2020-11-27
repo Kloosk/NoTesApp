@@ -57,7 +57,7 @@ const Touse = () => {
             <Nav/>
             <H1><Span>C</Span>hoose</H1>
             <Container onClick={closeMenu}>
-                {notesExample.map((el,i) => <Note key={i} title={el.title} text={el.text} titlecolor={el.titleColor} titlebg={el.titleBg} textcolor={el.textColor} textbg={el.textBg} border={el.border} font={el.font} textsize={el.textSize} titlesize={el.titleSize}/>)}
+                {notesExample.map((el,i) => <Note key={i} titlecolor={el.titleColor} titlebg={el.titleBg} textcolor={el.textColor} textbg={el.textBg} border={el.border} font={el.font}/>)}
             </Container>
         </Bg>
     );

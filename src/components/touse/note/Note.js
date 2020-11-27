@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
-import {setObj, TouseTrue} from "../../../redux";
+import {setObj, setTemplate, TouseTrue} from "../../../redux";
 import { useHistory } from "react-router-dom";
 
 const Container = styled.div`
@@ -29,7 +29,7 @@ const Title = styled.div`
 const H1 = styled.h1`
   color: ${props => props.titlecolor};
   font-family: ${props => props.font};
-  font-size: ${props => props.titlesize}rem;
+  font-size: 1.7rem;
 `;
 const Desc = styled.div`
   min-height: 170px;
@@ -45,35 +45,31 @@ const Desc = styled.div`
 const P = styled.p`
   color: ${props => props.textcolor};
   font-family: ${props => props.font};
-  font-size: ${props => props.textsize}rem;
+  font-size: 1rem;
 `;
-const Note = ({title,text,titlecolor,titlebg,textcolor,textbg,border,font,textsize,titlesize}) => {
+const Note = ({titlecolor,titlebg,textcolor,textbg,border,font}) => {
     const dispatch = useDispatch();
     const history = useHistory();
     const handleChoose = () => {
         const obj = {
-            title,
-            text,
             titleColor: titlecolor,
             titleBg: titlebg,
             textColor: textcolor,
             textBg:textbg,
             border,
             font,
-            textSize: textsize,
-            titleSize: titlesize
         };
         dispatch(TouseTrue());
-        dispatch(setObj(obj));
+        dispatch(setTemplate(obj));
         history.push("/add");
     };
     return (
         <Container border={border} onClick={handleChoose}>
             <Title titlebg={titlebg}>
-                <H1 titlecolor={titlecolor} titlesize={titlesize} font={font}>{title}</H1>
+                <H1 titlecolor={titlecolor} font={font}>Title</H1>
             </Title>
             <Desc textbg={textbg}>
-                <P textcolor={textcolor} font={font} textsize={textsize}>{text}</P>
+                    <P textcolor={textcolor} font={font}>Your Text</P>
             </Desc>
         </Container>
     );

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, menuDesktopClose, setObj, TouseFalse} from "../../redux";
+import {dashClose, fontOff, menuDesktopClose,setTemplate, TouseFalse} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
@@ -11,7 +11,6 @@ import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
-import LinearPicker from "../linearPicker/LinearPicker";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 
 const Div = styled.div`
@@ -64,9 +63,9 @@ const AddNote = () => {
     useEffect(() => {
         const obj = JSON.parse(localStorage.getItem('noteSave'));
         if(obj !== null && toUse === false){
-            dispatch(setObj(obj));
+            dispatch(setTemplate(obj));
         }else if(toUse === false){
-            dispatch(setObj(genereateOne()));
+            dispatch(setTemplate(genereateOne()));
         }
         toUse && dispatch(TouseFalse());
         setLoad(true);
