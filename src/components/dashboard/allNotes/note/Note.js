@@ -15,17 +15,17 @@ const Container = styled.div`
 `;
 const Options = styled.div`
   position: absolute;
-  top: 50%;
-  left: 101%;
+  top: 0;
+  left: 100%;
   transition: transform 1s ease,opacity 1s ease;
   opacity: 0;
-  transform: translate(-100%,-50%);
+  transform: translateX(-100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   ${Container}:hover &{
     opacity: 1;
-    transform: translate(-50%,-50%);
+    transform: translateX(-50%);
   }
 `;
 const Btn = styled.button`
