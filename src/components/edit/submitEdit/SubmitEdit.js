@@ -1,8 +1,9 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import styled from 'styled-components'
 import axios from "axios";
 import {useHistory} from "react-router-dom";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {loadingFalse, loadingTrue} from "../../../redux";
 
 const Container = styled.button`
   display: ${props => props.edit ? 'block' : 'none'};
@@ -39,17 +40,22 @@ const Container = styled.button`
 `;
 const SubmitEdit = ({edit}) => {
     const history = useHistory();
+    const dispatch = useDispatch();
     const data = useSelector(state => state.note);
+    const btnRef = useRef(null);
     const sendData = () => {
+        btnRef.current.setAttribute("disabled","disabled");//btn is only once click to avoid multiple add
+        dispatch(loadingTrue());
         axios.post("https://notesappserver.herokuapp.com/api/users/edit", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 history.push("/dashboard");
+                dispatch(loadingFalse());
             })
             .catch(err => console.log(err));
     };
 
     return (
-        <Container edit={edit} onClick={sendData}>Done</Container>
+        <Container ref={btnRef} edit={edit} onClick={sendData}>Done</Container>
     );
 };
 

@@ -12,6 +12,7 @@ import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import LinearPicker from "../linearPicker/LinearPicker";
+import LoadingAdd from "../loadingAdd/LoadingAdd";
 
 const Div = styled.div`
   position: relative;
@@ -79,6 +80,7 @@ const AddNote = () => {
     };
     return (
        load ? <Div>
+            <LoadingAdd/>
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>

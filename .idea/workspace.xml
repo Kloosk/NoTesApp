@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/loadingAdd/LoadingAdd.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loadingAdd/loading.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/showLoadingAdd/showLoadingAddActions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/showLoadingAdd/showLoadingAddReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/showLoadingAdd/showLoadingAddTypes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepFirst/stepFirst.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepTwo/stepTwice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/colorPicker/ColorPicker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/dashboard/allNotes/note/Note.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/linearPicker/LinearPicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/linearPicker/LinearPicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/AddNote.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/AddNote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/sendBtn/SendBtn.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/sendBtn/SendBtn.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/edit/Edit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/Edit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/edit/submitEdit/SubmitEdit.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/edit/submitEdit/SubmitEdit.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/rootReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/rootReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -46,15 +52,15 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\video\file" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\Praca\projekty stron\notesapp\src\components\loadingAdd" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\video\file" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\public" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\loading\gif" />
       <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\edit" />
-      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Łukasz\Desktop\praca\moje\projekty stron\notesapp\src\components\start\video\file" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -146,7 +152,10 @@
       <workItem from="1605702947048" duration="4322000" />
       <workItem from="1605713091348" duration="5524000" />
       <workItem from="1605992474285" duration="594000" />
-      <workItem from="1606303913204" duration="6930000" />
+      <workItem from="1606303913204" duration="8909000" />
+      <workItem from="1606386262165" duration="3455000" />
+      <workItem from="1606407842666" duration="2000000" />
+      <workItem from="1606493799970" duration="2961000" />
     </task>
     <servers />
   </component>

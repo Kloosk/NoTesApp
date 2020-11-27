@@ -8,6 +8,7 @@ import fontMenuReducer from "./fontMenu/fontMenuReducer";
 import alertDeleteReducer from "./alertDelete/alertDeleteReducer";
 import menuDesktopReducer from "./menuDesktop/menuDesktopReducer";
 import toUseReducer from "./touse/ToUseReducer";
+import loadingAddReducer from "./showLoadingAdd/showLoadingAddReducer";
 
 const rootReducer = combineReducers({
     startnow: startNowReducer,
@@ -19,7 +20,7 @@ const rootReducer = combineReducers({
     alert: alertDeleteReducer,
     menudesktop: menuDesktopReducer,
     touse: toUseReducer,
-
+    showLoading: loadingAddReducer,
 });
 
 export default rootReducer

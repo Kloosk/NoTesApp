@@ -12,6 +12,7 @@ import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
+import LoadingAdd from "../loadingAdd/LoadingAdd";
 
 const Bg = styled.div`
   position: relative;
@@ -86,6 +87,7 @@ const Edit = () => {
     };
     return (
         load ? <Bg>
+            <LoadingAdd/>
             <Logo/>
             <Menu/>
             <Nav/>

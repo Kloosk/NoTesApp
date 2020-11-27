@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{useRef} from 'react';
 import styled from 'styled-components'
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {setMove} from "../../../redux";
+import {loadingFalse, loadingTrue, setMove} from "../../../redux";
 
 const Container = styled.button`
   display: ${props => props.edit ? 'none' : 'block'};
@@ -42,17 +42,21 @@ const SendBtn = ({edit}) => {
     const history = useHistory();
     const dispatch = useDispatch();
     const data = useSelector(state => state.note);
+    const btnRef = useRef(null);
     const sendData = () => {
+        btnRef.current.setAttribute("disabled","disabled");//btn is only once click to avoid multiple add
+        dispatch(loadingTrue());//turn on loading screen when note is sending and turn off when its over
         axios.post("https://notesappserver.herokuapp.com/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
             .then(res => {
                 localStorage.removeItem('noteSave');// delete own style note
                 history.push("/dashboard");
                 dispatch(setMove(0));
+                dispatch(loadingFalse());
             })
             .catch(err => console.log(err));
     };
     return (
-        <Container edit={edit} onClick={sendData}>Add</Container>
+        <Container ref={btnRef} edit={edit} onClick={sendData}>Add</Container>
     );
 };
 
