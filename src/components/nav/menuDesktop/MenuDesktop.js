@@ -99,10 +99,34 @@ const Input = styled.input`
   }
   
 `;
-const MenuDesktop = ({mobile}) => {
+const More = styled.div`
+  border: 2px solid #000;
+  background-color: #E8E9E3;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  font-size: 1rem;
+  position: relative;
+`;
+const Info = styled.div`
+  display: none;
+  opacity: 0;
+  position: absolute;
+  top: 101%;
+  right: 0;
+  padding: 2px 5px;
+  font-size: 1rem;
+  transition: opacity 0.5s ease;
+  ${More}:hover{
+    display: block;
+    opacity: 1;
+  }
+`;
+const MenuDesktop = () => {
     const autosave = useRef(null);
     const deletealert = useRef(null);
     const selecttext = useRef(null);
+    const selectprivate = useRef(null);
 
     const open = useSelector(state => state.menudesktop.open);
 
@@ -116,11 +140,14 @@ const MenuDesktop = ({mobile}) => {
         if(localStorage.getItem('selecttext') !== null){
             selecttext.current.checked = true;
         }
+        if(localStorage.getItem('statusnote') !== null){
+            selectprivate.current.checked = true;
+        }
     },[]);
 
     const handleDeleteAlert = () => {
         if(deletealert.current.checked === true){
-            localStorage.setItem('alertdelete','true')
+            localStorage.setItem('alertdelete','true');
         }else{
             localStorage.removeItem('alertdelete');
         }
@@ -137,10 +164,16 @@ const MenuDesktop = ({mobile}) => {
     const handleSelectText = () => {
         if(selecttext.current.checked === true){
             localStorage.setItem('selecttext','true');
-            window.location.reload();
         }else{
             localStorage.removeItem('selecttext');
-            window.location.reload();
+        }
+    };
+
+    const handleSelectPrivate = () => {
+        if(selecttext.current.checked === true){
+            localStorage.setItem('statusnote','true');
+        }else{
+            localStorage.removeItem('statusnote');
         }
     };
 
@@ -152,6 +185,9 @@ const MenuDesktop = ({mobile}) => {
                         <Input type="checkbox" onClick={handleDeleteAlert} ref={deletealert}/>
                         <Span></Span>
                 </Label>
+                <More>?
+                    <Info>Show/hide delete alert.</Info>
+                </More>
             </Element>
             <Element>
                 <P>Autosave</P>
@@ -159,13 +195,29 @@ const MenuDesktop = ({mobile}) => {
                     <Input type="checkbox" onClick={handleAutosave} ref={autosave} />
                     <Span></Span>
                 </Label>
+                <More>?
+                    <Info>Save your note automatically after making changes.</Info>
+                </More>
             </Element>
-            <Element mobile={mobile}>
+            <Element>
                 <P>Select text note</P>
                 <Label>
                     <Input type="checkbox" onClick={handleSelectText} ref={selecttext} />
                     <Span></Span>
                 </Label>
+                <More>?
+                    <Info>On/off text selection in your notes.</Info>
+                </More>
+            </Element>
+            <Element>
+                <P>Private</P>
+                <Label>
+                    <Input type="checkbox" onClick={handleSelectPrivate} ref={selectprivate} />
+                    <Span></Span>
+                </Label>
+                <More>?
+                    <Info>Disabling it keeps your notes always public.</Info>
+                </More>
             </Element>
         </Container>
     );

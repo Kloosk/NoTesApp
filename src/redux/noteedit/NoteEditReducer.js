@@ -11,6 +11,7 @@ import {
     SET_TITLE_SIZE,
     SET_DESC_TRANSFORM,
     SET_TITLE_TRANSFORM,
+    SET_STATUS,
     SET_OBJ,
     SET_TEMPLATE
 } from "./NoteEditTypes";
@@ -28,6 +29,7 @@ const initialState = {
     titleSize: 1.7,
     titleTransform: "initial",
     textTransform: "initial",
+    status: true,
 };
 
 const NoteEditReducer = (state=initialState,action) => {
@@ -103,6 +105,12 @@ const NoteEditReducer = (state=initialState,action) => {
             return{
                 ...state,
                 titleTransform: action.payload
+            }
+        }
+        case SET_STATUS:{
+            return{
+                ...state,
+                status: action.payload
             }
         }
         case SET_TEMPLATE:{

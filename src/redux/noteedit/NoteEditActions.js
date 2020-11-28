@@ -12,7 +12,8 @@ import {
     SET_TITLE_BG,
     SET_TITLE_COLOR,
     SET_TITLE_SIZE,
-    SET_TEMPLATE
+    SET_TEMPLATE,
+    SET_STATUS
 } from "./NoteEditTypes";
 
 export const setDesc = payload => {
@@ -96,6 +97,12 @@ export const setTextTransform = payload => {
 export const setTemplate = payload => {
     return{
         type: SET_TEMPLATE,
+        payload
+    }
+};
+export const setStatus= payload => {
+    return{
+        type: SET_STATUS,
         payload
     }
 };

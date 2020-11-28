@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {fontOff, fontOn, setBorder, setFont} from "../../../../redux";
+import {fontOff, fontOn, setBorder, setFont, setStatus }from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled.div`
@@ -116,11 +116,23 @@ const Btn = styled.div`
     border: none;
   }
 `;
+const Checkbox = styled.input`
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+`;
 const StepThird = ({move}) => {
     const dispatch = useDispatch();
     const fontMenu = useSelector(state => state.fontmenu.menu);
-    const {border,font} = useSelector(state => state.note);
+    const {border,font,status} = useSelector(state => state.note);
     const [show,setShow] = useState(false);
+    const checkRef = useRef(null);
+    useEffect(() => {
+        if(localStorage.getItem('statusnote') !== null){
+            checkRef.current.checked = true;
+            setStatus(true);
+        }
+    },[]);
     const handleColor = () => {
         setShow(true);
         setTimeout(() =>{
@@ -130,12 +142,19 @@ const StepThird = ({move}) => {
     const handleFont = () => {
         fontMenu ? dispatch(fontOff()) : dispatch(fontOn());
     };
+    const handleChange = () => {
+        if(checkRef.current.checked === true){
+            setStatus(true);
+        }else{
+            setStatus(false);
+        }
+    };
     return (
         <Container move={move}>
             <H1><Span>G</Span>eneral</H1>
             <Flex>
                 <P><Span>B</Span>order</P>
-                <BtnColor color={border} onClick={handleColor}></BtnColor>
+                <BtnColor color={border} onClick={handleColor}/>
                 <ColorPicker show={show} func={setBorder}/>
             </Flex>
             <Flex>
@@ -154,6 +173,10 @@ const StepThird = ({move}) => {
                             <Btn font='Turret Road' onClick={() => {dispatch(setFont('Turret Road'))}}>Turret</Btn>
                     </FontMenu>
                 </Button>
+            </Flex>
+            <Flex>
+                <P><Span>P</Span>rivate</P>
+                <Checkbox ref={checkRef} onChange={handleChange} type="checkbox" checked={status}/>
             </Flex>
         </Container>
     );
