@@ -3,15 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepThird/stepThird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepThird/stepThird.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/account/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/account/Account.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/menu/submenu/SubMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/menu/submenu/SubMenu.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/nav/Nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/Nav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/nav/menuDesktop/MenuDesktop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/nav/menuDesktop/MenuDesktop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/redux/noteedit/NoteEditTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/noteedit/NoteEditTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/publicNotes/PublicNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publicNotes/PublicNotes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +149,9 @@
       <workItem from="1606386262165" duration="3455000" />
       <workItem from="1606407842666" duration="2000000" />
       <workItem from="1606493799970" duration="8009000" />
-      <workItem from="1606590206838" duration="4532000" />
+      <workItem from="1606590206838" duration="4850000" />
+      <workItem from="1606729148469" duration="647000" />
+      <workItem from="1606820531296" duration="1747000" />
     </task>
     <servers />
   </component>
