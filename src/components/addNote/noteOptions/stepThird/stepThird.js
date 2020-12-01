@@ -124,13 +124,18 @@ const Checkbox = styled.input`
 const StepThird = ({move}) => {
     const dispatch = useDispatch();
     const fontMenu = useSelector(state => state.fontmenu.menu);
-    const {border,font,status} = useSelector(state => state.note);
+    const {border,font} = useSelector(state => state.note);
     const [show,setShow] = useState(false);
+    const [currentStatus,setCurrentStatus] = useState(false);
     const checkRef = useRef(null);
     useEffect(() => {
         if(localStorage.getItem('statusnote') !== null){
             checkRef.current.checked = true;
+            setCurrentStatus(true);
             setStatus(true);
+        }else{
+            setCurrentStatus(false);
+            setStatus(false);
         }
     },[]);
     const handleColor = () => {
@@ -145,8 +150,10 @@ const StepThird = ({move}) => {
     const handleChange = () => {
         if(checkRef.current.checked === true){
             setStatus(true);
+            setCurrentStatus(true);
         }else{
             setStatus(false);
+            setCurrentStatus(false);
         }
     };
     return (
@@ -176,7 +183,7 @@ const StepThird = ({move}) => {
             </Flex>
             <Flex>
                 <P><Span>P</Span>rivate</P>
-                <Checkbox ref={checkRef} onChange={handleChange} type="checkbox" checked={status}/>
+                <Checkbox ref={checkRef} onChange={handleChange} type="checkbox" checked={currentStatus}/>
             </Flex>
         </Container>
     );

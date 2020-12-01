@@ -1,35 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components'
-import {useSelector} from "react-redux";
 
 const Container = styled.div`
- display: flex;
- position: static;
-z-index: 20;
 width: 100%;
-background-color: #E8EAE3;
+display: flex;
+background: transparent;
 color: #F9B613;
 flex-direction: column;
 align-items: center;
-justify-content: flex-start;
-padding: 10px;
-  @media(min-width: 768px){
-      z-index: 20;
-      display: ${props => props.open ? 'flex' : 'none'};
-      width:300px;
-      position: absolute;
-      top: 55px;
-      right: 5px;
-      border-radius: 14px;
-      border: 4px solid #F9B613; 
-      background-color: #E8EAE3;
-      color: #F9B613;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px;
-  }
-  
 `;
 const Element = styled.div`
   display: ${props => props.mobile ? 'none' : 'flex'};
@@ -39,9 +17,13 @@ const Element = styled.div`
   margin-bottom: 15px;
   padding-bottom: 3px;
   border-bottom: 1px solid #F9B613 ;
+  @media(min-width: 768px){
+     width: 25%;
+  }
 `;
 const P = styled.p`
   font-size: 1.4rem;
+  width: 50%;
 `;
 const Label = styled.label`
   position: relative;
@@ -100,13 +82,15 @@ const Input = styled.input`
   
 `;
 const More = styled.div`
-  border: 2px solid #000;
+  border: 2px solid #F9B613;
   background-color: #E8E9E3;
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  font-size: 1rem;
+  font-size: 1.4rem;
+  width: 25px;
+  height: 25px;
+  text-align: center;
   position: relative;
+  cursor: pointer;
 `;
 const Info = styled.div`
   display: none;
@@ -114,21 +98,25 @@ const Info = styled.div`
   position: absolute;
   top: 101%;
   right: 0;
-  padding: 2px 5px;
+  width: 250px;
+  padding: 10px 5px;
+  text-align: right;
+  background-color: #E9EAE4;
+  border-radius: 12px;
+  border: 2px solid #F9B613;
   font-size: 1rem;
   transition: opacity 0.5s ease;
-  ${More}:hover{
+  z-index: 15;
+  ${More}:hover &{
     display: block;
     opacity: 1;
   }
 `;
-const MenuDesktop = () => {
+const LocalSettings = () => {
     const autosave = useRef(null);
     const deletealert = useRef(null);
     const selecttext = useRef(null);
     const selectprivate = useRef(null);
-
-    const open = useSelector(state => state.menudesktop.open);
 
     useEffect(() => {
         if(localStorage.getItem('autosave') !== null){
@@ -170,7 +158,7 @@ const MenuDesktop = () => {
     };
 
     const handleSelectPrivate = () => {
-        if(selecttext.current.checked === true){
+        if(selectprivate.current.checked === true){
             localStorage.setItem('statusnote','true');
         }else{
             localStorage.removeItem('statusnote');
@@ -178,7 +166,7 @@ const MenuDesktop = () => {
     };
 
     return (
-        <Container open={open}>
+        <Container>
             <Element>
                 <P>Delete alert</P>
                 <Label>
@@ -223,4 +211,4 @@ const MenuDesktop = () => {
     );
 };
 
-export default MenuDesktop;
+export default LocalSettings;
