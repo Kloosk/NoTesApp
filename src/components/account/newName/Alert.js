@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 
 const Container = styled.div`
-  display: ${props => props.show ? 'block': 'none'};
+  transition: transform 0.2s ease;
+  transform: ${props => props.show ? 'translateY(0)': 'translateY(-100%)'};
   position: absolute;
   top: 0;
   left: 0;

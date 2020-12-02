@@ -1,6 +1,8 @@
 import React, {useRef, useState} from 'react';
 import styled from 'styled-components'
 import Alert from "./Alert";
+import axios from "axios";
+import {loadingFalse, setMove} from "../../../redux";
 
 const Container = styled.div`
   display: flex;
@@ -26,6 +28,10 @@ const Input = styled.input`
   &:focus{
      border: 3px solid #F9B613;
   }
+  @media (min-width: 768px) {
+      padding: 0 7px;
+      height: 30px;
+  }
 `;
 const Btn = styled.button`
   cursor: pointer;
@@ -37,6 +43,10 @@ const Btn = styled.button`
   outline: none;
   &:hover{
      border: 3px solid #F9B613;
+  }
+    @media (min-width: 768px) {
+      height: 30px;
+      padding: 0 15px;
   }
 `;
 const Error = styled.div`
@@ -61,29 +71,38 @@ const NewName = () => {
     const [show,setShow] = useState(false);
     const [errMsg,setErrMsg] = useState([]);
     const handleSaveName = () => {
-      const inputValue = inputRef.current.value;
+      const data = {
+          name: inputRef.current.value
+      };
       const tempArrOfErr = [];
-      if(inputValue.length > 20 || inputValue.length < 3){
+      if(data.name.length > 20 || data.name.length < 3){
           tempArrOfErr.push("Required length 3-20");
       }
       if(tempArrOfErr.length >= 1){
           setErrMsg(tempArrOfErr);
       }else{
-          setErrMsg([]);
-          //server axios
-          //when response
-          setMsg("Name update succesfully");
-          setShow(true);
-          setTimeout(() => {
-              setShow(false);
-          },3000);
+          axios.post("https://notesappserver.herokuapp.com/api/users/changename", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+              .then(res => {
+                  console.log(res);
+                  if(res.data.errors.length > 0){
+                      setErrMsg(res.error);
+                  }else{
+                      setMsg("Name update succesfully");
+                      setShow(true);
+                      setErrMsg([]);
+                      setTimeout(() => {
+                          setShow(false);
+                      },2500);
+                  }
+              })
+              .catch(err => console.log(err));
       }
     };
     return (
         <Container>
             <Alert msg={msg} show={show}/>
             <Inline>
-                <H1>New Name</H1>
+                <H1>New name</H1>
                 <Flex>
                     <Input ref={inputRef} type="text"/>
                     <Btn onClick={handleSaveName}>Save</Btn>
