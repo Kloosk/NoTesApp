@@ -8,6 +8,7 @@ import {useDispatch} from "react-redux";
 import bg from "../../img/bgReg.jpg";
 import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
+import DeleteAcc from "./deleteAcc/DeleteAcc";
 
 const Div = styled.div`
   position: relative;
@@ -60,10 +61,12 @@ const Account = () => {
             <Nav num={4}/>
             <div onClick={closeMenu}>
                 <Container>
-                    <H1>Account</H1>
-                    <NewName/>
                     <H1>Local settings</H1>
                     <LocalSettings/>
+                    <H1>Account</H1>
+                    <NewName/>
+                    <H1 style={{color: "red"}}>DANGER ZONE</H1>
+                    <DeleteAcc/>
                 </Container>
             </div>
         </Div>
