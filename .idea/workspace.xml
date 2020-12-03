@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/account/Account.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/account/Account.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/account/deleteAcc/DeleteAcc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/account/deleteAcc/DeleteAcc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../notes/notestest" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -151,7 +153,8 @@
       <workItem from="1606820531296" duration="8621000" />
       <workItem from="1606851866953" duration="2963000" />
       <workItem from="1606902584773" duration="6597000" />
-      <workItem from="1606997475694" duration="2896000" />
+      <workItem from="1606997475694" duration="3124000" />
+      <workItem from="1607021600889" duration="4742000" />
     </task>
     <servers />
   </component>
@@ -167,10 +170,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605134668648" />
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1606903535241">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1607023393240">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1606903535241" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607023393240" />
     <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605538335861" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />

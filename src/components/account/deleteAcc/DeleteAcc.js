@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
+import axios from 'axios';
+import {useHistory} from "react-router-dom";
 
 const Btn = styled.button`
    display: flex;
@@ -90,12 +92,20 @@ const Flex = styled.div`
   }
 `;
 const DeleteAcc = () => {
+    const history = useHistory();
     const [alert,setAlert] = useState(false);
     const handleClick = () => {
-            setAlert(true);
+         setAlert(true);
     };
     const handleYes = () => {
-
+        axios.delete('https://notesappserver.herokuapp.com/api/users/removeacc',{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+            .then(res => {
+                setAlert(false);
+                history.push("/logout");
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
     const handleNo = () => {
       setAlert(false);

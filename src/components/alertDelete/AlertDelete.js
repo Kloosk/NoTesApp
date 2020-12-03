@@ -12,12 +12,12 @@ const Container = styled.div`
   transform: translate(-50%,-50%);
   width: 300px;
   height: 200px;
-  background: #fff;
+  border: 4px solid #BF0413;
+  background: #F2B705;
   color: #000;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 2px solid #000;
   display: ${props => props.alert ? 'flex' : 'none'};
 `;
 const H1 = styled.h1`
@@ -35,10 +35,14 @@ const P = styled.p`
 `;
 const Btn = styled.button`
   padding: 7px 14px;
-  background-color: #fff;
-  border: 2px solid #000;
-  color:#000;
-  border-radius: 14px;
+  border: 2px solid #BF0413;
+  color: #000;
+  &:hover{
+    background: #F2B705;
+  }
+   @media (min-width: 768px) {
+    font-size: 1.2rem;
+  }
   font-size: 1rem;
   cursor: pointer;
   margin: 0 20px;
