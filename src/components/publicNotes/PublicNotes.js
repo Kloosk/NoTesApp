@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 import {dashClose, menuDesktopClose} from "../../redux";
@@ -6,6 +6,7 @@ import Logo from "../logo/Logo";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
+import axios from "axios";
 
 const Div = styled.div`
   position: relative;
@@ -33,17 +34,29 @@ const Container = styled.div`
 `;
 const PublicNotes = () => {
     const dispatch = useDispatch();
+    const [data,setData] = useState();
     const closeMenu = () => {
         dispatch(dashClose());
         dispatch(menuDesktopClose())
     };
+    useEffect(() => {
+        axios.get("https://notesappserver.herokuapp.com/api/users/publicnotes", {
+                headers: {
+                    'auth-token': localStorage.getItem("jwtToken")
+                }})
+            .then(res => {
+                setData(res.data);
+                console.log(res);
+            })
+            .catch(err => console.log(err));
+    },[]);
     return (
         <Div>
             <Logo/>
             <Menu num={3}/>
             <Nav num={3}/>
             <div onClick={closeMenu}>
-                <Container>
+                <Container data={data}>
 
                 </Container>
             </div>

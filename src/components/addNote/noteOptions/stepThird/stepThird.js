@@ -132,10 +132,10 @@ const StepThird = ({move}) => {
         if(localStorage.getItem('statusnote') !== null){
             checkRef.current.checked = true;
             setCurrentStatus(true);
-            setStatus(true);
+            dispatch(setStatus(true));
         }else{
             setCurrentStatus(false);
-            setStatus(false);
+            dispatch(setStatus(false));
         }
     },[]);
     const handleColor = () => {
@@ -149,10 +149,10 @@ const StepThird = ({move}) => {
     };
     const handleChange = () => {
         if(checkRef.current.checked === true){
-            setStatus(true);
+            dispatch(setStatus(true));
             setCurrentStatus(true);
         }else{
-            setStatus(false);
+            dispatch(setStatus(false));
             setCurrentStatus(false);
         }
     };

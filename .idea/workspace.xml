@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6a945357-ed97-48c8-b187-ee11c1a9bf7e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/account/deleteAcc/DeleteAcc.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/account/deleteAcc/DeleteAcc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/alertDelete/AlertDelete.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/logout/Logout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/logout/Logout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepThird/stepThird.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/addNote/noteOptions/stepThird/stepThird.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/publicNotes/PublicNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/publicNotes/PublicNotes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +35,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../notes/notestest" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -154,7 +154,11 @@
       <workItem from="1606851866953" duration="2963000" />
       <workItem from="1606902584773" duration="6597000" />
       <workItem from="1606997475694" duration="3124000" />
-      <workItem from="1607021600889" duration="4742000" />
+      <workItem from="1607021600889" duration="5133000" />
+      <workItem from="1607193924874" duration="3498000" />
+      <workItem from="1607202065874" duration="9000" />
+      <workItem from="1607291640954" duration="2617000" />
+      <workItem from="1607295139032" duration="565000" />
     </task>
     <servers />
   </component>
@@ -170,10 +174,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605134668648" />
-    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1607023393240">
+    <state x="489" y="278" key="FileChooserDialogImpl" timestamp="1607292172305">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607023393240" />
+    <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1607292172305" />
     <state x="489" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605538335861" />
     <state x="387" y="92" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1602604696843">
       <screen x="0" y="0" width="1920" height="1040" />
