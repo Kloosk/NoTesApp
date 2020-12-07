@@ -2,8 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import bg from '../../img/bgReg.jpg'
 import Logo from "../logo/Logo";
-import Menu from "../menu/Menu";
-import Nav from "../nav/Nav";
 
 const Container = styled.div`
   width: 100vw;

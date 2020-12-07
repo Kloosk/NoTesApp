@@ -2,7 +2,6 @@ import React, {useRef, useState} from 'react';
 import styled from 'styled-components'
 import Alert from "./Alert";
 import axios from "axios";
-import {loadingFalse, setMove} from "../../../redux";
 
 const Container = styled.div`
   display: flex;

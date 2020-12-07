@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setDescBg, setDescColor, setDescSize, setTextTransform, setTitleBg} from "../../../../redux";
+import {setDescBg, setDescColor, setDescSize, setTextTransform} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import LinearPicker from "../../../linearPicker/LinearPicker";
 
@@ -100,7 +100,7 @@ const Divide = styled.div`
 `;
 const StepTwice = ({move}) => {
     const dispatch = useDispatch();
-    const {textSize,textBg,textColor,textTransform} = useSelector(state => state.note);
+    const {textSize,textBg,textTransform} = useSelector(state => state.note);
     //it changes border of selected transform
     const [letter,setLetter] = useState(0);
     useEffect(() => {

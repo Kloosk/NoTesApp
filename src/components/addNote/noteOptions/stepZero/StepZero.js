@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {leftTrue, rightFalse, rightTrue, setMove, setObj, setTemplate} from "../../../../redux";
+import {leftTrue, rightFalse, rightTrue, setMove, setTemplate} from "../../../../redux";
 import {genereateOne} from "../../../../data/Data";
 import SendBtn from "../../sendBtn/SendBtn";
 import SubmitEdit from "../../../edit/submitEdit/SubmitEdit";

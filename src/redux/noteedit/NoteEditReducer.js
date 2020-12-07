@@ -47,7 +47,6 @@ const NoteEditReducer = (state=initialState,action) => {
             }
         }
         case SET_TITLE_SIZE:{
-            console.log(action.payload);
             return{
                 ...state,
                 titleSize: state.titleSize+action.payload

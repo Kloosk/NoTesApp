@@ -7,6 +7,8 @@ import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
 import axios from "axios";
+import AllPublic from "./allPublic/allPublic";
+import Loading from "../loading/Loading";
 
 const Div = styled.div`
   position: relative;
@@ -17,7 +19,6 @@ const Div = styled.div`
   background-position: center;
   background-size: cover;
   min-height: 100vh; 
-  padding-top: 13vh;
   width: 100vw;
   @media (min-width: 768px) {
     position: absolute;
@@ -31,10 +32,12 @@ const Div = styled.div`
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
+  padding-top: 13vh;
 `;
 const PublicNotes = () => {
     const dispatch = useDispatch();
     const [data,setData] = useState();
+    const [load,setLoad] = useState(false);
     const closeMenu = () => {
         dispatch(dashClose());
         dispatch(menuDesktopClose())
@@ -46,21 +49,21 @@ const PublicNotes = () => {
                 }})
             .then(res => {
                 setData(res.data);
-                console.log(res);
+                setLoad(true);
             })
             .catch(err => console.log(err));
     },[]);
     return (
+        load ? <>
         <Div>
             <Logo/>
             <Menu num={3}/>
             <Nav num={3}/>
-            <div onClick={closeMenu}>
-                <Container data={data}>
-
-                </Container>
-            </div>
+            <Container onClick={closeMenu}>
+                {data.length > 0 && <AllPublic data={data}/>}
+            </Container>
         </Div>
+        </> : <Loading/>
     );
 };
 
