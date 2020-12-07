@@ -16,6 +16,9 @@ const Container = styled(Textarea)`
   resize: none;
   outline: none;
   padding: 5px;
+  ::placeholder { 
+    color: ${props => props.titlecolor};
+  }
 `;
 const InputTitle = ({edit}) => {
     const dispatch = useDispatch();
@@ -36,7 +39,7 @@ const InputTitle = ({edit}) => {
     }else {
         return (
             <Container spellCheck="false" onClick={handleMove} titletransform={titleTransform} font={font}
-                       titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} placeholder={title}
+                       titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} placeholder="Title"
                        maxLength="50" onBlur={handleChange}/>
         )
     }

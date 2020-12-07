@@ -24,8 +24,6 @@ const NoteEdit = ({edit}) => {
             <InputDesc edit={edit}/>
         </Container>
     );
-
-
 };
 
 export default NoteEdit;

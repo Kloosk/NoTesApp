@@ -16,6 +16,9 @@ const Container = styled(Textarea)`
   outline: none;
   min-height: 170px;
   padding: 15px 5px 5px 5px;
+  ::placeholder { 
+    color: ${props => props.textcolor};
+  }
 `;
 const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
@@ -36,7 +39,7 @@ const InputDesc = ({edit}) => {
     }else {
         return (
             <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                       textsize={textSize} textcolor={textColor} textbg={textBg} placeholder={text} maxLength="800"
+                       textsize={textSize} textcolor={textColor} textbg={textBg} placeholder="Your text" maxLength="800"
                        onBlur={handleChange}/>
         )
     }
