@@ -23,9 +23,6 @@ const AllNotes = ({data}) => {
     const [width,setWidth] = useState(null);
     useEffect(() => {
         setWidth(window.innerWidth);
-        window.addEventListener('resize',() => {
-           setWidth(window.innerWidth);
-        });
         setLoad(true);
     },[]);
     const bigFirstLetter = name => {

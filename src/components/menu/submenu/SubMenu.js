@@ -21,6 +21,12 @@ const Container = styled.div`
   @media (min-width: 992px){
    width: 25vw;
   }
+  @media (min-width: 560px) 
+  and (max-width: 800px)
+  and (orientation: landscape) {
+    height: auto;
+    padding-bottom: 20px;
+  }
 `;
 const Element = styled.button`
   border: none;
