@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from "react-redux";
 import store from "./redux/store";
 import {createGlobalStyle} from "styled-components";
+import {QueryClientProvider,QueryClient} from "react-query";
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -32,12 +33,14 @@ const GlobalStyle = createGlobalStyle`
 }
   }
 `;
-
+const queryClient = new QueryClient();
 ReactDOM.render(
   <React.StrictMode>
       <GlobalStyle/>
       <Provider store={store}>
-         <App />
+          <QueryClientProvider client={queryClient}>
+            <App />
+          </QueryClientProvider>
       </Provider>
   </React.StrictMode>,
   document.getElementById('root')

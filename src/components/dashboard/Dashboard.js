@@ -11,6 +11,7 @@ import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
+import useNotes from "../../hooks/useNotes";
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
@@ -36,23 +37,11 @@ const Overlay = styled.div`
   display: ${props => props.alert ? 'block' : 'none'};
 `;
 const Dashboard = () => {
-    const [load,setLoad] = useState(false);
+    const {data,status} = useNotes();
     const {alert} = useSelector(state => state.alert);
     const [select,setSelect] = useState(false);
     const dispatch = useDispatch();
-    const [data,setData] = useState([]);
     useEffect(() => {
-        axios
-            .get("https://notesappserver.herokuapp.com/api/users/dashboard", {
-                headers: {
-                    'auth-token': localStorage.getItem("jwtToken")
-                }})
-            .then(res => {
-                setData(res.data.data);
-                setLoad(true);
-            })
-            .catch(err => console.log(err));
-
         if(localStorage.getItem('selecttext') !== null){
             setSelect(true);
         }else setSelect(false);
@@ -63,16 +52,22 @@ const Dashboard = () => {
         dispatch(menuDesktopClose())
     };
     return (
-        load ? <>
-            <Logo/>
-            <AlertDelete/>
-            <Nav num={2}/>
-            <Menu num={2}/>
-            <Container onClick={closeMenu} select={select}>
-                {data.length > 0 ? <AllNotes data={data}/> : <None/>}
-            </Container>
-            <Overlay alert={alert}/>
-        </> : <Loading/>
+        <>
+        {status === "success" && (
+            <>
+                <Logo/>
+                <AlertDelete/>
+                <Nav num={2}/>
+                <Menu num={2}/>
+                <Container onClick={closeMenu} select={select}>
+                    {data.length > 0 ? <AllNotes data={data}/> : <None/>}
+                </Container>
+                <Overlay alert={alert}/>
+            </>
+       )}
+       {status === "loading" && <Loading/>}
+       {status === "error" && <h1>Error with fetching data</h1>}
+      </>
     );
 };
 
