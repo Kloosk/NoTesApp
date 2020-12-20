@@ -3,4 +3,5 @@ What i learned:<br/>
 ~styled-components,<br/>
 ~redux,<br/>
 ~react-router,<br/>
+~react-query,<br/>
 ~api,<br/>
