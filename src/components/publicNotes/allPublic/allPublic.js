@@ -10,50 +10,44 @@ const Container = styled(Masonry)`
   margin: 0 13px;
 `;
 const AllPublic= ({data}) => {
-    const [load,setLoad] = useState(false);
     const [width,setWidth] = useState(null);
     useEffect(() => {
         setWidth(window.innerWidth);
-        setLoad(true);
+        window.addEventListener("resize",() => {
+          setWidth(window.innerWidth);
+        });
     },[]);
-    if(load) {
-        if (width > 992) {
-            return (
-                <>
-                    <Container breakpointCols={{default: 3}} columnClassName="">
-                        {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
-                                                   titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
-                                                   border={el.border} font={el.font} textSize={el.textSize}
-                                                   titleSize={el.titleSize} name={el.name}/>)}
-                    </Container>
-                </>
-            )
-        } else if (width > 768) {
-            return (
-                <>
-                    <Container breakpointCols={{default: 2}} columnClassName="">
-                        {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleColor={el.titleColor}
-                                                   titleTransform={el.titleTransform} textTransform={el.textTransform}
-                                                   titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
-                                                   border={el.border} font={el.font} textSize={el.textSize}
-                                                   titleSize={el.titleSize} name={el.name}/>)}
-                    </Container>
-                </>
-            )
-        } else if (width <= 768) {
-            return (
-                <>
-                    <Container breakpointCols={{default: 1}} columnClassName="">
-                        {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleColor={el.titleColor}
-                                                   titleTransform={el.titleTransform} textTransform={el.textTransform}
-                                                   titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
-                                                   border={el.border} font={el.font} textSize={el.textSize}
-                                                   titleSize={el.titleSize} name={el.name}/>)}
-                    </Container>
-                </>
-            )
-        }
-    }else return <Loading/>
+    return(
+        <>
+            {width > 992 &&(
+                <Container breakpointCols={{default: 3}} columnClassName="">
+                    {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
+                                                     titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
+                                                     border={el.border} font={el.font} textSize={el.textSize}
+                                                     titleSize={el.titleSize} name={el.name}/>)}
+                </Container>
+            )}
+            {(width > 768 && width <= 992) &&(
+                <Container breakpointCols={{default: 2}} columnClassName="">
+                    {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                                                     titleTransform={el.titleTransform} textTransform={el.textTransform}
+                                                     titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
+                                                     border={el.border} font={el.font} textSize={el.textSize}
+                                                     titleSize={el.titleSize} name={el.name}/>)}
+                </Container>
+            )}
+            {width <= 768 &&(
+                <Container breakpointCols={{default: 1}} columnClassName="">
+                    {data.map((el, i) => <NotePublic key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                                                     titleTransform={el.titleTransform} textTransform={el.textTransform}
+                                                     titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
+                                                     border={el.border} font={el.font} textSize={el.textSize}
+                                                     titleSize={el.titleSize} name={el.name}/>)}
+                </Container>
+            )}
+
+        </>
+    );
 };
 
 export default AllPublic;

@@ -1,4 +1,4 @@
-import React, {useEffect,useState} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 import {dashClose, menuDesktopClose} from "../../redux";
@@ -6,9 +6,9 @@ import Logo from "../logo/Logo";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
-import axios from "axios";
 import AllPublic from "./allPublic/allPublic";
 import Loading from "../loading/Loading";
+import usePublic from "../../hooks/usePublic";
 
 const Div = styled.div`
   position: relative;
@@ -35,36 +35,29 @@ const Container = styled.div`
   padding-top: 13vh;
 `;
 const PublicNotes = () => {
+    const {data,status} = usePublic();
+    console.log(data);
     const dispatch = useDispatch();
-    const [data,setData] = useState();
-    const [load,setLoad] = useState(false);
     const closeMenu = () => {
         dispatch(dashClose());
         dispatch(menuDesktopClose())
     };
-    useEffect(() => {
-        axios.get("https://notesappserver.herokuapp.com/api/users/publicnotes", {
-                headers: {
-                    'auth-token': localStorage.getItem("jwtToken")
-                }})
-            .then(res => {
-                setData(res.data);
-                setLoad(true);
-            })
-            .catch(err => console.log(err));
-    },[]);
     return (
-        load ? <>
-        <Div>
-            <Logo/>
-            <Menu num={3}/>
-            <Nav num={3}/>
-            <Container onClick={closeMenu}>
-                {data.length > 0 && <AllPublic data={data}/>}
-            </Container>
-        </Div>
-        </> : <Loading/>
-    );
+        <>
+            {status === "loading" && <Loading/>}
+            {status === "error" && <p>Error in fetching data</p>}
+            {status === "success" && (
+                <Div>
+                    <Logo/>
+                    <Menu num={3}/>
+                    <Nav num={3}/>
+                    <Container onClick={closeMenu}>
+                        <AllPublic data={data}/>
+                    </Container>
+                </Div>
+            )}
+        </>
+    )
 };
 
 export default PublicNotes;

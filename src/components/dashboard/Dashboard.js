@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import None from "./none/None";
 import Logo from "../logo/Logo";
