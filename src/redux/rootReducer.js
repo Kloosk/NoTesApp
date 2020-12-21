@@ -9,6 +9,7 @@ import alertDeleteReducer from "./alertDelete/alertDeleteReducer";
 import menuDesktopReducer from "./menuDesktop/menuDesktopReducer";
 import toUseReducer from "./touse/ToUseReducer";
 import loadingAddReducer from "./showLoadingAdd/showLoadingAddReducer";
+import emojiReducer from "./emoji/EmojiReducer";
 
 const rootReducer = combineReducers({
     startnow: startNowReducer,
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
     menudesktop: menuDesktopReducer,
     touse: toUseReducer,
     showLoading: loadingAddReducer,
+    emoji: emojiReducer,
 });
 
 export default rootReducer

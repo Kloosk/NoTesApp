@@ -12,6 +12,7 @@ import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
+import EmojiBtn from "../emoji/EmojiBtn";
 
 const Div = styled.div`
   position: relative;
@@ -45,6 +46,7 @@ const Container = styled.div`
     grid-template-columns: repeat(2,1fr);
     align-items: flex-start;
     justify-items: center;
+    position: relative;
   }
 `;
 const Desktop = styled.div`
@@ -84,11 +86,12 @@ const AddNote = () => {
             <Menu num={1}/>
             <Nav num={1}/>
             <div onClick={closeMenu}>
-            <Desktop><StepZeroDesktop/></Desktop>
-            <Container onClick={handleClick}>
-                <NoteEdit/>
-                <NoteOptions/>
-            </Container>
+                <Desktop><StepZeroDesktop/></Desktop>
+                <Container onClick={handleClick}>
+                    <NoteEdit/>
+                    <NoteOptions/>
+                    <EmojiBtn/>
+                </Container>
             </div>
         </Div> : <Loading/>
     );

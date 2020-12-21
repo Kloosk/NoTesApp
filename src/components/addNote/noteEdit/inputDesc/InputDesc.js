@@ -24,9 +24,6 @@ const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
     const {textSize,textColor,textBg,font,text,textTransform} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
-    const handleChange = e => {
-        dispatch(setDesc(e.target.value));
-    };
     const handleMove = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
@@ -38,12 +35,12 @@ const InputDesc = ({edit}) => {
         <>
             {edit ? (
                 <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                               textsize={textSize} textcolor={textColor} textbg={textBg} value={temp} maxLength="800"
-                               onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
+                           textsize={textSize} textcolor={textColor} textbg={textBg} value={temp} maxLength="800"
+                           onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             ):(
                 <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} placeholder="Your text" maxLength="800"
-                           onBlur={handleChange}/>
+                           value={temp} onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             )}
         </>
         )

@@ -17,8 +17,8 @@ import {
 } from "./NoteEditTypes";
 
 const initialState = {
-    title:"Title",
-    text: "Your text",
+    title:"",
+    text: "",
     titleColor:"#000",
     titleBg: "#fff",
     textColor:"#000",
