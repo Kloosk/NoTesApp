@@ -1,6 +1,5 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
-import axios from "axios";
 import {useDispatch, useSelector} from "react-redux";
 import {dashClose, fontOff, setObj} from "../../redux";
 import {useParams} from "react-router-dom";
@@ -13,6 +12,7 @@ import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
+import useEdit from "../../hooks/useEdit";
 
 const Bg = styled.div`
   position: relative;
@@ -63,42 +63,33 @@ const Desktop = styled.div`
   
 `;
 const Edit = () => {
-    const { id } = useParams();
+    const {id} = useParams();
+    const {status} = useEdit(id);
     const dispatch = useDispatch();
     const font = useSelector(state => state.fontmenu.menu);
-    const [load,setLoad] = useState(false);
-    useEffect(() => {
-        axios
-            .get("https://notesappserver.herokuapp.com/api/users/edit", {
-                headers: {
-                    'auth-token': localStorage.getItem("jwtToken"),
-                    'id': id
-                },
-            })
-            .then(res => {
-                dispatch(setObj(res.data.data));
-                setLoad(true);
-            })
-            .catch(err => console.log(err));
-    },[]);
     const handleClick = () => {
         dispatch(dashClose()); // close mobile menu
         if(font) dispatch(fontOff());
     };
     return (
-        load ? <Bg>
-            <LoadingAdd/>
-            <Logo/>
-            <Menu/>
-            <Nav/>
-            <Desktop>
-                <SubmitEdit edit={true}/>
-            </Desktop>
-            <Container onClick={handleClick}>
-                <NoteEdit edit={true}/>
-                <NoteOptions edit={true}/>
-            </Container>
-        </Bg> : <Loading/>
+        <>
+            {status === "success" && (
+                <Bg>
+                    <LoadingAdd/>
+                    <Logo/>
+                    <Menu/>
+                    <Nav/>
+                    <Desktop>
+                        <SubmitEdit edit={true}/>
+                    </Desktop>
+                    <Container onClick={handleClick}>
+                        <NoteEdit edit={true}/>
+                        <NoteOptions edit={true}/>
+                    </Container>
+                </Bg>
+            )}
+            {status === "loading" && <Loading/>}
+        </>
     );
 };
 

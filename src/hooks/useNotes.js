@@ -7,6 +7,7 @@ export default function useNotes(){
         () => axios.get("https://notesappserver.herokuapp.com/api/users/dashboard", {
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken")
-                }}).then(res => res.data.data)
-        );
+                }}).then(res => res.data.data),
+        )
+
 }
