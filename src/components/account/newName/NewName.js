@@ -82,7 +82,6 @@ const NewName = () => {
       }else{
           axios.post("https://notesappserver.herokuapp.com/api/users/changename", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
               .then(res => {
-                  console.log(res);
                   if(res.data.errors.length > 0){
                       setErrMsg(res.error);
                   }else{

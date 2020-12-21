@@ -1,9 +1,8 @@
 import React,{useRef} from 'react';
-import styled from 'styled-components'
-import axios from "axios";
-import {useHistory} from "react-router-dom";
+import styled from 'styled-components';
 import {useDispatch, useSelector} from "react-redux";
-import {loadingFalse, loadingTrue, setMove} from "../../../redux";
+import {loadingTrue} from "../../../redux";
+import {useAdd} from "../../../hooks/useAdd";
 
 const Container = styled.button`
   display: ${props => props.edit ? 'none' : 'block'};
@@ -39,21 +38,14 @@ const Container = styled.button`
   }
 `;
 const SendBtn = ({edit}) => {
-    const history = useHistory();
     const dispatch = useDispatch();
     const data = useSelector(state => state.note);
     const btnRef = useRef(null);
+    const {mutate} = useAdd();
     const sendData = () => {
         btnRef.current.setAttribute("disabled","disabled");//btn is only once click to avoid multiple add
         dispatch(loadingTrue());//turn on loading screen when note is sending and turn off when its over
-        axios.post("https://notesappserver.herokuapp.com/api/users/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
-            .then(res => {
-                localStorage.removeItem('noteSave');// delete own style note
-                history.push("/dashboard");
-                dispatch(setMove(0));
-                dispatch(loadingFalse());
-            })
-            .catch(err => console.log(err));
+        mutate(data); //send data to usemutation react-query
     };
     return (
         <Container ref={btnRef} edit={edit} onClick={sendData}>Add</Container>
