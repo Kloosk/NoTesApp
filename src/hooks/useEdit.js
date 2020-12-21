@@ -12,5 +12,9 @@ export default function useEdit(id){
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken"),
                     'id': id
-                }}).then(res => dispatch(setObj(res.data.data)))
+                }}).then(res => res.data.data)
+        ,{
+            onSuccess: async (data) => await dispatch(setObj(data)),
+            refetchOnWindowFocus: false
+        }
     )}

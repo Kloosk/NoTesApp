@@ -4,7 +4,6 @@ import {useHistory} from "react-router-dom";
 import {useDispatch} from "react-redux";
 import {loadingFalse} from "../redux";
 
-
 export const useEditUpdate = () => {
     const queryClient = useQueryClient();
     const history = useHistory();

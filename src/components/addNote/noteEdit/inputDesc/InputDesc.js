@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
 import {rightTrue, setDesc, setMove} from "../../../../redux";
@@ -23,6 +23,7 @@ const Container = styled(Textarea)`
 const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
     const {textSize,textColor,textBg,font,text,textTransform} = useSelector(state => state.note);
+    const [temp,setTemp] = useState('');
     const handleChange = e => {
         dispatch(setDesc(e.target.value));
     };
@@ -30,18 +31,21 @@ const InputDesc = ({edit}) => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
     };
-    if(edit){
-        return (
-            <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                       textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text} maxLength="800"
-                       onBlur={handleChange}/>
+    useEffect(() => {
+        setTemp(text);
+    },[text]);
+    return(
+        <>
+            {edit ? (
+                <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                               textsize={textSize} textcolor={textColor} textbg={textBg} value={temp} maxLength="800"
+                               onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
+            ):(
+                <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                           textsize={textSize} textcolor={textColor} textbg={textBg} placeholder="Your text" maxLength="800"
+                           onBlur={handleChange}/>
+            )}
+        </>
         )
-    }else {
-        return (
-            <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                       textsize={textSize} textcolor={textColor} textbg={textBg} placeholder="Your text" maxLength="800"
-                       onBlur={handleChange}/>
-        )
-    }
 };
 export default InputDesc
