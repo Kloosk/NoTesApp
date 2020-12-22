@@ -6,7 +6,7 @@ import StepTwice from "./stepTwo/stepTwice";
 import StepThird from "./stepThird/stepThird";
 import StepFourth from "./stepFourth/StepFourth";
 import {useDispatch, useSelector} from "react-redux";
-import {leftFalse, leftTrue, rightFalse, rightTrue, setMove} from "../../../redux";
+import {emojiClose, leftFalse, leftTrue, rightFalse, rightTrue, setMove} from "../../../redux";
 
 const ContainerMobile = styled.div`
   width: 500vw;
@@ -100,7 +100,7 @@ const NoteOptions = ({edit}) => {
                 <StepFourth move={move} edit={edit}/>
             </ContainerMobile>
 
-            <Container>
+            <Container onClick={() => {dispatch(emojiClose())}}>
                 <StepFirst move={move}/>
                 <StepTwice move={move}/>
                 <StepThird move={move}/>

@@ -36,7 +36,6 @@ const Container = styled.div`
 `;
 const PublicNotes = () => {
     const {data,status} = usePublic();
-    console.log(data);
     const dispatch = useDispatch();
     const closeMenu = () => {
         dispatch(dashClose());

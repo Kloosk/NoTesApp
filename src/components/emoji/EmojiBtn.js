@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import Emoji from "./Emoji";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {emojiOpen} from "../../redux";
 
 const Container = styled.div`
