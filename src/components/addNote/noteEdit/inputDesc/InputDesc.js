@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
-import {rightTrue, setDesc, setMove} from "../../../../redux";
+import {focusDesc, rightTrue, setDesc, setMove} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
 const Container = styled(Textarea)`
@@ -27,6 +27,7 @@ const InputDesc = ({edit}) => {
     const handleMove = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
+        dispatch(focusDesc());
     };
     useEffect(() => {
         setTemp(text);

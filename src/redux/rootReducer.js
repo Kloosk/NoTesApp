@@ -10,6 +10,7 @@ import menuDesktopReducer from "./menuDesktop/menuDesktopReducer";
 import toUseReducer from "./touse/ToUseReducer";
 import loadingAddReducer from "./showLoadingAdd/showLoadingAddReducer";
 import emojiReducer from "./emoji/EmojiReducer";
+import emojiFocusReducer from "./emojiFocus/emojiFocusReducer";
 
 const rootReducer = combineReducers({
     startnow: startNowReducer,
@@ -23,6 +24,7 @@ const rootReducer = combineReducers({
     touse: toUseReducer,
     showLoading: loadingAddReducer,
     emoji: emojiReducer,
+    emojiFocus: emojiFocusReducer,
 });
 
 export default rootReducer

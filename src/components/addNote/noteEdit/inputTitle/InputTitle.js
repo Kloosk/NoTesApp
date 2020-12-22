@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import Textarea from 'react-expanding-textarea'
 import {useDispatch, useSelector} from "react-redux";
-import {rightTrue,setMove, setTitle} from "../../../../redux";
+import {focusTitle, rightTrue, setMove, setTitle} from "../../../../redux";
 
 const Container = styled(Textarea)`
   width: 100%;
@@ -24,12 +24,10 @@ const InputTitle = ({edit}) => {
     const dispatch = useDispatch();
     const {titleColor,titleBg,titleSize,font,title,titleTransform} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
-    const handleChange = e => {
-        dispatch(setTitle(e.target.value));
-    };
     const handleMove = () => {
         dispatch(setMove(-100));
         dispatch(rightTrue());
+        dispatch(focusTitle());
     };
     useEffect(() => {
         setTemp(title);
@@ -39,11 +37,13 @@ const InputTitle = ({edit}) => {
             {edit ? (
                 <Container spellCheck="false" onClick={handleMove} titletransform={titleTransform} font={font}
                            titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} value={temp}
-                           maxLength="50" onBlur={() => dispatch(setTitle(temp))} onChange={e => setTemp(e.target.value)}/>
+                           maxLength="50" onBlur={() => dispatch(setTitle(temp))}
+                           onChange={e => setTemp(e.target.value)}/>
             ) : (
                 <Container spellCheck="false" onClick={handleMove} titletransform={titleTransform} font={font}
                            titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} placeholder="Title"
-                           maxLength="50" onBlur={handleChange}/>
+                           value={temp} maxLength="50" onBlur={() => dispatch(setTitle(temp))}
+                           onChange={e => setTemp(e.target.value)}/>
             )}
         </>
     )

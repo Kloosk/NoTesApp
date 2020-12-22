@@ -18,10 +18,9 @@ const Container = styled.div`
   }
 `;
 const NoteEdit = ({edit}) => {
-    const dispatch = useDispatch();
     const border = useSelector(state => state.note.border);
     return (
-        <Container border={border} onClick={() => {dispatch(emojiClose())}}>
+        <Container border={border} >
             <InputTitle edit={edit}/>
             <InputDesc edit={edit}/>
         </Container>

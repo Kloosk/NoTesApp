@@ -8,3 +8,4 @@ export {menuDesktopClose,menuDesktopOpen} from './menuDesktop/menuDesktopActions
 export {TouseFalse,TouseTrue} from './touse/ToUseActions'
 export {loadingFalse,loadingTrue} from './showLoadingAdd/showLoadingAddActions'
 export {emojiClose,emojiOpen} from './emoji/EmojiActions'
+export {focusDesc,focusTitle} from './emojiFocus/emojiFocusActions'

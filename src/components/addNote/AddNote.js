@@ -13,6 +13,7 @@ import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import EmojiBtn from "../emoji/EmojiBtn";
+import NoteToolbar from "../../noteToolbar/noteToolbar";
 
 const Div = styled.div`
   position: relative;
@@ -77,7 +78,8 @@ const AddNote = () => {
     };
     const closeMenu = () => {
         dispatch(dashClose());
-        dispatch(menuDesktopClose())
+        dispatch(menuDesktopClose());
+        dispatch(emojiClose());
     };
     return (
        load ? <Div>
@@ -85,12 +87,12 @@ const AddNote = () => {
             <Logo/>
             <Menu num={1}/>
             <Nav num={1}/>
+            <NoteToolbar/>
             <div onClick={closeMenu}>
                 <Desktop><StepZeroDesktop/></Desktop>
                 <Container onClick={handleClick}>
                     <NoteEdit/>
                     <NoteOptions/>
-                    <EmojiBtn/>
                 </Container>
             </div>
         </Div> : <Loading/>
