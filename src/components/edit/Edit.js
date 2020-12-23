@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, setObj} from "../../redux";
+import {dashClose, emojiClose, fontOff, setObj} from "../../redux";
 import {useParams} from "react-router-dom";
 import Logo from "../logo/Logo";
 import Menu from "../menu/Menu";
@@ -13,6 +13,7 @@ import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import useEdit from "../../hooks/useEdit";
+import NoteToolbar from "../../noteToolbar/noteToolbar";
 
 const Bg = styled.div`
   position: relative;
@@ -69,6 +70,7 @@ const Edit = () => {
     const font = useSelector(state => state.fontmenu.menu);
     const handleClick = () => {
         dispatch(dashClose()); // close mobile menu
+        dispatch(emojiClose());
         if(font) dispatch(fontOff());
     };
     return (
@@ -79,6 +81,7 @@ const Edit = () => {
                     <Logo/>
                     <Menu/>
                     <Nav/>
+                    <NoteToolbar/>
                     <Desktop>
                         <SubmitEdit edit={true}/>
                     </Desktop>

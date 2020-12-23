@@ -3,7 +3,16 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, emojiClose, fontOff, menuDesktopClose, setTemplate, TouseFalse} from "../../redux";
+import {
+    dashClose,
+    emojiClose,
+    fontOff,
+    menuDesktopClose,
+    setDesc,
+    setTemplate,
+    setTitle,
+    TouseFalse
+} from "../../redux";
 import Menu from "../menu/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
@@ -69,8 +78,13 @@ const AddNote = () => {
             dispatch(setTemplate(obj));
         }else if(toUse === false){
             dispatch(setTemplate(genereateOne()));
+            dispatch(setDesc(""));
+            dispatch(setTitle(""));
+        }else if(toUse){
+            dispatch(TouseFalse());
+            dispatch(setDesc(""));
+            dispatch(setTitle(""));
         }
-        toUse && dispatch(TouseFalse());
         setLoad(true);
     },[]);
     const handleClick = () => {
