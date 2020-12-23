@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components'
 import InputTitle from "./inputTitle/InputTitle";
 import InputDesc from "./inputDesc/InputDesc";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {emojiClose} from "../../../redux";
 
 const Container = styled.div`
   width: 80vw;
