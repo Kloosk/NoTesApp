@@ -13,7 +13,7 @@ import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import EmojiBtn from "../emoji/EmojiBtn";
-import NoteToolbar from "../../noteToolbar/noteToolbar";
+import NoteToolbar from "../noteToolbar/noteToolbar";
 
 const Div = styled.div`
   position: relative;

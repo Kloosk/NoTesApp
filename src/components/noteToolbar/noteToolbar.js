@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import EmojiBtn from "../components/emoji/EmojiBtn";
+import EmojiBtn from "../emoji/EmojiBtn";
 
 const Container = styled.div`
   position: absolute;

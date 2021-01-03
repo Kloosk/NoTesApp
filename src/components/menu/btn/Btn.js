@@ -4,11 +4,12 @@ import {useDispatch, useSelector} from "react-redux";
 import {dashClose, dashOpen} from "../../../redux";
 
 const Container = styled.button`
-  padding: 5px;
+  padding: 3px;
   background: transparent;
   cursor: pointer;
   border: none;
   z-index: 2;
+  margin-left: 3px;
 `;
 const Svg = styled.svg`
   width: 40px;

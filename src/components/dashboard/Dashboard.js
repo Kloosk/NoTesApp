@@ -11,6 +11,7 @@ import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
 import useNotes from "../../hooks/useNotes";
+import Search from "../search/Search";
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
