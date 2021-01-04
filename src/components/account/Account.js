@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
-import Menu from "../menu/Menu";
+import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";

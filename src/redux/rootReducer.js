@@ -11,6 +11,7 @@ import toUseReducer from "./touse/ToUseReducer";
 import loadingAddReducer from "./showLoadingAdd/showLoadingAddReducer";
 import emojiReducer from "./emoji/EmojiReducer";
 import emojiFocusReducer from "./emojiFocus/emojiFocusReducer";
+import searchInputReducer from "./searchInput/searchInputReducer";
 
 const rootReducer = combineReducers({
     startnow: startNowReducer,
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
     showLoading: loadingAddReducer,
     emoji: emojiReducer,
     emojiFocus: emojiFocusReducer,
+    inputSentence: searchInputReducer,
 });
 
 export default rootReducer

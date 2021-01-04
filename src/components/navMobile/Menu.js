@@ -19,7 +19,7 @@ const Container = styled.nav`
 const Menu = ({num}) => {
     return (
         <Container>
-            <Search/>
+            {(num === 2 || num === 3) && <Search/> /*if its dashboard or publicnotes show search icon*/}
             <Btn/>
             <SubMenu num={num}/>
         </Container>

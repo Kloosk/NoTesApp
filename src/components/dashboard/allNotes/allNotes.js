@@ -18,14 +18,21 @@ const Welcome = styled.h1`
   color: #F9B613;
 `;
 const AllNotes = ({data}) => {
-    const name = useSelector(state => state.auth.user.name);
-    const [width,setWidth] = useState(null);
+    const name = useSelector(state => state.auth.user.name);//username
+    const inputSentence = useSelector(state => state.inputSentence.sentence);//search input value
+    const [searchData,setSearchData] = useState(data); //copy data to operation on display array
+    const [width,setWidth] = useState(null);//width of windows
     useEffect(() => {
         setWidth(window.innerWidth);
         window.addEventListener("resize",() => {
             setWidth(window.innerWidth);
         });
     },[]);
+    useEffect(() => {
+            const toLower = inputSentence.toLowerCase();
+            setSearchData(data.filter(el => el.title.toLowerCase().includes(toLower) || el.text.toLowerCase().includes(toLower)));
+    },[inputSentence]);
+
     const bigFirstLetter = name => {
         return name.charAt(0).toUpperCase() + name.slice(1);
     };
@@ -34,7 +41,7 @@ const AllNotes = ({data}) => {
             <Welcome>Hi {bigFirstLetter(name)}</Welcome>
             {width > 992 && (
                 <Container breakpointCols={{default: 3}} columnClassName="">
-                    {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
+                    {searchData.map(el => <Note key={el.num} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
                                                titleSize={el.titleSize} num={el.num}/>)}
@@ -42,7 +49,7 @@ const AllNotes = ({data}) => {
             )}
             {(width > 768 && width <= 992) && (
                 <Container breakpointCols={{default: 2}} columnClassName="">
-                    {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                    {searchData.map(el => <Note key={el.num} title={el.title} text={el.text} titleColor={el.titleColor}
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
@@ -51,7 +58,7 @@ const AllNotes = ({data}) => {
             )}
             {width <= 768 && (
                 <Container breakpointCols={{default: 1}} columnClassName="">
-                    {data.map((el, i) => <Note key={i} title={el.title} text={el.text} titleColor={el.titleColor}
+                    {searchData.map(el => <Note key={el.num} title={el.title} text={el.text} titleColor={el.titleColor}
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}

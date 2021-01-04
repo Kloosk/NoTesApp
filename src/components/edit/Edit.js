@@ -1,10 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
-import {dashClose, fontOff, setObj} from "../../redux";
+import {dashClose, fontOff} from "../../redux";
 import {useParams} from "react-router-dom";
 import Logo from "../logo/Logo";
-import Menu from "../menu/Menu";
+import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import SubmitEdit from "./submitEdit/SubmitEdit";
 import NoteEdit from "../addNote/noteEdit/NoteEdit";

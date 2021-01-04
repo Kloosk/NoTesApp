@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 import {dashClose, menuDesktopClose} from "../../redux";
 import Logo from "../logo/Logo";
-import Menu from "../menu/Menu";
+import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
 import AllPublic from "./allPublic/allPublic";

@@ -4,14 +4,13 @@ import {useDispatch, useSelector} from "react-redux";
 import None from "./none/None";
 import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
-import Menu from "../menu/Menu";
-import {dashClose, menuDesktopClose} from "../../redux";
+import Menu from "../navMobile/Menu";
+import {dashClose, menuDesktopClose, setSentence} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
 import useNotes from "../../hooks/useNotes";
-import Search from "../search/Search";
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
@@ -42,6 +41,7 @@ const Dashboard = () => {
     const [select,setSelect] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
+        dispatch(setSentence(""));
         if(localStorage.getItem('selecttext') !== null){
             setSelect(true);
         }else setSelect(false);

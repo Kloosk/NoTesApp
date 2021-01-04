@@ -4,7 +4,7 @@ import Logo from "../logo/Logo";
 import NoteEdit from "./noteEdit/NoteEdit";
 import {useDispatch, useSelector} from "react-redux";
 import {dashClose, emojiClose, fontOff, menuDesktopClose, setTemplate, TouseFalse} from "../../redux";
-import Menu from "../menu/Menu";
+import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
@@ -12,7 +12,6 @@ import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
-import EmojiBtn from "../emoji/EmojiBtn";
 import NoteToolbar from "../noteToolbar/noteToolbar";
 
 const Div = styled.div`

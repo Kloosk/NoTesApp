@@ -1,0 +1,1 @@
+export const SET_SENTENCE = 'SET_SENTENCE';
