@@ -5,7 +5,7 @@ import None from "./none/None";
 import Logo from "../logo/Logo";
 import AllNotes from "./allNotes/allNotes";
 import Menu from "../navMobile/Menu";
-import {dashClose, menuDesktopClose, setSentence} from "../../redux";
+import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
@@ -49,7 +49,8 @@ const Dashboard = () => {
 
     const closeMenu = () => {
         dispatch(dashClose());
-        dispatch(menuDesktopClose())
+        dispatch(menuDesktopClose());
+        dispatch(setShow(false));
     };
     return (
         <>

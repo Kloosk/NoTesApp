@@ -4,6 +4,7 @@ import Note from "./note/Note";
 import { useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import Loading from "../../loading/Loading";
+import {searchEngine} from "../../search/SearchEngine";
 
 const Container = styled(Masonry)`
   display: flex;
@@ -29,8 +30,7 @@ const AllNotes = ({data}) => {
         });
     },[]);
     useEffect(() => {
-            const toLower = inputSentence.toLowerCase();
-            setSearchData(data.filter(el => el.title.toLowerCase().includes(toLower) || el.text.toLowerCase().includes(toLower)));
+        setSearchData(searchEngine(data,inputSentence));//searching function
     },[inputSentence]);
 
     const bigFirstLetter = name => {

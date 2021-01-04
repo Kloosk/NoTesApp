@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
-import {dashClose, menuDesktopClose} from "../../redux";
+import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Logo from "../logo/Logo";
 import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
@@ -39,8 +39,13 @@ const PublicNotes = () => {
     const dispatch = useDispatch();
     const closeMenu = () => {
         dispatch(dashClose());
-        dispatch(menuDesktopClose())
+        dispatch(menuDesktopClose());
+        dispatch(setShow(false));
+
     };
+    useEffect(() => {
+        dispatch(setSentence(""));
+    },[]);
     return (
         <>
             {status === "loading" && <Loading/>}

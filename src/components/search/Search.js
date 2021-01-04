@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styled from 'styled-components'
-import {useDispatch} from "react-redux";
-import {setSentence} from "../../redux/searchInput/searchInputActions";
+import {useDispatch, useSelector} from "react-redux";
+import {setSentence, setShow} from "../../redux/searchInput/searchInputActions";
 
 const Container = styled.div`
   position: relative;
@@ -59,13 +59,13 @@ const Input = styled.input`
   }
 `;
 const Search = () => {
-    const [show,setShow] = useState(false);
-    const showSearchBar = () => {
-        setShow(!show);
-    };
     const dispatch = useDispatch();
+    const show = useSelector(state => state.inputSentence.show);//search input show value true/false
+    const showSearchBar = () => {
+        dispatch(setShow(!show));
+    };
     const handleInput = e => {
-            dispatch(setSentence(e.target.value));
+        dispatch(setSentence(e.target.value));
     };
 
     return (
