@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
 import {setSentence, setShow} from "../../redux/searchInput/searchInputActions";
@@ -7,13 +7,14 @@ const Container = styled.div`
   position: relative;
   top: 3px;
   height: 40px;
-  width: 250px;
+  width: 220px;
   overflow: hidden;
   @media(min-width: 768px){
     position: relative;
     top: 0;
     right: 0;
     height: 50px;
+    width: 350px;
   }
 `;
 const Btn = styled.button`
@@ -46,16 +47,19 @@ const Input = styled.input`
   border-radius: 25px;
   height: 40px;
   border: 2px solid #F9B613;
-  padding: 0 7px;
+  padding: 0 40px 0 7px;
   font-size: 1.1rem;
-  width: 250px;
+  width: 220px;
   transition: transform 0.5s ease;
-  transform: ${props => props.show ? 'translateX(0)' : 'translateX(250px)'};
+  transform: ${props => props.show ? 'translateX(0)' : 'translateX(220px)'};
   &:focus{
     background: #fff;
   }
   @media(min-width: 768px){
     height: 50px;
+    width: 350px;
+    transform: ${props => props.show ? 'translateX(0)' : 'translateX(350px)'};
+
   }
 `;
 const Search = () => {

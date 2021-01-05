@@ -13,14 +13,21 @@ const Container = styled(Masonry)`
 const AllPublic= ({data}) => {
     const [width,setWidth] = useState(null);
     const inputSentence = useSelector(state => state.inputSentence.sentence);//search input value
+    const sortMethod = useSelector(state => state.sort.method); // method of sort true=newest or false=oldest
     const [searchData,setSearchData] = useState(data); //copy data to operation on display array
-    useEffect(() => {
+    useEffect(() => {//initial effect
         setWidth(window.innerWidth);
         window.addEventListener("resize",() => {
           setWidth(window.innerWidth);
         });
     },[]);
-    useEffect(() => {
+
+    useEffect(() => { //sort effect
+        //statment for first time launch
+        data !== searchData && setSearchData(searchData.reverse());//reverse data
+    },[sortMethod]);
+
+    useEffect(() => {//search effect
         setSearchData(searchEngine(data,inputSentence));//searching function
     },[inputSentence]);
     return(

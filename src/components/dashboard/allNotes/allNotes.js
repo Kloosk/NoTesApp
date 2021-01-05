@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import Note from "./note/Note";
 import { useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
-import Loading from "../../loading/Loading";
 import {searchEngine} from "../../search/SearchEngine";
 
 const Container = styled(Masonry)`
@@ -21,15 +20,22 @@ const Welcome = styled.h1`
 const AllNotes = ({data}) => {
     const name = useSelector(state => state.auth.user.name);//username
     const inputSentence = useSelector(state => state.inputSentence.sentence);//search input value
+    const sortMethod = useSelector(state => state.sort.method); // method of sort true=newest or false=oldest
     const [searchData,setSearchData] = useState(data); //copy data to operation on display array
     const [width,setWidth] = useState(null);//width of windows
-    useEffect(() => {
+    useEffect(() => {//initial effect
         setWidth(window.innerWidth);
         window.addEventListener("resize",() => {
             setWidth(window.innerWidth);
         });
     },[]);
-    useEffect(() => {
+
+    useEffect(() => { //sort effect
+        //statment for first time launch
+        data !== searchData && setSearchData(searchData.reverse());//reverse data
+    },[sortMethod]);
+
+    useEffect(() => {//search effect
         setSearchData(searchEngine(data,inputSentence));//searching function
     },[inputSentence]);
 
