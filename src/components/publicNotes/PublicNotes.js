@@ -52,7 +52,7 @@ const PublicNotes = () => {
             {status === "error" && <p>Error in fetching data</p>}
             {status === "success" && (
                 <Div>
-                    <Logo/>
+                    <Logo path="/dashboard"/>
                     <Menu num={3}/>
                     <Nav num={3}/>
                     <Container onClick={closeMenu}>

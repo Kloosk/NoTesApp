@@ -50,7 +50,7 @@ const Svg = styled.svg`
 const Authors = () => {
     return (
         <>
-            <Logo/>
+            <Logo path="/"/>
             <Container>
                 <H1>Authors</H1>
                 <Author>

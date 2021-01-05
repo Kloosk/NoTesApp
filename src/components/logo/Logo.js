@@ -20,10 +20,10 @@ const Img = styled.img`
     width: 210px;
   }
 `;
-const Logo = () => {
+const Logo = ({path}) => {
     return (
         <Container role="banner">
-            <Linkk to="/">
+            <Linkk to={path}>
                 <Img src={logo} alt="logo"/>
             </Linkk>
         </Container>

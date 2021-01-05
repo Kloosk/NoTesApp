@@ -156,7 +156,7 @@ const Login = () => {
     };
     return (
         isAuthenticated ? null : <>
-            <Logo/>
+            <Logo path="/"/>
             <LinkReg/>
             <Container>
                 <Title/>

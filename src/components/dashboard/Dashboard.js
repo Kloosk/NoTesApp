@@ -56,7 +56,7 @@ const Dashboard = () => {
         <>
         {status === "success" && (
             <>
-                <Logo/>
+                <Logo path="/dashboard"/>
                 <AlertDelete/>
                 <Nav num={2}/>
                 <Menu num={2}/>

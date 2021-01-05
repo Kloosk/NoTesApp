@@ -27,7 +27,7 @@ const Start = () => {
         <Container>
             <Video/>
             <Btn/>
-            <Logo/>
+            <Logo path="/"/>
             <NoteSection/>
             <LogAndReg/>
             <AuthorsLink/>

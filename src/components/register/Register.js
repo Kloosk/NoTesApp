@@ -172,7 +172,7 @@ const Register = () => {
     },[isAuthenticated]);
     return (
         isAuthenticated ? null : <>
-            <Logo/>
+            <Logo path="/"/>
             <LinkLogin/>
             <Container>
                 <Title/>

@@ -56,7 +56,7 @@ const Account = () => {
     };
     return (
         <Div>
-            <Logo/>
+            <Logo path="/dashboard"/>
             <Menu num={4}/>
             <Nav num={4}/>
             <div onClick={closeMenu}>

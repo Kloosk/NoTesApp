@@ -83,7 +83,7 @@ const AddNote = () => {
     return (
        load ? <Div>
             <LoadingAdd/>
-            <Logo/>
+            <Logo path="/dashboard"/>
             <Menu num={1}/>
             <Nav num={1}/>
             <NoteToolbar/>

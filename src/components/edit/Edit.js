@@ -76,7 +76,7 @@ const Edit = () => {
             {status === "success" && (
                 <Bg>
                     <LoadingAdd/>
-                    <Logo/>
+                    <Logo path="/dashboard"/>
                     <Menu/>
                     <Nav/>
                     <Desktop>
