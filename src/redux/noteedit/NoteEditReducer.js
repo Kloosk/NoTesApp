@@ -13,7 +13,8 @@ import {
     SET_TITLE_TRANSFORM,
     SET_STATUS,
     SET_OBJ,
-    SET_TEMPLATE
+    SET_TEMPLATE,
+    SET_BORDER_SIZE
 } from "./NoteEditTypes";
 
 const initialState = {
@@ -24,6 +25,7 @@ const initialState = {
     textColor:"#000",
     textBg:"#fff",
     border: "#000",
+    borderSize: 3,
     font:"Lato",
     textSize: 1.0,
     titleSize: 1.7,
@@ -116,6 +118,12 @@ const NoteEditReducer = (state=initialState,action) => {
             return {
                 ...state,
                 ...action.payload
+            }
+        }
+        case SET_BORDER_SIZE:{
+            return{
+                ...state,
+                borderSize: state.borderSize+action.payload
             }
         }
         case SET_OBJ: return action.payload;

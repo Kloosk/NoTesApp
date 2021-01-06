@@ -6,7 +6,9 @@ import Textarea from "react-expanding-textarea";
 
 const Container = styled.div`
   min-height: 200px;
-  border: 2px solid ${props => props.border};
+   border-style: solid;
+  border-color: ${props => props.border};
+  border-width: ${props => props.borderSize}px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -72,9 +74,9 @@ const Title = styled(Textarea)`
   min-height: 30px;
   overflow-x: hidden;
 `;
-const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,num,titleTransform,textTransform}) => {
+const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,num,titleTransform,textTransform}) => {
     return (
-        <Container border={border}>
+        <Container border={border} borderSize={borderSize}>
             <Options>
                 <DeleteBtn id={num}/>
                 <Link to={`/edit/${num}`}>

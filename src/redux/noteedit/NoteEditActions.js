@@ -13,7 +13,8 @@ import {
     SET_TITLE_COLOR,
     SET_TITLE_SIZE,
     SET_TEMPLATE,
-    SET_STATUS
+    SET_STATUS,
+    SET_BORDER_SIZE
 } from "./NoteEditTypes";
 
 export const setDesc = payload => {
@@ -25,6 +26,12 @@ export const setDesc = payload => {
 export const setBorder= payload => {
     return{
         type: SET_BORDER,
+        payload
+    }
+};
+export const setBorderSize= payload => {
+    return{
+        type: SET_BORDER_SIZE,
         payload
     }
 };

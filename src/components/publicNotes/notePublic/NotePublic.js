@@ -4,7 +4,9 @@ import Textarea from "react-expanding-textarea";
 
 const Container = styled.div`
   min-height: 200px;
-  border: 2px solid ${props => props.border};
+  border-style: solid;
+  border-color: ${props => props.border};
+  border-width: ${props => props.borderSize}px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -48,9 +50,9 @@ const Name = styled.p`
   font-size: 1.4rem;
   color: ${props => props.color};
 `;
-const NotePublic = ({title,text,titleColor,titleBg,textColor,textBg,border,font,textSize,titleSize,titleTransform,textTransform,name}) => {
+const NotePublic = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,titleTransform,textTransform,name}) => {
     return (
-        <Container border={border}>
+        <Container border={border} borderSize={borderSize}>
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
             <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
             <Name color={textColor}>{name}</Name>

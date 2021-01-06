@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
 import {fontOff, fontOn, setBorder, setFont, setStatus }from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
+import BorderSize from "./BorderSize";
 
 const Container = styled.div`
  left: 300vw;
@@ -163,6 +164,7 @@ const StepThird = ({move}) => {
                 <P><Span>B</Span>order</P>
                 <BtnColor color={border} onClick={handleColor}/>
                 <ColorPicker show={show} func={setBorder}/>
+                <BorderSize/>
             </Flex>
             <Flex>
                 <P><Span>F</Span>ont</P>

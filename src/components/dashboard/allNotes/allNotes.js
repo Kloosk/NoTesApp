@@ -50,7 +50,7 @@ const AllNotes = ({data}) => {
                     {searchData.map(el => <Note key={el.num} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
                 </Container>
             )}
             {(width > 768 && width <= 992) && (
@@ -59,7 +59,7 @@ const AllNotes = ({data}) => {
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
                 </Container>
             )}
             {width <= 768 && (
@@ -68,7 +68,7 @@ const AllNotes = ({data}) => {
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
                 </Container>
             )}
         </>
