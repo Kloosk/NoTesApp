@@ -14,3 +14,4 @@ export const SET_STATUS = 'SET_STATUS';
 export const SET_OBJ = 'SET_OBJ';
 export const SET_TEMPLATE = 'SET_TEMPLATE';
 export const SET_BORDER_SIZE = 'SET_BORDER_SIZE';
+export const SET_ALIGN_DESC = 'SET_ALIGN_DESC';

@@ -20,6 +20,7 @@ const Desc = styled(Textarea)`
   font-size: ${props => props.textsize}rem;
   font-family: ${props => props.font};
   text-transform: ${props => props.texttransform};
+  text-align: ${props => props.aligndesc};
   border: none;
   resize: none;
   outline: none;
@@ -50,11 +51,11 @@ const Name = styled.p`
   font-size: 1.4rem;
   color: ${props => props.color};
 `;
-const NotePublic = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,titleTransform,textTransform,name}) => {
+const NotePublic = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,titleTransform,textTransform,alignDesc,name}) => {
     return (
         <Container border={border} borderSize={borderSize}>
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
+            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} defaultValue={text}/>
             <Name color={textColor}>{name}</Name>
         </Container>
     );

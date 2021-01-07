@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import ColorPicker from "../../../colorPicker/ColorPicker";
-import {setDescBg, setDescColor, setDescSize, setTextTransform} from "../../../../redux";
+import {setAlignDesc, setDescBg, setDescColor, setDescSize, setTextTransform} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import LinearPicker from "../../../linearPicker/LinearPicker";
 
@@ -98,6 +98,32 @@ const FlexTransform = styled.div`
 const Divide = styled.div`
   display: flex;
 `;
+const BtnAlign = styled.button`
+  border: 1px solid #F9B613;
+  padding: 2px;
+  background: #E6E7E1;
+  cursor: pointer;
+  margin-left: 7px;
+  :hover{
+    transform: translateY(1px);
+  }
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 0;
+    &:nth-child(3){
+      margin: 0 7px;
+    }
+  }
+`;
+const Svg = styled.svg`
+  width: 30px;
+  height: 30px;
+  color: #F9B613;
+  @media (min-width: 768px) {
+      width: 45px;
+      height: 30px;
+  }
+`;
 const StepTwice = ({move}) => {
     const dispatch = useDispatch();
     const {textSize,textBg,textTransform} = useSelector(state => state.note);
@@ -165,6 +191,12 @@ const StepTwice = ({move}) => {
                 <BtnSize onClick={descDec}>-</BtnSize>
                 <Num>{textSize.toFixed(1)}</Num>
                 <BtnSize onClick={descInc}>+</BtnSize>
+            </Flex>
+            <Flex>
+                <P><Span>A</Span>lign</P>
+                <BtnAlign onClick={() => dispatch(setAlignDesc("left"))}><Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="align-left" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M12.83 352h262.34A12.82 12.82 0 0 0 288 339.17v-38.34A12.82 12.82 0 0 0 275.17 288H12.83A12.82 12.82 0 0 0 0 300.83v38.34A12.82 12.82 0 0 0 12.83 352zm0-256h262.34A12.82 12.82 0 0 0 288 83.17V44.83A12.82 12.82 0 0 0 275.17 32H12.83A12.82 12.82 0 0 0 0 44.83v38.34A12.82 12.82 0 0 0 12.83 96zM432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"></path></Svg></BtnAlign>
+                <BtnAlign onClick={() => dispatch(setAlignDesc("center"))}><Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="align-center" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M432 160H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0 256H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM108.1 96h231.81A12.09 12.09 0 0 0 352 83.9V44.09A12.09 12.09 0 0 0 339.91 32H108.1A12.09 12.09 0 0 0 96 44.09V83.9A12.1 12.1 0 0 0 108.1 96zm231.81 256A12.09 12.09 0 0 0 352 339.9v-39.81A12.09 12.09 0 0 0 339.91 288H108.1A12.09 12.09 0 0 0 96 300.09v39.81a12.1 12.1 0 0 0 12.1 12.1z"></path></Svg></BtnAlign>
+                <BtnAlign onClick={() => dispatch(setAlignDesc("right"))}><Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="align-right" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 224h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm416 192H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm3.17-384H172.83A12.82 12.82 0 0 0 160 44.83v38.34A12.82 12.82 0 0 0 172.83 96h262.34A12.82 12.82 0 0 0 448 83.17V44.83A12.82 12.82 0 0 0 435.17 32zm0 256H172.83A12.82 12.82 0 0 0 160 300.83v38.34A12.82 12.82 0 0 0 172.83 352h262.34A12.82 12.82 0 0 0 448 339.17v-38.34A12.82 12.82 0 0 0 435.17 288z"></path></Svg></BtnAlign>
             </Flex>
             <Flex>
                 <P><Span>T</Span>ransform</P>

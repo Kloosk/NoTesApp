@@ -52,6 +52,7 @@ const Desc = styled(Textarea)`
   font-size: ${props => props.textsize}rem;
   font-family: ${props => props.font};
   text-transform: ${props => props.texttransform};
+  text-align: ${props => props.aligndesc};
   border: none;
   resize: none;
   outline: none;
@@ -74,7 +75,7 @@ const Title = styled(Textarea)`
   min-height: 30px;
   overflow-x: hidden;
 `;
-const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,num,titleTransform,textTransform}) => {
+const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,num,titleTransform,textTransform,alignDesc}) => {
     return (
         <Container border={border} borderSize={borderSize}>
             <Options>
@@ -87,7 +88,7 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,
             </Options>
 
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} defaultValue={text}/>
+            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} defaultValue={text}/>
         </Container>
     );
 };

@@ -37,7 +37,8 @@ const AllPublic= ({data}) => {
                     {searchData.map(el => <NotePublic key={el.num} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
                                                      titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                      border={el.border} font={el.font} textSize={el.textSize}
-                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}/>)}
+                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}
+                                                     alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
             {(width > 768 && width <= 992) &&(
@@ -46,7 +47,8 @@ const AllPublic= ({data}) => {
                                                      titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                      titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                      border={el.border} font={el.font} textSize={el.textSize}
-                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}/>)}
+                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}
+                                                     alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
             {width <= 768 &&(
@@ -55,7 +57,8 @@ const AllPublic= ({data}) => {
                                                      titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                      titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                      border={el.border} font={el.font} textSize={el.textSize}
-                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}/>)}
+                                                     titleSize={el.titleSize} name={el.name} borderSize={el.borderSize}
+                                                     alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
 

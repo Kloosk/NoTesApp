@@ -11,6 +11,7 @@ const Container = styled(Textarea)`
   font-size: ${props => props.textsize}rem;
   font-family: ${props => props.font};
   text-transform: ${props => props.texttransform};
+  text-align: ${props => props.aligndesc};
   border: none;
   resize: none;
   outline: none;
@@ -22,7 +23,7 @@ const Container = styled(Textarea)`
 `;
 const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
-    const {textSize,textColor,textBg,font,text,textTransform} = useSelector(state => state.note);
+    const {textSize,textColor,textBg,font,text,textTransform,alignDesc} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
     const handleMove = () => {
         dispatch(setMove(-200));
@@ -36,12 +37,14 @@ const InputDesc = ({edit}) => {
         <>
             {edit ? (
                 <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                           textsize={textSize} textcolor={textColor} textbg={textBg} value={temp} maxLength="800"
+                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} value={temp}
+                           maxLength="800"
                            onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             ):(
                 <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
-                           textsize={textSize} textcolor={textColor} textbg={textBg} placeholder="Your text" maxLength="800"
-                           value={temp} onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
+                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
+                           placeholder="Your text" maxLength="800" value={temp}
+                           onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             )}
         </>
         )

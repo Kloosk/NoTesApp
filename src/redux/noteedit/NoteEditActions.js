@@ -14,7 +14,8 @@ import {
     SET_TITLE_SIZE,
     SET_TEMPLATE,
     SET_STATUS,
-    SET_BORDER_SIZE
+    SET_BORDER_SIZE,
+    SET_ALIGN_DESC
 } from "./NoteEditTypes";
 
 export const setDesc = payload => {
@@ -56,6 +57,12 @@ export const setDescSize = payload => {
 export const setFont = payload => {
     return{
         type: SET_FONT,
+        payload
+    }
+};
+export const setAlignDesc = payload => {
+    return{
+        type: SET_ALIGN_DESC,
         payload
     }
 };

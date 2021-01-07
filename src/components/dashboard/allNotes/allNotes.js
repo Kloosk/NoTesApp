@@ -4,6 +4,7 @@ import Note from "./note/Note";
 import { useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import {searchEngine} from "../../search/SearchEngine";
+import NotePublic from "../../publicNotes/notePublic/NotePublic";
 
 const Container = styled(Masonry)`
   display: flex;
@@ -50,7 +51,8 @@ const AllNotes = ({data}) => {
                     {searchData.map(el => <Note key={el.num} title={el.title} text={el.text} titleTransform={el.titleTransform} textTransform={el.textTransform} titleColor={el.titleColor}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}
+                                               alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
             {(width > 768 && width <= 992) && (
@@ -59,7 +61,8 @@ const AllNotes = ({data}) => {
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}
+                                               alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
             {width <= 768 && (
@@ -68,7 +71,8 @@ const AllNotes = ({data}) => {
                                                titleTransform={el.titleTransform} textTransform={el.textTransform}
                                                titleBg={el.titleBg} textColor={el.textColor} textBg={el.textBg}
                                                border={el.border} font={el.font} textSize={el.textSize}
-                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}/>)}
+                                               titleSize={el.titleSize} num={el.num} borderSize={el.borderSize}
+                                               alignDesc={el.alignDesc}/>)}
                 </Container>
             )}
         </>

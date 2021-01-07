@@ -11,3 +11,9 @@ What i learned:<br/>
 -Added search engine,<br/>
 -Added new emoji toolbar,<br/>
 -Optimization for reloading "notes" and "publicnotes"
+
+
+2.1<br/>
+-Added new option: border size,text align,<br/>
+-Added sort button,<br/>
+-Fix logo,<br/>
