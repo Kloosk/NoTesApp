@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import Menu from "../navMobile/Menu";
@@ -6,6 +6,7 @@ import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
 import bg from "../../img/bgReg.jpg";
+import darkbg from "../../img/dark_theme.jpg"
 import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
 import DeleteAcc from "./deleteAcc/DeleteAcc";
@@ -13,7 +14,7 @@ import DeleteAcc from "./deleteAcc/DeleteAcc";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -50,18 +51,22 @@ const H1 = styled.h1`
 `;
 const Account = () => {
     const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
     const closeMenu = () => {
         dispatch(dashClose());
         dispatch(menuDesktopClose())
     };
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     return (
-        <Div>
+        <Div darkmode={darkmode}>
             <Logo path="/dashboard"/>
             <Menu num={4}/>
             <Nav num={4}/>
             <div onClick={closeMenu}>
                 <Container>
-                    <H1>Local settings</H1>
+                    <H1>Settings</H1>
                     <LocalSettings/>
                     <H1>Account</H1>
                     <NewName/>

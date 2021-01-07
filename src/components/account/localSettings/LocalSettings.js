@@ -117,6 +117,7 @@ const LocalSettings = () => {
     const deletealert = useRef(null);
     const selecttext = useRef(null);
     const selectprivate = useRef(null);
+    const darkmode = useRef(null);
 
     useEffect(() => {
         if(localStorage.getItem('autosave') !== null){
@@ -129,6 +130,9 @@ const LocalSettings = () => {
             selecttext.current.checked = true;
         }
         if(localStorage.getItem('statusnote') !== null){
+            selectprivate.current.checked = true;
+        }
+        if(localStorage.getItem('darkmode') !== null){
             selectprivate.current.checked = true;
         }
     },[]);
@@ -163,6 +167,15 @@ const LocalSettings = () => {
         }else{
             localStorage.removeItem('statusnote');
         }
+    };
+
+    const handleDarkMode = () => {
+        if(darkmode.current.checked === true){
+            localStorage.setItem('darkmode','true');
+        }else{
+            localStorage.removeItem('darkmode');
+        }
+
     };
 
     return (
@@ -205,6 +218,16 @@ const LocalSettings = () => {
                 </Label>
                 <More>?
                     <Info>Disabling it keeps your notes always public.</Info>
+                </More>
+            </Element>
+            <Element>
+                <P>Dark mode</P>
+                <Label>
+                    <Input type="checkbox" onClick={handleDarkMode} ref={darkmode} />
+                    <Span></Span>
+                </Label>
+                <More>?
+                    <Info>On/off dark mode.</Info>
                 </More>
             </Element>
         </Container>

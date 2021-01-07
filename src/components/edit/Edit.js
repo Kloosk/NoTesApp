@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
 import {dashClose, fontOff} from "../../redux";
@@ -11,13 +11,14 @@ import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
+import darkbg from "../../img/dark_theme.jpg"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import useEdit from "../../hooks/useEdit";
 
 const Bg = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -64,9 +65,15 @@ const Desktop = styled.div`
 `;
 const Edit = () => {
     const {id} = useParams();
+    const [darkmode,setDarkmode] = useState(false);
     const {status} = useEdit(id);
     const dispatch = useDispatch();
     const font = useSelector(state => state.fontmenu.menu);
+
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
+
     const handleClick = () => {
         dispatch(dashClose()); // close mobile menu
         if(font) dispatch(fontOff());
@@ -74,7 +81,7 @@ const Edit = () => {
     return (
         <>
             {status === "success" && (
-                <Bg>
+                <Bg darkmode={darkmode}>
                     <LoadingAdd/>
                     <Logo path="/dashboard"/>
                     <Menu/>

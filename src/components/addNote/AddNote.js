@@ -10,6 +10,7 @@ import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
+import darkbg from "../../img/dark_theme.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import NoteToolbar from "../noteToolbar/noteToolbar";
@@ -17,7 +18,7 @@ import NoteToolbar from "../noteToolbar/noteToolbar";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -59,10 +60,12 @@ const Desktop = styled.div`
 `;
 const AddNote = () => {
     const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
     const [load,setLoad] = useState(false);
     const toUse = useSelector(state => state.touse.touse);
     const font = useSelector(state => state.fontmenu.menu);
     useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
         const obj = JSON.parse(localStorage.getItem('noteSave'));
         if(obj !== null && toUse === false){
             dispatch(setTemplate(obj));
@@ -81,7 +84,7 @@ const AddNote = () => {
         dispatch(emojiClose());
     };
     return (
-       load ? <Div>
+       load ? <Div darkmode={darkmode}>
             <LoadingAdd/>
             <Logo path="/dashboard"/>
             <Menu num={1}/>

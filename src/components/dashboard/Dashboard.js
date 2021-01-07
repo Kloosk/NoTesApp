@@ -9,14 +9,15 @@ import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
-import bg from "../../img/dark_theme.jpg"
+import darkbg from "../../img/dark_theme.jpg"
+import bg from "../../img/bgReg.jpg"
 import useNotes from "../../hooks/useNotes";
 
 const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -39,12 +40,12 @@ const Dashboard = () => {
     const {data,status} = useNotes();
     const {alert} = useSelector(state => state.alert);
     const [select,setSelect] = useState(false);
+    const [darkmode,setDarkmode] = useState(false);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(setSentence(""));
-        if(localStorage.getItem('selecttext') !== null){
-            setSelect(true);
-        }else setSelect(false);
+        localStorage.getItem('selecttext') !== null && setSelect(true);
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
     },[]);
 
     const closeMenu = () => {
@@ -60,7 +61,7 @@ const Dashboard = () => {
                 <AlertDelete/>
                 <Nav num={2}/>
                 <Menu num={2}/>
-                <Container onClick={closeMenu} select={select}>
+                <Container onClick={closeMenu} select={select} darkmode={darkmode}>
                     {data.length > 0 ? <AllNotes data={data}/> : <None/>}
                 </Container>
                 <Overlay alert={alert}/>

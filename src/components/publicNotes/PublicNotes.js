@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
@@ -6,6 +6,7 @@ import Logo from "../logo/Logo";
 import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
+import darkbg from "../../img/dark_theme.jpg"
 import AllPublic from "./allPublic/allPublic";
 import Loading from "../loading/Loading";
 import usePublic from "../../hooks/usePublic";
@@ -13,7 +14,7 @@ import usePublic from "../../hooks/usePublic";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -36,6 +37,7 @@ const Container = styled.div`
 `;
 const PublicNotes = () => {
     const {data,status} = usePublic();
+    const [darkmode,setDarkmode] = useState(false);
     const dispatch = useDispatch();
     const closeMenu = () => {
         dispatch(dashClose());
@@ -45,13 +47,14 @@ const PublicNotes = () => {
     };
     useEffect(() => {
         dispatch(setSentence(""));
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
     },[]);
     return (
         <>
             {status === "loading" && <Loading/>}
             {status === "error" && <p>Error in fetching data</p>}
             {status === "success" && (
-                <Div>
+                <Div darkmode={darkmode}>
                     <Logo path="/dashboard"/>
                     <Menu num={3}/>
                     <Nav num={3}/>
