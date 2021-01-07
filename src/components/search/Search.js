@@ -26,7 +26,7 @@ const Btn = styled.button`
   height: 40px;
   border: 2px solid #F9B613;
   border-radius: 50%;
-  background: #E8E9E3;
+  background: transparent;
   cursor: pointer;
   @media(min-width: 768px){
       width: 50px;

@@ -4,7 +4,6 @@ import Note from "./note/Note";
 import { useSelector} from "react-redux";
 import Masonry from 'react-masonry-css';
 import {searchEngine} from "../../search/SearchEngine";
-import NotePublic from "../../publicNotes/notePublic/NotePublic";
 
 const Container = styled(Masonry)`
   display: flex;
