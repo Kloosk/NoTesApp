@@ -133,7 +133,7 @@ const LocalSettings = () => {
             selectprivate.current.checked = true;
         }
         if(localStorage.getItem('darkmode') !== null){
-            selectprivate.current.checked = true;
+            darkmode.current.checked = true;
         }
     },[]);
 
@@ -175,6 +175,7 @@ const LocalSettings = () => {
         }else{
             localStorage.removeItem('darkmode');
         }
+        window.location.reload();
 
     };
 

@@ -14,7 +14,7 @@ const Container = styled.div`
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
-  background: #E6E7E1;
+  background: transparent;
   color: #F9B613;
   font-size: 1.2rem;
   width: 30px;

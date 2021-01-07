@@ -63,7 +63,7 @@ const PBtn = styled.p`
 const Button = styled.button`
   display: flex;
   border: none;
-  background: #E6E7E1;
+  background: transparent;
   align-items: center;
   justify-content: center;
   cursor: pointer;

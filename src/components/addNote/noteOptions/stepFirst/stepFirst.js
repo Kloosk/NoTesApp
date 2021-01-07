@@ -30,7 +30,7 @@ const P = styled.p`
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
-  background: #E6E7E1;
+  background: transparent;
   color: #F9B613;
   font-size: 1.4rem;
   width: 45px;
@@ -69,7 +69,7 @@ const BtnColor = styled.button`
   padding: 1px 3px;
   border: 1px solid #F9B613;
   color: #F9B613;
-  background: #E9EAE4;
+  background: transparent;
   font-size: 1rem; 
   cursor: pointer;
   margin-right: 10px;
@@ -79,7 +79,7 @@ const BtnColor = styled.button`
 `;
 const BtnTransform = styled.button`
   border: ${props => props.leter ? '2px solid #000000' : '2px solid #F9B613'};
-  background: #E6E7E1;
+  background: transparent;
   color: #F9B613;
   font-size: 1.4rem;
   width: 65px;
