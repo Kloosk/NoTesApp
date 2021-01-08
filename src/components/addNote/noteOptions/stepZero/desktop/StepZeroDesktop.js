@@ -38,24 +38,10 @@ const Button = styled.button`
   &:last-child{
     margin-left: 5px;
   }
-  &::before{
-    z-index: -1;
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-    transform: translate(-50%,-50%) scaleX(0) skewX(4deg);
-    opacity: 0;
-    height: 100%;
-    width: 10%;
-    background-color: #0798DA;
+  :hover{
+    transform: translateY(1px);
   }
-  &:hover::before{
-    opacity: 1;
-    transform: translate(-50%,-50%) scaleX(10) skewX(4deg);
-  }
-   @media (min-width: 768px) {
+  @media (min-width: 768px) {
     display: ${props => props.show ? 'none' : 'block'};
  }
 `;

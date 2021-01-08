@@ -9,6 +9,9 @@ const Button = styled.button`
   background: transparent;
   padding: 2px;
   border: none;
+  :hover{
+    transform: translateY(1px);
+  }
 `;
 const Svg = styled.svg`
   width: 25px;

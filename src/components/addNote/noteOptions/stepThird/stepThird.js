@@ -91,9 +91,12 @@ const FontMenu = styled.div`
   justify-content: center;
   border: 1px solid #F9B613;
   padding: 5px 10px;
-  background-color: #E6E7E1;
+  background-color: ${props => props.darkmode ? '#231F20' : '#E6E7E1'};
   height: 150px;
   overflow-y: auto;
+  &:nth-child(all){
+    background-color: ${props => props.darkmode ? '#231F20' : '#E6E7E1'};
+  }
   @media (min-width: 768px) {
     overflow: hidden;
     height: 300px;
@@ -104,7 +107,6 @@ const Btn = styled.div`
   width: 100%;
   font-family: ${props => props.font};
   border-bottom: 2px solid #F9B613;
-  background-color: #E6E7E1;
   color: #F9B613;
   font-size: 1.5rem;
   text-align: center;
@@ -125,6 +127,7 @@ const Checkbox = styled.input`
 const StepThird = ({move}) => {
     const dispatch = useDispatch();
     const fontMenu = useSelector(state => state.fontmenu.menu);
+    const [darkmode,setDarkmode] = useState(false);
     const {border,font} = useSelector(state => state.note);
     const [show,setShow] = useState(false);
     const [currentStatus,setCurrentStatus] = useState(false);
@@ -138,6 +141,7 @@ const StepThird = ({move}) => {
             setCurrentStatus(false);
             dispatch(setStatus(false));
         }
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
     },[]);
     const handleColor = () => {
         setShow(true);
@@ -171,7 +175,7 @@ const StepThird = ({move}) => {
                 <Button onClick={handleFont}>
                     <PBtn font={font}>{font}</PBtn>
                     <Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path></Svg>
-                    <FontMenu open={fontMenu}>
+                    <FontMenu open={fontMenu} darkmode={darkmode}>
                             <Btn font='Amatic SC' onClick={() => {dispatch(setFont('Amatic SC'))}}>Amatic</Btn>
                             <Btn font='Anton' onClick={() => {dispatch(setFont('Anton'))}}>Anton</Btn>
                             <Btn font='Dancing Script' onClick={() => {dispatch(setFont('Dancing Script'))}}>Dancing</Btn>

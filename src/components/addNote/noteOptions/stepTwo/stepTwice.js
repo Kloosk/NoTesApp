@@ -87,6 +87,9 @@ const BtnTransform = styled.button`
   cursor: pointer;
   margin: 2px 2px;
   outline: none;
+  :hover{
+    transform: translateY(1px);
+  }
 `;
 const FlexTransform = styled.div`
   display: flex;

@@ -7,7 +7,7 @@ const Container = styled.button`
   width: 50px;
   height: 50px;
   cursor: pointer;
-  background: #E8EAE3;
+  background: transparent;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -15,6 +15,10 @@ const Container = styled.button`
   @media (min-width: 768px) {
     border-left: none;
   }
+  :hover{
+    transform: translateY(1px);
+  }
+ 
 `;
 const Svg = styled.svg`
   transition: opacity 1s ease,transform 1s ease;
