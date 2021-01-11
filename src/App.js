@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import {HashRouter as Router, Switch, Route} from "react-router-dom";
 import Start from "./components/start/Start";
 import Register from "./components/register/Register";
@@ -16,6 +16,32 @@ import Touse from "./components/touse/Touse";
 import Edit from "./components/edit/Edit";
 import Account from "./components/account/Account";
 import PublicNotes from "./components/publicNotes/PublicNotes";
+import {createGlobalStyle} from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html{
+      scroll-behavior: smooth;
+     ::-webkit-scrollbar {
+     width: 14px;
+     height: 14px;
+    }
+    ::-webkit-scrollbar-thumb {
+     background: linear-gradient(13deg, #0798da 14%,#f9b613 64%);
+     border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover{
+     background: linear-gradient(13deg, #F9B613 14%,#0798da 64%);
+    }
+    ::-webkit-scrollbar-track{
+     background: ${props => props.darkmode ? "#231F20" : "#ffffff"};  
+}
+  }
+`;
 
 function App() {
     const dispatch = useDispatch();
@@ -37,8 +63,13 @@ function App() {
             window.location.href = "./login";
         }
     }
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
   return (
       <>
+          <GlobalStyle darkmode={darkmode}/>
           <Router>
             <Switch>
                 <Route exact path="/">
