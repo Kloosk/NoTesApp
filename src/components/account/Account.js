@@ -6,7 +6,6 @@ import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
 import bg from "../../img/bgReg.jpg";
-import darkbg from "../../img/dark_theme.jpg"
 import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
 import DeleteAcc from "./deleteAcc/DeleteAcc";
@@ -14,7 +13,8 @@ import DeleteAcc from "./deleteAcc/DeleteAcc";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

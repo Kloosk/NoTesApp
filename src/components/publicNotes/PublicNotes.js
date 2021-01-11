@@ -6,7 +6,6 @@ import Logo from "../logo/Logo";
 import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import bg from "../../img/bgReg.jpg";
-import darkbg from "../../img/dark_theme.jpg"
 import AllPublic from "./allPublic/allPublic";
 import Loading from "../loading/Loading";
 import usePublic from "../../hooks/usePublic";
@@ -14,7 +13,8 @@ import usePublic from "../../hooks/usePublic";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

@@ -9,7 +9,6 @@ import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
-import darkbg from "../../img/dark_theme.jpg"
 import bg from "../../img/bgReg.jpg"
 import useNotes from "../../hooks/useNotes";
 
@@ -17,7 +16,8 @@ const Container = styled.div`
  @import url('https://fonts.googleapis.com/css2?family=Grandstander&display=swap');
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

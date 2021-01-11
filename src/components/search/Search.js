@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useDispatch, useSelector} from "react-redux";
 import {setSentence, setShow} from "../../redux/searchInput/searchInputActions";
@@ -26,7 +26,7 @@ const Btn = styled.button`
   height: 40px;
   border: 2px solid #F9B613;
   border-radius: 50%;
-  background: transparent;
+  background-color: ${props => props.darkmode ? "#231f20" : "#fff"};
   cursor: pointer;
   @media(min-width: 768px){
       width: 50px;
@@ -47,14 +47,14 @@ const Input = styled.input`
   border-radius: 25px;
   height: 40px;
   border: 2px solid #F9B613;
+  color: ${props => props.darkmode ? "#F9B613" : "#000"};
+  background-color: ${props => props.darkmode ? "#231f20" : "#fff"};
   padding: 0 40px 0 7px;
   font-size: 1.1rem;
   width: 220px;
   transition: transform 0.5s ease;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(220px)'};
-  &:focus{
-    background: #fff;
-  }
+  outline-color: ${props => props.darkmode && "#F9B613" };
   @media(min-width: 768px){
     height: 50px;
     width: 350px;
@@ -64,7 +64,12 @@ const Input = styled.input`
 `;
 const Search = () => {
     const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
     const show = useSelector(state => state.inputSentence.show);//search input show value true/false
+
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const showSearchBar = () => {
         dispatch(setShow(!show));
     };
@@ -74,10 +79,10 @@ const Search = () => {
 
     return (
         <Container>
-            <Btn onClick={showSearchBar}>
+            <Btn onClick={showSearchBar} darkmode={darkmode}>
                 <Svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></Svg>
             </Btn>
-            <Input type="text" placeholder="Search..." onChange={handleInput} show={show}/>
+            <Input type="text" placeholder="Search..." onChange={handleInput} show={show} darkmode={darkmode}/>
         </Container>
     );
 };

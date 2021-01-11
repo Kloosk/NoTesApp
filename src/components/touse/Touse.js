@@ -8,14 +8,14 @@ import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
 import bg from "../../img/bgReg.jpg"
-import darkbg from "../../img/dark_theme.jpg"
 
 const Bg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   min-height: 100vh;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

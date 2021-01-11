@@ -11,14 +11,14 @@ import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
 import bg from "../../img/bgReg.jpg"
-import darkbg from "../../img/dark_theme.jpg"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import useEdit from "../../hooks/useEdit";
 
 const Bg = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;

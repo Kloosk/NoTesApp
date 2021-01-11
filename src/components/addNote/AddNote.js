@@ -10,7 +10,6 @@ import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
-import darkbg from "../../img/dark_theme.jpg"
 import Loading from "../loading/Loading";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import NoteToolbar from "../noteToolbar/noteToolbar";
@@ -18,7 +17,8 @@ import NoteToolbar from "../noteToolbar/noteToolbar";
 const Div = styled.div`
   position: relative;
   overflow-x: hidden;
-  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
+  background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
+  background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
