@@ -83,9 +83,9 @@ const Input = styled.input`
 `;
 const More = styled.div`
   border: 2px solid #F9B613;
-  background-color: #E8E9E3;
+  background-color: ${props => props.dark ? "#231f20" : "#E9EAE4"};
   border-radius: 50%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   width: 25px;
   height: 25px;
   text-align: center;
@@ -101,7 +101,7 @@ const Info = styled.div`
   width: 250px;
   padding: 10px 5px;
   text-align: right;
-  background-color: #E9EAE4;
+  background-color: ${props => props.dark ? "#231f20" : "#E9EAE4"};
   border-radius: 12px;
   border: 2px solid #F9B613;
   font-size: 1rem;
@@ -112,7 +112,7 @@ const Info = styled.div`
     opacity: 1;
   }
 `;
-const LocalSettings = () => {
+const LocalSettings = ({dark}) => {
     const autosave = useRef(null);
     const deletealert = useRef(null);
     const selecttext = useRef(null);
@@ -187,8 +187,8 @@ const LocalSettings = () => {
                         <Input type="checkbox" onClick={handleDeleteAlert} ref={deletealert}/>
                         <Span></Span>
                 </Label>
-                <More>?
-                    <Info>Show/hide delete alert.</Info>
+                <More dark={dark}>?
+                    <Info dark={dark}>Show/hide delete alert.</Info>
                 </More>
             </Element>
             <Element>
@@ -197,8 +197,8 @@ const LocalSettings = () => {
                     <Input type="checkbox" onClick={handleAutosave} ref={autosave} />
                     <Span></Span>
                 </Label>
-                <More>?
-                    <Info>Save your note automatically after making changes.</Info>
+                <More dark={dark}>?
+                    <Info dark={dark}>Save your note automatically after making changes.</Info>
                 </More>
             </Element>
             <Element>
@@ -207,8 +207,8 @@ const LocalSettings = () => {
                     <Input type="checkbox" onClick={handleSelectText} ref={selecttext} />
                     <Span></Span>
                 </Label>
-                <More>?
-                    <Info>On/off text selection in your notes.</Info>
+                <More dark={dark}>?
+                    <Info dark={dark}>On/off text selection in your notes.</Info>
                 </More>
             </Element>
             <Element>
@@ -217,8 +217,8 @@ const LocalSettings = () => {
                     <Input type="checkbox" onClick={handleSelectPrivate} ref={selectprivate} />
                     <Span></Span>
                 </Label>
-                <More>?
-                    <Info>Disabling it keeps your notes always public.</Info>
+                <More dark={dark}>?
+                    <Info dark={dark}>Disabling it keeps your notes always public.</Info>
                 </More>
             </Element>
             <Element>
@@ -227,8 +227,8 @@ const LocalSettings = () => {
                     <Input type="checkbox" onClick={handleDarkMode} ref={darkmode} />
                     <Span></Span>
                 </Label>
-                <More>?
-                    <Info>On/off dark mode.</Info>
+                <More dark={dark}>?
+                    <Info dark={dark}>On/off dark mode.</Info>
                 </More>
             </Element>
         </Container>

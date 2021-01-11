@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import {notesExample} from "../../data/Data";
@@ -8,13 +8,14 @@ import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
 import bg from "../../img/bgReg.jpg"
+import darkbg from "../../img/dark_theme.jpg"
 
 const Bg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
   min-height: 100vh;
-  background-image: url(${bg});
+  background-image: ${props => props.darkmode ? `url(${darkbg})` : `url(${bg})`};
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -37,21 +38,30 @@ const Container = styled.div`
 const H1 = styled.h1`
   width: 100vw;
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: #F9B613;
-  margin: 5vh 0 0 0;
+  margin: 10vh 0 0 0;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    margin: 5vh 0 0 0;
+  }
 `;
 const Span = styled.span`
   color: #0798DA;
 `;
 const Touse = () => {
-    const dispatch = useDispatch();
-   const closeMenu = () => {
+   const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
+
+    const closeMenu = () => {
         dispatch(dashClose());
         dispatch(menuDesktopClose())
     };
     return (
-        <Bg>
+        <Bg darkmode={darkmode}>
             <Logo/>
             <Menu/>
             <Nav/>

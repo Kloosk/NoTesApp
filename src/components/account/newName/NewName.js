@@ -21,6 +21,8 @@ const H1 = styled.h1`
 const Input = styled.input`
   height: 25px;
   border: 1px solid #F9B613;
+  background-color: ${props => props.dark ? "#231f20" : "#FFF"};
+  color: ${props => props.dark ? "#F9B613" : "#000"};
   border-radius: 14px;
   outline: none;
   padding: 0 4px;
@@ -38,6 +40,7 @@ const Btn = styled.button`
   padding: 0 5px;
   color: #F9B613;
   border: 1px solid #F9B613;
+  background-color: ${props => props.dark ? "#231f20" : "#FFF"};
   border-radius: 14px;
   outline: none;
   &:hover{
@@ -64,7 +67,7 @@ const Inline = styled.div`
   justify-content: center;
   flex-direction: column;
 `;
-const NewName = () => {
+const NewName = ({dark}) => {
     const inputRef = useRef(null);
     const [msg,setMsg] = useState("");
     const [show,setShow] = useState(false);
@@ -102,8 +105,8 @@ const NewName = () => {
             <Inline>
                 <H1>New name</H1>
                 <Flex>
-                    <Input ref={inputRef} type="text"/>
-                    <Btn onClick={handleSaveName}>Save</Btn>
+                    <Input ref={inputRef} type="text" dark={dark}/>
+                    <Btn onClick={handleSaveName} dark={dark}>Save</Btn>
                 </Flex>
             </Inline>
             {errMsg.map((el,i) => <Error key={i}>{el}</Error>)}

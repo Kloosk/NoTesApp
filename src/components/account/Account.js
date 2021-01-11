@@ -67,11 +67,11 @@ const Account = () => {
             <div onClick={closeMenu}>
                 <Container>
                     <H1>Settings</H1>
-                    <LocalSettings/>
+                    <LocalSettings dark={darkmode}/>
                     <H1>Account</H1>
-                    <NewName/>
+                    <NewName dark={darkmode}/>
                     <H1 style={{color: "red"}}>DANGER ZONE</H1>
-                    <DeleteAcc/>
+                    <DeleteAcc dark={darkmode}/>
                 </Container>
             </div>
         </Div>
