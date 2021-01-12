@@ -16,7 +16,6 @@ import NoteToolbar from "../noteToolbar/noteToolbar";
 
 const Container = styled.div`
   min-height: 100vh;
-  overflow-x: hidden;
   background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
   background-color: ${props => props.darkmode && `#231f20`};
   background-repeat: no-repeat;
@@ -26,12 +25,11 @@ const Container = styled.div`
   user-select: ${props => props.select ? 'none' : 'auto'};
 `;
 const Desktop = styled.div`
-
   display: none;
    @media (min-width: 768px) {
-   display: block;
-   margin: 40px 0 10px 0;
-}
+       display: block;
+       margin: 40px 0 10px 0;
+   }
 `;
 const Grid = styled.div`
   padding-top: 13vh;
@@ -39,7 +37,6 @@ const Grid = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2,1fr);
