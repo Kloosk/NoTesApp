@@ -26,7 +26,7 @@ const Btn = styled.button`
   height: 40px;
   border: 2px solid #F9B613;
   border-radius: 50%;
-  background-color: ${props => props.darkmode ? "#231f20" : "#fff"};
+  background-color: ${props => props.darkmode ? "#231f20" : "#EBEBE7"};
   cursor: pointer;
   @media(min-width: 768px){
       width: 50px;
@@ -48,7 +48,7 @@ const Input = styled.input`
   height: 40px;
   border: 2px solid #F9B613;
   color: ${props => props.darkmode ? "#F9B613" : "#000"};
-  background-color: ${props => props.darkmode ? "#231f20" : "#fff"};
+  background-color: ${props => props.darkmode ? "#231f20" : "#EBEBE7"};
   padding: 0 40px 0 7px;
   font-size: 1.1rem;
   width: 220px;
