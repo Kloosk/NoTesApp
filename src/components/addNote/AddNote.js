@@ -61,7 +61,7 @@ const AddNote = () => {
         }
         toUse && dispatch(TouseFalse());
         setLoad(true);
-    },[]);
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
     const handleClick = () => {
         if(font) dispatch(fontOff());
     };
