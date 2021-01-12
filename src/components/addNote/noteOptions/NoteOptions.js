@@ -9,8 +9,10 @@ import {useDispatch, useSelector} from "react-redux";
 import {emojiClose, leftFalse, leftTrue, rightFalse, rightTrue, setMove} from "../../../redux";
 
 const ContainerMobile = styled.div`
-  width: 500vw;
-  height: 50vh;
+  width: 100vw;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
   @media (min-width: 768px) {
     display: none;
   }

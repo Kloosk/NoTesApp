@@ -28,7 +28,7 @@ const Desktop = styled.div`
   display: none;
    @media (min-width: 768px) {
        display: block;
-       margin: 40px 0 10px 0;
+       padding: 40px 0 10px 0;
    }
 `;
 const Grid = styled.div`

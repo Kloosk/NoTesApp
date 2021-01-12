@@ -10,8 +10,9 @@ import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
 import DeleteAcc from "./deleteAcc/DeleteAcc";
 
-const Div = styled.div`
-  position: relative;
+const Container = styled.div`
+  padding: 5vh 0 5vh 0;
+  min-height: 100vh;
   overflow-x: hidden;
   background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
   background-color: ${props => props.darkmode && `#231f20`};
@@ -19,32 +20,12 @@ const Div = styled.div`
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  min-height: 100vh; 
-  padding-top: 13vh;
-  width: 100vw;
-  @media (min-width: 768px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 0;
-  }
-`;
-const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  @media (min-width: 768px) {
-    margin-top: 13vh;   
-  }
 `;
 const H1 = styled.h1`
   font-size: 1.7rem;
   color: #F9B613;
   margin: 5vh 0;
+  text-align: center;
   @media (min-width: 768px) {
     font-size: 2rem;   
   }
@@ -60,12 +41,12 @@ const Account = () => {
         localStorage.getItem('darkmode') !== null && setDarkmode(true);
     },[]);
     return (
-        <Div darkmode={darkmode}>
+        <>
             <Logo path="/dashboard"/>
             <Menu num={4}/>
             <Nav num={4}/>
             <div onClick={closeMenu}>
-                <Container>
+                <Container darkmode={darkmode}>
                     <H1>Settings</H1>
                     <LocalSettings dark={darkmode}/>
                     <H1>Account</H1>
@@ -74,7 +55,7 @@ const Account = () => {
                     <DeleteAcc dark={darkmode}/>
                 </Container>
             </div>
-        </Div>
+        </>
     );
 };
 

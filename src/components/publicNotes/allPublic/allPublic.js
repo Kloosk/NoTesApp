@@ -8,7 +8,7 @@ import {searchEngine} from "../../search/SearchEngine";
 const Container = styled(Masonry)`
   display: flex;
   width: auto;
-  margin: 0 13px;
+  margin: 12vh 13px 0 13px;
 `;
 const AllPublic= ({data}) => {
     const [width,setWidth] = useState(null);
