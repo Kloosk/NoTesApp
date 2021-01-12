@@ -11,6 +11,7 @@ const Btn = styled.button`
    padding: 7px 14px;
    border: 2px solid red;
    cursor: pointer;
+   margin: 0 auto;
 
 `;
 const P = styled.p`

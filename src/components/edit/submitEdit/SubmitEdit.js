@@ -8,7 +8,6 @@ import {useEditUpdate} from "../../../hooks/useEditUpdate";
 const Container = styled.button`
   display: ${props => props.edit ? 'block' : 'none'};
   font-size: 1.2rem;
-  margin: 3px 0;
   padding: 7px 14px;
   background: transparent;
   border: 2px solid #F9B613;
@@ -17,6 +16,7 @@ const Container = styled.button`
   width: 150px;
   cursor: pointer;
   overflow: hidden;
+  margin: 3px auto;
   @media (min-width: 768px) {
     width: 205px;
  }
