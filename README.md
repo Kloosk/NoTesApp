@@ -16,4 +16,6 @@ What i learned:<br/>
 2.1<br/>
 -Added new option: border size,text align,<br/>
 -Added sort button,<br/>
+-Added dark mode,<br/>
 -Fix logo,<br/>
+-Fix horizontal scroll,<br/>

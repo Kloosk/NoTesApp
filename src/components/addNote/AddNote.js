@@ -12,7 +12,7 @@ import NoteOptions from "./noteOptions/NoteOptions";
 import bg from "../../img/bgReg.jpg"
 import Loading from "../loading/Loading";
 import NoteToolbar from "../noteToolbar/noteToolbar";
-
+import LoadingAdd from "../loadingAdd/LoadingAdd";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -72,6 +72,7 @@ const AddNote = () => {
     };
     return (
        load ? <>
+            <LoadingAdd/>
             <Logo path="/dashboard"/>
             <Menu num={1}/>
             <Nav num={1}/>

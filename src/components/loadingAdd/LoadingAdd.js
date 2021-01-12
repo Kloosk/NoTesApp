@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useSelector} from "react-redux";
-import loadingGif from './loading.gif';
+import darkload from "../loading/gif/loadDark.gif";
+import load from "../loading/gif/load.gif";
 
 const Container = styled.div`
   display: ${props => props.show ? 'block' : 'none'};
@@ -15,30 +16,38 @@ const Container = styled.div`
   background: #000;
   overflow: hidden;
 `;
+const H1 = styled.h1`
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.2rem;
+  color: ${props => props.darkmode ? "#fff" : "#000"};
+`;
 const Img = styled.img`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: 100px;
-  
+  transform: translate(-50%,-50%);
+  width: 200px;
 `;
-const H1 = styled.h1`
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2.2rem;
-  color: #F9B613;
+const ImgDark = styled(Img)`
+  width: 500px;
+  @media (min-width: 768px) {
+    width: 800px;
+  }
 `;
 const LoadingAdd = () => {
     const show = useSelector(state => state.showLoading.loading);
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     return (
         <Container show={show}>
             <H1>Adding...</H1>
-            <Img src={loadingGif} alt="Adding"/>
+            {darkmode ? <ImgDark src={darkload} alt="Loading"/> : <Img src={load} alt="Loading"/>}
         </Container>
     );
 };
-
 export default LoadingAdd;

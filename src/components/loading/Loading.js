@@ -5,7 +5,7 @@ import darkload from './gif/loadDark.gif'
 
 const Container = styled.div`
   overflow: hidden;
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -34,5 +34,4 @@ const Loading = () => {
         </Container>
     );
 };
-
 export default Loading;
