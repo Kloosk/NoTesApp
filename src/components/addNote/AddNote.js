@@ -26,6 +26,7 @@ const Container = styled.div`
   user-select: ${props => props.select ? 'none' : 'auto'};
 `;
 const Desktop = styled.div`
+
   display: none;
    @media (min-width: 768px) {
    display: block;
@@ -33,11 +34,18 @@ const Desktop = styled.div`
 }
 `;
 const Grid = styled.div`
+  padding-top: 13vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: flex-start;
     justify-items: center;
+    padding: 0;
   }
 `;
 const AddNote = () => {

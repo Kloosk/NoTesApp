@@ -14,8 +14,8 @@ import bg from "../../img/bgReg.jpg"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import useEdit from "../../hooks/useEdit";
 
-const Bg = styled.div`
-  position: relative;
+const Container = styled.div`
+  min-height: 100vh;
   overflow-x: hidden;
   background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
   background-color: ${props => props.darkmode && `#231f20`};
@@ -23,45 +23,29 @@ const Bg = styled.div`
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  min-height: 100vh; 
-  padding-top: 13vh;
-  width: 100vw;
-  @media (min-width: 768px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 100vh;
-    padding: 0;
-  }
+  user-select: ${props => props.select ? 'none' : 'auto'};
 `;
-
-const Container = styled.div`
-  width: 100vw;
+const Desktop = styled.div`
+  display: none;
+   @media (min-width: 768px) {
+   display: block;
+   margin: 40px 0 10px 0;
+}
+`;
+const Grid = styled.div`
+  padding-top: 13vh;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 13vh;
+  width: 100vw;
   @media (min-width: 768px) {
-    min-height: auto;
-    margin: 0;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: flex-start;
     justify-items: center;
+    padding: 0;
   }
-`;
-const Desktop = styled.div`
-  margin: 5vh 0;
-  width: 100vw;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  @media (min-width: 768px) {
-    display: flex;
-  }
-  
 `;
 const Edit = () => {
     const {id} = useParams();
@@ -81,19 +65,20 @@ const Edit = () => {
     return (
         <>
             {status === "success" && (
-                <Bg darkmode={darkmode}>
+                <>
                     <LoadingAdd/>
                     <Logo path="/dashboard"/>
                     <Menu/>
                     <Nav/>
-                    <Desktop>
-                        <SubmitEdit edit={true}/>
-                    </Desktop>
-                    <Container onClick={handleClick}>
-                        <NoteEdit edit={true}/>
-                        <NoteOptions edit={true}/>
+
+                    <Container onClick={handleClick} darkmode={darkmode}>
+                        <Desktop><SubmitEdit edit={true}/></Desktop>
+                        <Grid>
+                            <NoteEdit edit={true}/>
+                            <NoteOptions edit={true}/>
+                        </Grid>
                     </Container>
-                </Bg>
+                </>
             )}
             {status === "loading" && <Loading/>}
         </>
