@@ -147,9 +147,9 @@ const Login = () => {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     useEffect(() => {
         if (isAuthenticated) {
-            history.push("/dashboard"); // push user to dashboard when they login
+            history.push("/dashboard"); // push users to dashboard when they login
         }
-    },[isAuthenticated]);
+    },[isAuthenticated]);// eslint-disable-line react-hooks/exhaustive-deps
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data =>{
         dispatch(loginUser(data));

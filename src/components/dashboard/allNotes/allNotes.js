@@ -33,11 +33,11 @@ const AllNotes = ({data}) => {
     useEffect(() => { //sort effect
         //statment for first time launch
         data !== searchData && setSearchData(searchData.reverse());//reverse data
-    },[sortMethod]);
+    },[sortMethod]);// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {//search effect
         setSearchData(searchEngine(data,inputSentence));//searching function
-    },[inputSentence]);
+    },[inputSentence]);// eslint-disable-line react-hooks/exhaustive-deps
 
     const bigFirstLetter = name => {
         return name.charAt(0).toUpperCase() + name.slice(1);

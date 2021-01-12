@@ -30,7 +30,7 @@ const P = styled.p`
 `;
 const BtnSize = styled.button`
   border: 2px solid #F9B613;
-  background: transparent;
+  background: ${props => props.darkmode ? 'transparent' : '#E5E6DF'};
   color: #F9B613;
   font-size: 1.4rem;
   width: 45px;
@@ -79,7 +79,7 @@ const BtnColor = styled.button`
 `;
 const BtnTransform = styled.button`
   border: ${props => props.leter ? '2px solid #000000' : '2px solid #F9B613'};
-  background: transparent;
+  background: ${props => props.darkmode ? 'transparent' : '#E5E6DF'};
   color: #F9B613;
   font-size: 1.4rem;
   width: 65px;
@@ -104,8 +104,8 @@ const Divide = styled.div`
 const StepFirst = ({move}) => {
     const dispatch = useDispatch();
     const {titleSize,titleBg,titleColor,titleTransform} = useSelector(state => state.note);
-    //it changes border of selected transform
-    const [letter,setLetter] = useState(0);
+    const [darkmode,setDarkmode] = useState(false);
+    const [letter,setLetter] = useState(0);//it changes border of selected transform
     useEffect(() => {
         if(titleTransform === "uppercase"){
             setLetter(2);
@@ -116,9 +116,11 @@ const StepFirst = ({move}) => {
         }else{
             setLetter(0);
         }
-
     },[titleTransform]);
     ///////
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const titleDec = () => {
         if(titleSize >= 0.2) {
             dispatch(setTitleSize(-0.1));
@@ -165,20 +167,20 @@ const StepFirst = ({move}) => {
             </Flex>
             <Flex>
                 <P><Span>S</Span>ize</P>
-                <BtnSize onClick={titleDec}>-</BtnSize>
+                <BtnSize onClick={titleDec} darkmode={darkmode}>-</BtnSize>
                 <Num>{titleSize.toFixed(1)}</Num>
-                <BtnSize onClick={titleInc}>+</BtnSize>
+                <BtnSize onClick={titleInc} darkmode={darkmode}>+</BtnSize>
             </Flex>
             <Flex>
                 <P><Span>T</Span>ransform</P>
                 <FlexTransform>
                 <Divide>
-                    <BtnTransform leter={letter===0 ? true : false} onClick={() => {dispatch(setTitleTransform("initial"))}}>Aa</BtnTransform>
-                    <BtnTransform leter={letter===1 ? true : false} onClick={() => {dispatch(setTitleTransform("lowercase"))}}>aa</BtnTransform>
+                    <BtnTransform darkmode={darkmode} leter={letter===0 ? true : false} onClick={() => {dispatch(setTitleTransform("initial"))}}>Aa</BtnTransform>
+                    <BtnTransform darkmode={darkmode} leter={letter===1 ? true : false} onClick={() => {dispatch(setTitleTransform("lowercase"))}}>aa</BtnTransform>
                 </Divide>
                 <Divide>
-                    <BtnTransform leter={letter===2 ? true : false} onClick={() => {dispatch(setTitleTransform("uppercase"))}}>AA</BtnTransform>
-                    <BtnTransform leter={letter===3 ? true : false} onClick={() => {dispatch(setTitleTransform("capitalize"))}}>AaAa</BtnTransform>
+                    <BtnTransform darkmode={darkmode} leter={letter===2 ? true : false} onClick={() => {dispatch(setTitleTransform("uppercase"))}}>AA</BtnTransform>
+                    <BtnTransform darkmode={darkmode} leter={letter===3 ? true : false} onClick={() => {dispatch(setTitleTransform("capitalize"))}}>AaAa</BtnTransform>
                 </Divide>
                 </FlexTransform>
             </Flex>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -41,7 +41,7 @@ const Button = styled.button`
   font-size: 1.2rem;
   margin: 3px 0;
   padding: 7px 14px;
-  background: transparent;
+  background-color: ${props => props.darkmode ? 'transparent' : '#E6E7E1'};
   border: 2px solid #F9B613;
   color: #F9B613;
   position: relative;
@@ -60,7 +60,11 @@ const Linkk = styled(Link)`
 `;
 const StepZero = ({edit}) => {
     const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
     const move = useSelector(state => state.arrows.move);
+    useEffect(() =>{
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const moveRight = () => {
         dispatch(setMove(move-100));
         if(move === -300) dispatch(rightFalse());
@@ -76,10 +80,10 @@ const StepZero = ({edit}) => {
     return (
         <Container move={move}>
             <Center>
-                <Button show={false} onClick={handleGenerate}>Generate</Button>
-                <Linkk to="/touse"><Button>Use</Button></Linkk>
-                <Button show={true} onClick={moveRight}>Create own</Button>
-                <SendBtn edit={edit}/>
+                <Button darkmode={darkmode} show={false} onClick={handleGenerate}>Generate</Button>
+                <Linkk to="/touse"><Button darkmode={darkmode}>Use</Button></Linkk>
+                <Button darkmode={darkmode} show={true} onClick={moveRight}>Create own</Button>
+                <SendBtn darkmode={darkmode} edit={edit}/>
                 <SubmitEdit edit={edit}/>
             </Center>
         </Container>

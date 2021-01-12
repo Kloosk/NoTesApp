@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {rightTrue, setMove} from "../../../../redux";
 import {useDispatch} from "react-redux";
@@ -37,7 +37,7 @@ const Button = styled.button`
   font-size: 1.2rem;
   margin: 3px 0;
   padding: 7px 14px;
-  background: none;
+  background-color: ${props => props.darkmode ? 'transparent' : '#E6E7E1'};
   border: 2px solid #F9B613;
   color: #F9B613;
   position: relative;
@@ -64,6 +64,10 @@ const Button = styled.button`
 `;
 const StepFourth = ({move,edit}) => {
     const dispatch = useDispatch();
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const handleMove = () => {
         dispatch(setMove(-100));
         dispatch(rightTrue());
@@ -72,10 +76,10 @@ const StepFourth = ({move,edit}) => {
         <Container move={move}>
             <H1><Span>I</Span>s everything correct?</H1>
                 <Center>
-                    <Button onClick={handleMove}>Edit</Button>
-                    <SendBtn edit={edit}/>
-                    <SubmitEdit edit={edit}/>
-                    <SaveBtn/>
+                    <Button onClick={handleMove} darkmode={darkmode}>Edit</Button>
+                    <SendBtn edit={edit} darkmode={darkmode}/>
+                    <SubmitEdit edit={edit} darkmode={darkmode}/>
+                    <SaveBtn darkmode={darkmode}/>
                 </Center>
 
         </Container>

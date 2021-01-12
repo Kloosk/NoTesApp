@@ -9,7 +9,7 @@ const Logout = () => {
     useEffect(() => {
         dispatch(logoutUser());
         history.push("/login");
-    },[]);
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <div>
             You have been logged out.

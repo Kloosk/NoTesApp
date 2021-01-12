@@ -1,4 +1,4 @@
-import React, {useEffect, useLayoutEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useDispatch} from "react-redux";
 import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
@@ -33,7 +33,7 @@ const PublicNotes = () => {
     useEffect(() => {
         dispatch(setSentence(""));
         localStorage.getItem('darkmode') !== null && setDarkmode(true);
-    },[]);
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
     return (
         <>
             {status === "loading" && <Loading/>}

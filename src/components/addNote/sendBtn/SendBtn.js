@@ -9,7 +9,7 @@ const Container = styled.button`
   font-size: 1.2rem;
   margin: 3px 0;
   padding: 7px 14px;
-  background: transparent;
+  background-color: ${props => props.darkmode ? 'transparent' : '#E6E7E1'};
   border: 2px solid #F9B613;
   color: #F9B613;
   position: relative;
@@ -23,7 +23,7 @@ const Container = styled.button`
   transform: translateY(1px);
  }
 `;
-const SendBtn = ({edit}) => {
+const SendBtn = ({edit,darkmode}) => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.note);
     const btnRef = useRef(null);
@@ -34,7 +34,7 @@ const SendBtn = ({edit}) => {
         mutate(data); //send data to usemutation react-query
     };
     return (
-        <Container ref={btnRef} edit={edit} onClick={sendData}>Add</Container>
+        <Container darkmode={darkmode} ref={btnRef} edit={edit} onClick={sendData}>Add</Container>
     );
 };
 

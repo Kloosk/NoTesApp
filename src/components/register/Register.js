@@ -169,7 +169,7 @@ const Register = () => {
         if (isAuthenticated) {
             history.push("/dashboard"); // push user to dashboard when they login
         }
-    },[isAuthenticated]);
+    },[isAuthenticated]);// eslint-disable-line react-hooks/exhaustive-deps
     return (
         isAuthenticated ? null : <>
             <Logo path="/"/>

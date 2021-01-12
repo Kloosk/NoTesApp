@@ -79,7 +79,7 @@ const LinearPicker = ({func,show,toppos,linearcolor}) => {
    const [current,setCurrent] = useState(0);
    useEffect(() => {
        if(show) dispatch(func(`linear-gradient(to right,${color1},${color2})`));
-   },[show]);
+   },[show]);// eslint-disable-line react-hooks/exhaustive-deps
    useEffect(() => {
        if(linearcolor.length > 7){
             setColor1(linearcolor.substr(25,7));

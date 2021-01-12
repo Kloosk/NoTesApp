@@ -46,7 +46,7 @@ const Dashboard = () => {
         dispatch(setSentence(""));
         localStorage.getItem('selecttext') !== null && setSelect(true);
         localStorage.getItem('darkmode') !== null && setDarkmode(true);
-    },[]);
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
 
     const closeMenu = () => {
         dispatch(dashClose());

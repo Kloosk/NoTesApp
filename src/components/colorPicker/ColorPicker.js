@@ -54,7 +54,7 @@ const ColorPicker = ({func,show,toppos,normalcolor}) => {
             setDisplay(true);
             dispatch(func(bg));
         }
-    },[show]);
+    },[show]);// eslint-disable-line react-hooks/exhaustive-deps
     useEffect(() => {
        if(normalcolor !== undefined){
            if(normalcolor.length <= 7){

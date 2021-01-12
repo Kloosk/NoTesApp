@@ -20,16 +20,16 @@ const AllPublic= ({data}) => {
         window.addEventListener("resize",() => {
           setWidth(window.innerWidth);
         });
-    },[]);
+    },[]);// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => { //sort effect
         //statment for first time launch
         data !== searchData && setSearchData(searchData.reverse());//reverse data
-    },[sortMethod]);
+    },[sortMethod]);// eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {//search effect
         setSearchData(searchEngine(data,inputSentence));//searching function
-    },[inputSentence]);
+    },[inputSentence]);// eslint-disable-line react-hooks/exhaustive-deps
     return(
         <>
             {width > 992 &&(
