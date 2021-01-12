@@ -1,4 +1,4 @@
-import React,{useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components';
 import {useDispatch, useSelector} from "react-redux";
 import {loadingTrue} from "../../../redux";
@@ -23,11 +23,15 @@ const Container = styled.button`
   transform: translateY(1px);
  }
 `;
-const SendBtn = ({edit,darkmode}) => {
+const SendBtn = ({edit}) => {
     const dispatch = useDispatch();
     const data = useSelector(state => state.note);
     const btnRef = useRef(null);
     const {mutate} = useAdd();
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() =>{
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const sendData = () => {
         btnRef.current.setAttribute("disabled","disabled");//btn is only once click to avoid multiple add
         dispatch(loadingTrue());//turn on loading screen when note is sending and turn off when its over

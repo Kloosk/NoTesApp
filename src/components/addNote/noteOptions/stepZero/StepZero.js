@@ -60,8 +60,8 @@ const Linkk = styled(Link)`
 `;
 const StepZero = ({edit}) => {
     const dispatch = useDispatch();
-    const [darkmode,setDarkmode] = useState(false);
     const move = useSelector(state => state.arrows.move);
+    const [darkmode,setDarkmode] = useState(false);
     useEffect(() =>{
         localStorage.getItem('darkmode') !== null && setDarkmode(true);
     },[]);
@@ -82,8 +82,8 @@ const StepZero = ({edit}) => {
             <Center>
                 <Button darkmode={darkmode} show={false} onClick={handleGenerate}>Generate</Button>
                 <Linkk to="/touse"><Button darkmode={darkmode}>Use</Button></Linkk>
-                <Button darkmode={darkmode} show={true} onClick={moveRight}>Create own</Button>
-                <SendBtn darkmode={darkmode} edit={edit}/>
+                <Button show={true} onClick={moveRight}>Create own</Button>
+                <SendBtn edit={edit}/>
                 <SubmitEdit edit={edit}/>
             </Center>
         </Container>

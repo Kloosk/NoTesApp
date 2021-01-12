@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {useSelector} from "react-redux";
 
@@ -36,9 +36,13 @@ const SvgCheck = styled(Svg)`
   transform: ${props => props.status ? 'scale(1)' : "scale(0)"};
   color: greenyellow;
 `;
-const SaveBtn = ({darkmode}) => {
+const SaveBtn = () => {
     const objToSave = useSelector(state => state.note);
     const [state,setState] = useState(false);
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() =>{
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     const handleSave = () => {
         setState(true);
         localStorage.setItem('noteSave', JSON.stringify(objToSave));
