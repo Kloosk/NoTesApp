@@ -17,5 +17,7 @@ What i learned:<br/>
 -Added new option: border size,text align,<br/>
 -Added sort button,<br/>
 -Added dark mode,<br/>
--Fix logo,<br/>
--Fix horizontal scroll,<br/>
+-Fixed logo,<br/>
+-Fixed horizontal scroll,<br/>
+2.1b<br/>
+-Fixed background button,<br/>
