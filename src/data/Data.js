@@ -91,7 +91,20 @@ export const notesExample = [
         font:"Lato",
     }
 ];
+let arrWithAlreadyRandom = [];
 export const genereateOne = () => {
-  const num = Math.floor(Math.random()*notesExample.length);
-  return notesExample[num];
+    const arrWithAlreadyRandomLength = arrWithAlreadyRandom.length;
+    const notesExampleLength = notesExample.length;
+
+    if(arrWithAlreadyRandomLength === notesExampleLength){
+        arrWithAlreadyRandom = [];
+    }
+
+    let num = Math.floor(Math.random()*notesExampleLength);
+    while(arrWithAlreadyRandom.includes(num)){
+        num = Math.floor(Math.random()*notesExampleLength);
+    }
+    arrWithAlreadyRandom.push(num);
+
+    return notesExample[num];
 };
