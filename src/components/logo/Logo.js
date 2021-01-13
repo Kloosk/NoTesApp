@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import logo from '../../img/logo.png'
+import logodark from '../../img/logoDark.png'
 
 const Container = styled.nav`
   font-family: 'Chilanka', cursive;
@@ -21,10 +22,14 @@ const Img = styled.img`
   }
 `;
 const Logo = ({path}) => {
+    const [darkmode,setDarkmode] = useState(false);
+    useEffect(() => {
+        localStorage.getItem('darkmode') !== null && setDarkmode(true);
+    },[]);
     return (
         <Container role="banner">
             <Linkk to={path}>
-                <Img src={logo} alt="logo"/>
+                {darkmode ? <Img src={logodark} alt="logo"/> : <Img src={logo} alt="logo"/>}
             </Linkk>
         </Container>
     );
