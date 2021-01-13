@@ -21,3 +21,7 @@ What i learned:<br/>
 -Fixed horizontal scroll,<br/>
 2.1b<br/>
 -Fixed background button,<br/>
+2.2<br/>
+-Added new styles to use<br/>
+-Added new logo<br/>
+-Optimization random style function<br/>
