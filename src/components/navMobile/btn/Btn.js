@@ -10,10 +10,11 @@ const Container = styled.button`
   border: none;
   z-index: 2;
   margin-left: 3px;
+  outline: none;
 `;
 const Svg = styled.svg`
-  width: 40px;
-  height: 40px;
+  width: 37px;
+  height: 37px;
   color: #F9B613;
   transition: transform 10s ease;
   ${Container}:hover & {

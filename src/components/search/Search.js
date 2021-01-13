@@ -28,6 +28,7 @@ const Btn = styled.button`
   border-radius: 50%;
   background-color: ${props => props.darkmode ? "#231f20" : "#EBEBE7"};
   cursor: pointer;
+  outline: none;
   @media(min-width: 768px){
       width: 50px;
       height: 50px;
@@ -54,7 +55,7 @@ const Input = styled.input`
   width: 220px;
   transition: transform 0.5s ease;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(220px)'};
-  outline-color: ${props => props.darkmode && "#F9B613" };
+  outline: none;
   @media(min-width: 768px){
     height: 50px;
     width: 350px;

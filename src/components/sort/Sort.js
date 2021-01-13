@@ -11,6 +11,7 @@ const Btn = styled.button`
   background: transparent;
   cursor: pointer;
   margin-top: 3px;
+  outline: none;
   :hover::after{
     transform: translate(-75%,0);
     opacity: 1;

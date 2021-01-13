@@ -11,6 +11,7 @@ const Container = styled.div`
   left: 0;
   z-index: 100;
 `;
+
 const Emoji = () => {
     const dispatch = useDispatch();
     const {title,text} = useSelector(state => state.note);
@@ -25,7 +26,7 @@ const Emoji = () => {
     };
     return (
         <Container show={show}>
-            <Picker onEmojiClick={onEmojiClick} />
+            <Picker onEmojiClick={onEmojiClick}/>
         </Container>
     );
 };

@@ -48,6 +48,7 @@ const Button = styled.button`
   min-width: 150px;
   cursor: pointer;
   overflow: hidden;
+  outline: none;
   :hover{
     transform: translateY(1px);
   }
@@ -82,7 +83,7 @@ const StepZero = ({edit}) => {
             <Center>
                 <Button darkmode={darkmode} show={false} onClick={handleGenerate}>Generate</Button>
                 <Linkk to="/touse"><Button darkmode={darkmode}>Use</Button></Linkk>
-                <Button show={true} onClick={moveRight}>Create own</Button>
+                <Button darkmode={darkmode} show={true} onClick={moveRight}>Create own</Button>
                 <SendBtn edit={edit}/>
                 <SubmitEdit edit={edit}/>
             </Center>

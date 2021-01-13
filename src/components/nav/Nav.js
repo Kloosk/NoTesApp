@@ -35,6 +35,7 @@ const Btn = styled.button`
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+  outline: none;    
 `;
 const Svg = styled.svg`
   position: absolute;
