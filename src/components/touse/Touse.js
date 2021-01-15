@@ -7,7 +7,7 @@ import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
-import bg from "../../img/bgReg.jpg"
+import bg from "../../img/bgReg.webp"
 
 const Container = styled.div`
   min-height: 100vh;

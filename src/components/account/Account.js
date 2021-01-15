@@ -5,7 +5,7 @@ import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
 import {dashClose, menuDesktopClose} from "../../redux";
 import {useDispatch} from "react-redux";
-import bg from "../../img/bgReg.jpg";
+import bg from "../../img/bgReg.webp";
 import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
 import DeleteAcc from "./deleteAcc/DeleteAcc";

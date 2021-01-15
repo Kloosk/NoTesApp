@@ -10,7 +10,7 @@ import SubmitEdit from "./submitEdit/SubmitEdit";
 import NoteEdit from "../addNote/noteEdit/NoteEdit";
 import NoteOptions from "../addNote/noteOptions/NoteOptions";
 import Loading from "../loading/Loading";
-import bg from "../../img/bgReg.jpg"
+import bg from "../../img/bgReg.webp"
 import LoadingAdd from "../loadingAdd/LoadingAdd";
 import useEdit from "../../hooks/useEdit";
 

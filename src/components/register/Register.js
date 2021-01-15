@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import {Link,useHistory} from "react-router-dom";
 import Logo from "../logo/Logo";
 import Title from "./title/Title";
-import bgReg from "../../img/bgReg.jpg"
+import bgReg from "../../img/bgReg.webp"
 import {useDispatch, useSelector} from "react-redux";
 import {registerUser} from "../../redux/auth/authActions";
 import LinkLogin from "./link/LinkLogin";

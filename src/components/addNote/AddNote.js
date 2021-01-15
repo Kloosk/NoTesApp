@@ -9,7 +9,7 @@ import Nav from "../nav/Nav";
 import StepZeroDesktop from "./noteOptions/stepZero/desktop/StepZeroDesktop";
 import {genereateOne} from "../../data/Data";
 import NoteOptions from "./noteOptions/NoteOptions";
-import bg from "../../img/bgReg.jpg"
+import bg from "../../img/bgReg.webp"
 import Loading from "../loading/Loading";
 import NoteToolbar from "../noteToolbar/noteToolbar";
 import LoadingAdd from "../loadingAdd/LoadingAdd";

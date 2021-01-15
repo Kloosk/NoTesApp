@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import Title from "./title/Title";
 import {useForm} from "react-hook-form";
-import bgReg from "../../img/bgReg.jpg"
+import bgReg from "../../img/bgReg.webp"
 import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {loginUser} from "../../redux/auth/authActions";

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import bg from '../../img/bgReg.jpg'
+import bg from '../../img/bgReg.webp'
 import Logo from "../logo/Logo";
 
 const Container = styled.div`
@@ -18,9 +18,14 @@ const H1 = styled.h1`
   margin-bottom: 20px;
 `;
 const Author = styled.div`
+  width: 90%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 15px;
+  @media(min-width: 768px){
+    width: 40%;
+  }
 `;
 const Name = styled.p`
   font-size: 1.2rem;

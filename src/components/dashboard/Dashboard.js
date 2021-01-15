@@ -9,7 +9,7 @@ import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Nav from "../nav/Nav";
 import AlertDelete from "../alertDelete/AlertDelete";
 import Loading from "../loading/Loading";
-import bg from "../../img/bgReg.jpg"
+import bg from "../../img/bgReg.webp"
 import useNotes from "../../hooks/useNotes";
 
 const Container = styled.div`

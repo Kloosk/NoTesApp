@@ -5,7 +5,7 @@ import {dashClose, menuDesktopClose, setSentence, setShow} from "../../redux";
 import Logo from "../logo/Logo";
 import Menu from "../navMobile/Menu";
 import Nav from "../nav/Nav";
-import bg from "../../img/bgReg.jpg";
+import bg from "../../img/bgReg.webp";
 import AllPublic from "./allPublic/allPublic";
 import Loading from "../loading/Loading";
 import usePublic from "../../hooks/usePublic";
