@@ -8,11 +8,11 @@ const Container = styled.button`
   background-color: transparent;
   color: #fff;
   font-size: 3rem;
-  width: 320px;
+  width: 90%;
   height: 100px;
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 25%;
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
@@ -47,6 +47,10 @@ const Container = styled.button`
   }
   &:hover::after, &:hover::before{
     transform: translateY(0);
+  }
+  @media (min-width: 768px) {
+    top: 40%;
+    width: 320px;
   }
 `;
 const P = styled.p`

@@ -5,7 +5,7 @@ import Note from "./note/Note";
 
 const Container = styled.section`
   position: absolute;
-  top: 65%;
+  top: 50%;
   left: 50%;
   transform:  translateX(-50%);
   width: 90%;
@@ -15,10 +15,12 @@ const Container = styled.section`
   justify-items: center;
   overflow: hidden;
   @media (min-width: 768px) {
+   top: 65%;
    grid-template-columns: repeat(2,1fr);
    grid-gap: 5vw;
   }
   @media (min-width: 992px){
+   top: 65%;
    grid-gap: 5vw;
    grid-template-columns: repeat(4,1fr);
   }
