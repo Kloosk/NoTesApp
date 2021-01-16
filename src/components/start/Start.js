@@ -7,7 +7,7 @@ import NoteSection from "./notesection/NoteSection";
 import LogAndReg from "./logandreg/LogAndReg";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
-import AuthorsLink from "../authorsLink/AuthorsLink";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
   width: 100vw;
@@ -30,7 +30,7 @@ const Start = () => {
             <Logo path="/"/>
             <NoteSection/>
             <LogAndReg/>
-            <AuthorsLink/>
+            <Footer/>
         </Container>
     );
 };

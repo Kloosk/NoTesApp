@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import { useForm} from "react-hook-form";
 import styled from 'styled-components'
-import {Link,useHistory} from "react-router-dom";
+import {useHistory} from "react-router-dom";
 import Logo from "../logo/Logo";
 import Title from "./title/Title";
 import bgReg from "../../img/bgReg.webp"
 import {useDispatch, useSelector} from "react-redux";
 import {registerUser} from "../../redux/auth/authActions";
 import LinkLogin from "./link/LinkLogin";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
   padding: 8vh 0;
@@ -137,12 +138,13 @@ const Submit = styled.button`
     width: 50%;
   }
 `;
-const Linkk = styled(Link)`
+const A = styled.a`
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-color: #F9B613;
   color: #F9B613;
 `;
+
 const PZindex = styled.p`
   position: relative;
   z-index: 5;
@@ -207,7 +209,7 @@ const Register = () => {
 
                     <Terms>
                         <Checkbox type="checkbox" name="terms" aria-invalid={errors.terms ? "true" : "false"} ref={register({required: true})}/>
-                        <p>I accept the <Linkk to="/terms">terms and conditions</Linkk></p>
+                        <p>I accept the <A href="https://notes-sage.vercel.app/terms">terms and conditions</A></p>
                         {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
                     </Terms>
 
