@@ -5,6 +5,7 @@ import logo from '../../img/logo.png'
 import logodark from '../../img/logoDark.png'
 
 const Container = styled.nav`
+  font-family: 'Chilanka', cursive;
   position: absolute;
   top: 5px;
   left: 0;

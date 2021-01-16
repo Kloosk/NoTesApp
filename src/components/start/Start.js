@@ -7,7 +7,7 @@ import NoteSection from "./notesection/NoteSection";
 import LogAndReg from "./logandreg/LogAndReg";
 import {useSelector} from "react-redux";
 import {useHistory} from "react-router-dom";
-import AuthorsLink from "../authors/authorsLink/AuthorsLink";
+import AuthorsLink from "../authorsLink/AuthorsLink";
 
 const Container = styled.div`
   width: 100vw;
