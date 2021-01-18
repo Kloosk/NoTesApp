@@ -30,7 +30,7 @@ const Start = () => {
             <Logo path="/"/>
             <NoteSection/>
             <LogAndReg/>
-            <Footer/>
+            <Footer colordata={true}/>
         </Container>
     );
 };

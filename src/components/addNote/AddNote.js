@@ -13,6 +13,7 @@ import bg from "../../img/bgReg.webp"
 import Loading from "../loading/Loading";
 import NoteToolbar from "../noteToolbar/noteToolbar";
 import LoadingAdd from "../loadingAdd/LoadingAdd";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
   min-height: 100vh;
@@ -86,6 +87,7 @@ const AddNote = () => {
                     </Grid>
                 </Container>
             </div>
+           <Footer color={darkmode}/>
         </> : <Loading/>
     );
 };

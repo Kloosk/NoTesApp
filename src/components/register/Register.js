@@ -174,51 +174,51 @@ const Register = () => {
     },[isAuthenticated]);// eslint-disable-line react-hooks/exhaustive-deps
     return (
         isAuthenticated ? null : <>
-            <Logo path="/"/>
-            <LinkLogin/>
-            <Container>
-                <Title/>
-                <Form onSubmit={handleSubmit(onSubmit)}>
-                    <Label>
-                        <Input type="text" id="nick" name="name" aria-invalid={errors.name ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
-                        <PInput htmlFor="nick"><PZindex>Name</PZindex></PInput>
-                        {errors.name && errors.name.type === "required" && <Error role="alert">This field is required</Error>}
-                        {errors.name && errors.name.type === "minLength" && <Error role="alert">Min length 3</Error>}
-                        {errors.name && errors.name.type === "maxLength" && <Error role="alert">Max length 20</Error>}
-                    </Label>
+                <Logo path="/"/>
+                <LinkLogin/>
+                <Container>
+                    <Title/>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
+                        <Label>
+                            <Input type="text" id="nick" name="name" aria-invalid={errors.name ? "true" : "false"} ref={register({required: true,maxLength:20,minLength: 3})} />
+                            <PInput htmlFor="nick"><PZindex>Name</PZindex></PInput>
+                            {errors.name && errors.name.type === "required" && <Error role="alert">This field is required</Error>}
+                            {errors.name && errors.name.type === "minLength" && <Error role="alert">Min length 3</Error>}
+                            {errors.name && errors.name.type === "maxLength" && <Error role="alert">Max length 20</Error>}
+                        </Label>
 
-                    <Label>
-                        <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
-                        <PInput htmlFor="pass" ><PZindex>Password</PZindex></PInput>
-                        {errors.password && errors.password.type === "required" && <Error role="alert">This field is required</Error>}
-                        {errors.password && errors.password.type === "minLength" && <Error role="alert">Min length 6</Error>}
-                        {errors.password && errors.password.type === "maxLength" && <Error role="alert" >Max length 20</Error>}
-                    </Label>
+                        <Label>
+                            <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true,minLength: 6,maxLength: 20})} />
+                            <PInput htmlFor="pass" ><PZindex>Password</PZindex></PInput>
+                            {errors.password && errors.password.type === "required" && <Error role="alert">This field is required</Error>}
+                            {errors.password && errors.password.type === "minLength" && <Error role="alert">Min length 6</Error>}
+                            {errors.password && errors.password.type === "maxLength" && <Error role="alert" >Max length 20</Error>}
+                        </Label>
 
-                    <Label>
-                        <Input type="password" id="confirmpass" name="password2"  aria-invalid={errors.password2 ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
-                        <PInput htmlFor="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
-                        {errors.password2 && <Error role="alert">Passwords are different</Error>}
-                    </Label>
+                        <Label>
+                            <Input type="password" id="confirmpass" name="password2"  aria-invalid={errors.password2 ? "true" : "false"} ref={register({ validate: (value) => value === watch('password')})} />
+                            <PInput htmlFor="confirmpass"><PZindex>Confirm Password</PZindex></PInput>
+                            {errors.password2 && <Error role="alert">Passwords are different</Error>}
+                        </Label>
 
-                    <Label>
-                        <Input type="text" id="email" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
-                        <PInput htmlFor="email"><PZindex>Email</PZindex></PInput>
-                        {errors.email && <Error role="alert">This field is required</Error>}
-                    </Label>
+                        <Label>
+                            <Input type="text" id="email" name="email"  aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
+                            <PInput htmlFor="email"><PZindex>Email</PZindex></PInput>
+                            {errors.email && <Error role="alert">This field is required</Error>}
+                        </Label>
 
-                    <Terms>
-                        <Checkbox type="checkbox" name="terms" aria-invalid={errors.terms ? "true" : "false"} ref={register({required: true})}/>
-                        <p>I accept the <A href="https://notes-sage.vercel.app/terms">terms and conditions</A></p>
-                        {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
-                    </Terms>
+                        <Terms>
+                            <Checkbox type="checkbox" name="terms" aria-invalid={errors.terms ? "true" : "false"} ref={register({required: true})}/>
+                            <p>I accept the <A href="https://notes-sage.vercel.app/terms">terms and conditions</A></p>
+                            {errors.terms && <Error role="alert">Accept the terms and conditions</Error>}
+                        </Terms>
 
-                    <Errors>
-                        {resErrors.errors && resErrors.errors.map((err,i) => <ErrorServer key={i}>{err}</ErrorServer>)}
-                    </Errors>
-                    <Submit><PZindex>Submit</PZindex></Submit>
-                </Form>
-            </Container>
+                        <Errors>
+                            {resErrors.errors && resErrors.errors.map((err,i) => <ErrorServer key={i}>{err}</ErrorServer>)}
+                        </Errors>
+                        <Submit><PZindex>Submit</PZindex></Submit>
+                    </Form>
+                </Container>
             </>
     );
 };

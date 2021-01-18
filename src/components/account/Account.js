@@ -9,9 +9,10 @@ import bg from "../../img/bgReg.webp";
 import NewName from "./newName/NewName";
 import LocalSettings from "./localSettings/LocalSettings";
 import DeleteAcc from "./deleteAcc/DeleteAcc";
+import Footer from "../footer/Footer";
 
 const Container = styled.div`
-  padding: 5vh 0 5vh 0;
+  padding: 5vh 0 8vh 0;
   min-height: 100vh;
   overflow-x: hidden;
   background-image: ${props => props.darkmode ? "none" : `url(${bg})`};
@@ -55,6 +56,7 @@ const Account = () => {
                     <DeleteAcc dark={darkmode}/>
                 </Container>
             </div>
+            <Footer colordata={true}/>
         </>
     );
 };
