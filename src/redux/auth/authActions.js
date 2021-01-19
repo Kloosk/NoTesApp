@@ -8,7 +8,7 @@ import {GET_ERRORS,SET_CURRENT_USER,USER_LOADING} from "./authTypes";
 export const registerUser = (userData, history) => dispatch => {
     axios
         .post("https://notesappserver.herokuapp.com/api/users/register", userData)
-        .then(res => {
+        .then(() => {
             dispatch({
                 type: GET_ERRORS,
                 payload: []

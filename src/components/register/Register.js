@@ -8,7 +8,6 @@ import bgReg from "../../img/bgReg.webp"
 import {useDispatch, useSelector} from "react-redux";
 import {registerUser} from "../../redux/auth/authActions";
 import LinkLogin from "./link/LinkLogin";
-import Footer from "../footer/Footer";
 
 const Container = styled.div`
   padding: 8vh 0;
