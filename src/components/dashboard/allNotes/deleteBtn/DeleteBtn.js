@@ -26,7 +26,7 @@ const DeleteBtn = ({id,darkmode}) => {
 
     const handleDelete = () => {
         if(localStorage.getItem('alertdelete') === 'true'){
-            axios.post("https://notesappserver.herokuapp.com/api/users/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+            axios.post("https://notesappserver.herokuapp.com/api/notes/delete", {num: id},{headers: {'auth-token': localStorage.getItem("jwtToken")}})
                 .then(res => {
                    window.location.reload();
                 })

@@ -8,7 +8,7 @@ export default function useEdit(id){
     return useQuery(
         'edit',
         () =>
-            axios.get("https://notesappserver.herokuapp.com/api/users/edit", {
+            axios.get("https://notesappserver.herokuapp.com/api/notes/edit", {
                 headers: {
                     'auth-token': localStorage.getItem("jwtToken"),
                     'id': id
