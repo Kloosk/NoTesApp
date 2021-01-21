@@ -25,3 +25,7 @@ What i learned:<br/>
 -Added new styles to use<br/>
 -Added new logo<br/>
 -Optimization random style function<br/>
+2.3<br/>
+-Added footer in NextJS<br/>
+-Backend Optimization, rewrite to TypeScript<br/>
+-Fixed notation of hex color<br/>
