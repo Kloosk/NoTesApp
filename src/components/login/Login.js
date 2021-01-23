@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
 import Logo from "../logo/Logo";
 import Title from "./title/Title";
@@ -8,6 +8,7 @@ import {useHistory} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {loginUser} from "../../redux/auth/authActions";
 import LinkReg from "./link/LinkReg";
+import loader from './loader.gif'
 
 const Container = styled.div`
   width: 100vw;
@@ -140,7 +141,15 @@ const ErrorServer = styled.p`
  color: red;
  font-size: 1.2rem;
 `;
+const Img = styled.img`
+  width: 50px;
+  visibility: ${props => props.loadingImg ? "visible" : "hidden"};
+  @media (min-width: 768px) {
+    width: 70px;
+  }
+`;
 const Login = () => {
+    const [loading,setLoading] = useState(false);
     const history = useHistory();
     const dispatch = useDispatch();
     const loginError = useSelector(state => state.auth.error);
@@ -150,8 +159,14 @@ const Login = () => {
             history.push("/dashboard"); // push users to dashboard when they login
         }
     },[isAuthenticated]);// eslint-disable-line react-hooks/exhaustive-deps
+    useEffect(() => {
+        if(loginError){
+            setLoading(false);
+        }
+    },[loginError]);
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = data =>{
+        setLoading(true);
         dispatch(loginUser(data));
     };
     return (
@@ -159,23 +174,24 @@ const Login = () => {
             <Logo path="/"/>
             <LinkReg/>
             <Container>
+                <Img src={loader} alt="Loading" loadingImg={loading}/>
                 <Title/>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <Label>
-                        <Input type="text" id="email" name="email" aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
+                        <Input disabled={loading} type="text" id="email" name="email" aria-invalid={errors.email ? "true" : "false"} ref={register({required: true})} />
                         <PInput htmlFor="email"><PZindex>Email</PZindex></PInput>
                         {errors.nick && <Error role="alert">This field is required</Error>}
                     </Label>
 
                     <Label>
-                        <Input type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true})}/>
+                        <Input disabled={loading} type="password" id="pass" name="password"  aria-invalid={errors.password ? "true" : "false"} ref={register({required: true})}/>
                         <PInput htmlFor="pass"><PZindex>Password</PZindex></PInput>
                         {errors.password && <Error role="alert">This field is required</Error>}
                     </Label>
                     <Errors>
                         {loginError && <ErrorServer>{loginError.errors}</ErrorServer>}
                     </Errors>
-                    <Submit><PZindex>Log In</PZindex></Submit>
+                    <Submit disabled={loading}><PZindex>Log In</PZindex></Submit>
                 </Form>
             </Container>
         </>

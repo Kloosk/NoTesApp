@@ -5,6 +5,8 @@ What i learned:<br/>
 ~react-router,<br/>
 ~react-query,<br/>
 ~api,<br/>
+~TypeScript,<br/>
+~NextJS,<br/>
 
 
 2.0<br/>
