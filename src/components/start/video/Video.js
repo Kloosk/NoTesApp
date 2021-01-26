@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import bg from './file/bg.jpg'
+import bg from './file/bg.webp'
 
 const Container = styled.div`
   position: relative;
