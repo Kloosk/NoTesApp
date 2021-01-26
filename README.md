@@ -31,3 +31,6 @@ What i learned:<br/>
 -Added footer in NextJS<br/>
 -Backend Optimization, rewrite to TypeScript<br/>
 -Fixed notation of hex color<br/>
+2.4<br/>
+-Added loading to login<br/>
+-Fixed name change<br/>

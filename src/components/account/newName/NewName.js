@@ -2,6 +2,7 @@ import React, {useRef, useState} from 'react';
 import styled from 'styled-components'
 import Alert from "./Alert";
 import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 const Container = styled.div`
   display: flex;
@@ -30,8 +31,8 @@ const Input = styled.input`
      border: 3px solid #F9B613;
   }
   @media (min-width: 768px) {
-      padding: 0 7px;
-      height: 30px;
+      width: 300px;
+      height: 40px;
   }
 `;
 const Btn = styled.button`
@@ -47,8 +48,8 @@ const Btn = styled.button`
      border: 3px solid #F9B613;
   }
     @media (min-width: 768px) {
-      height: 30px;
-      padding: 0 15px;
+      width: 100px;
+      height: 40px;
   }
 `;
 const Error = styled.div`
@@ -68,6 +69,7 @@ const Inline = styled.div`
   flex-direction: column;
 `;
 const NewName = ({dark}) => {
+    const history = useHistory();
     const inputRef = useRef(null);
     const [msg,setMsg] = useState("");
     const [show,setShow] = useState(false);
@@ -88,15 +90,15 @@ const NewName = ({dark}) => {
                   if(res.data.errors.length > 0){
                       setErrMsg(res.error);
                   }else{
-                      setMsg("Name update succesfully");
+                      setMsg("Name update succesfully. You will be logged out.");
                       setShow(true);
                       setErrMsg([]);
                       setTimeout(() => {
                           setShow(false);
-                      },2500);
+                          history.push("/logout");
+                      },3000);
                   }
-              })
-              .catch(err => console.log(err));
+              }).catch(err => console.log(err));
       }
     };
     return (
