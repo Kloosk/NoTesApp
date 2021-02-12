@@ -1,21 +1,22 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect,Suspense,lazy} from 'react';
 import {HashRouter as Router, Switch, Route} from "react-router-dom";
 import Start from "./components/start/Start";
-import Register from "./components/register/Register";
 import Login from "./components/login/Login";
-import Logout from "./components/logout/Logout";
-import Dashboard from "./components/dashboard/Dashboard";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import {useDispatch} from "react-redux";
 import {setCurrentUser,logoutUser} from "./redux/auth/authActions";
 import PrivateRoute from "./components/privateroutes/PrivateRoutes";
-import AddNote from "./components/addNote/AddNote";
-import Touse from "./components/touse/Touse";
-import Edit from "./components/edit/Edit";
-import Account from "./components/account/Account";
-import PublicNotes from "./components/publicNotes/PublicNotes";
 import {createGlobalStyle} from "styled-components";
+import Loading from "./components/loading/Loading";
+const Dashboard = lazy(() => import("./components/dashboard/Dashboard"));
+const Touse = lazy(() => import("./components/touse/Touse"));
+const AddNote = lazy(() => import("./components/addNote/AddNote"));
+const Edit = lazy(() => import("./components/edit/Edit"));
+const Account = lazy(() => import("./components/account/Account"));
+const PublicNotes = lazy(() => import("./components/publicNotes/PublicNotes"));
+const Logout = lazy(() => import("./components/logout/Logout"));
+const Register = lazy(() => import("./components/register/Register"));
 
 const GlobalStyle = createGlobalStyle`
   *{
@@ -70,26 +71,28 @@ function App() {
       <>
           <GlobalStyle darkmode={darkmode}/>
           <Router>
-            <Switch>
-                <Route exact path="/">
-                  <Start/>
-                </Route>
-                <Route exact path="/register">
-                    <Register/>
-                </Route>
-                <Route exact path="/login">
-                    <Login/>
-                </Route>
-                <Route exact path="/logout">
-                    <Logout/>
-                </Route>
-                <PrivateRoute exact path="/dashboard" component={Dashboard} />
-                <PrivateRoute exact path="/add" component={AddNote} />
-                <PrivateRoute exact path="/edit/:id" component={Edit} />
-                <PrivateRoute exact path="/touse" component={Touse} />
-                <PrivateRoute exact path="/account" component={Account} />
-                <PrivateRoute exact path="/public" component={PublicNotes} />
-            </Switch>
+            <Suspense fallback={<Loading/>}>
+                <Switch>
+                    <Route exact path="/">
+                      <Start/>
+                    </Route>
+                    <Route exact path="/register">
+                        <Register/>
+                    </Route>
+                    <Route exact path="/login">
+                        <Login/>
+                    </Route>
+                    <Route exact path="/logout">
+                        <Logout/>
+                    </Route>
+                    <PrivateRoute exact path="/dashboard" component={Dashboard} />
+                    <PrivateRoute exact path="/add" component={AddNote} />
+                    <PrivateRoute exact path="/edit/:id" component={Edit} />
+                    <PrivateRoute exact path="/touse" component={Touse} />
+                    <PrivateRoute exact path="/account" component={Account} />
+                    <PrivateRoute exact path="/public" component={PublicNotes} />
+                </Switch>
+            </Suspense>
           </Router>
       </>
   );

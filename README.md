@@ -34,3 +34,5 @@ What i learned:<br/>
 2.4<br/>
 -Added loading to login<br/>
 -Fixed name change<br/>
+2.4.1<br/>
+-Added lazy loading<br/>
