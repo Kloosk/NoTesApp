@@ -1,0 +1,2 @@
+(this.webpackJsonpnotesapp=this.webpackJsonpnotesapp||[]).push([[12],{326:function(e,t,n){"use strict";n.r(t);var c=n(0),u=n.n(c),o=n(9),s=n(10),a=n(45);t.default=function(){var e=Object(o.g)(),t=Object(s.b)();return Object(c.useEffect)((function(){t(Object(a.b)()),e.push("/login")}),[]),u.a.createElement("div",null,"You have been logged out.")}}}]);
+//# sourceMappingURL=12.e2f98d69.chunk.js.map
