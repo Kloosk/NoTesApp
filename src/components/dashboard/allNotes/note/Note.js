@@ -47,7 +47,7 @@ const Svg = styled.svg`
     transform: scale(1.2);
   }
 `;
-const Desc = styled(Textarea)`
+const Desc = styled.div`
   width: 100%;
   color: ${props => props.textcolor};
   background: ${props => props.textbg};
@@ -94,7 +94,9 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,
             </Options>
 
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} defaultValue={text}/>
+            <Desc font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}>
+                {text}
+            </Desc>
         </Container>
     );
 };

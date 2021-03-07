@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
-import Textarea from 'react-expanding-textarea'
 import {focusDesc, rightTrue, setDesc, setMove} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 
-const Container = styled(Textarea)`
+const Container = styled.div`
   width: 100%;
   color: ${props => props.textcolor};
   background: ${props => props.textbg};
@@ -25,10 +24,11 @@ const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
     const {textSize,textColor,textBg,font,text,textTransform,alignDesc} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
-    const handleMove = () => {
+    const handleMove = (e) => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
         dispatch(focusDesc());
+        console.log(e);
     };
     useEffect(() => {
         setTemp(text);
@@ -36,12 +36,11 @@ const InputDesc = ({edit}) => {
     return(
         <>
             {edit ? (
-                <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} value={temp}
-                           maxLength="800"
                            onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             ):(
-                <Container spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
                            placeholder="Your text" maxLength="800" value={temp}
                            onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>

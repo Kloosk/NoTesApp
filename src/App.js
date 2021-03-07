@@ -41,6 +41,9 @@ const GlobalStyle = createGlobalStyle`
      background: ${props => props.darkmode ? "#231F20" : "#ffffff"};  
 }
   }
+  img{
+    max-width: 90%;
+  }
 `;
 
 function App() {
