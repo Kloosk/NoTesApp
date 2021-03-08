@@ -19,6 +19,10 @@ const Container = styled.div`
   ::placeholder { 
     color: ${props => props.textcolor};
   }
+  div{
+      height: auto;
+      width: auto;
+  }
 `;
 const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
@@ -28,7 +32,27 @@ const InputDesc = ({edit}) => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
         dispatch(focusDesc());
-        console.log(e);
+    };
+    const handlePaste = (e) => {
+        if(e.clipboardData.types[0] === "text/html") {
+            let image = (e.clipboardData || window.clipboardData).getData("text/html");
+            image = image.match(/<img.*?src="(.*?)"[^\>]+>/g);
+
+            let temp = document.createElement('div');
+            temp.innerHTML= image[0];
+            image = temp.firstChild;
+            console.log(image.style);
+            const wrapperDiv = document.createElement("div");
+            wrapperDiv.style.setProperty("border","4px solid red");
+            wrapperDiv.appendChild(image);
+
+            const selection = window.getSelection();
+            if (!selection.rangeCount) return false;
+            selection.deleteFromDocument();
+            selection.getRangeAt(0).insertNode(wrapperDiv);
+
+            e.preventDefault();
+        }
     };
     useEffect(() => {
         setTemp(text);
@@ -36,11 +60,11 @@ const InputDesc = ({edit}) => {
     return(
         <>
             {edit ? (
-                <Container contentEditable="true" spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} value={temp}
                            onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
             ):(
-                <Container contentEditable="true" spellCheck="false" onClick={handleMove} texttransform={textTransform} font={font}
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
                            placeholder="Your text" maxLength="800" value={temp}
                            onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
