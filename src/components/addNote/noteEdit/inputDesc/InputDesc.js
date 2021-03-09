@@ -24,9 +24,14 @@ const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
     const {textSize,textColor,textBg,font,text,textTransform,alignDesc} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
-    const containerRef = useRef(null);
+    const editRef = useRef(null);
 
-    const handleMove = (e) => {
+    useEffect(() => {
+        if(edit){
+            editRef.current.innerHTML = text;
+        }
+    },[edit]);
+    const handleMove = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
         dispatch(focusDesc());
@@ -75,13 +80,15 @@ const InputDesc = ({edit}) => {
     return(
         <>
             {edit ? (
-                <Container ref={containerRef} contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
-                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} value={temp}
+                <Container ref={editRef} contentEditable="true" spellCheck="false" onClick={handleMove}
+                           onPaste={handlePaste} texttransform={textTransform} font={font}
+                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
                            onBlur={handleBlur} onInput={handleTemp}/>
             ):(
-                <Container ref={containerRef} contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove}
+                           onPaste={handlePaste} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
-                           value={temp} onBlur={handleBlur} onInput={handleTemp}/>
+                           onBlur={handleBlur} onInput={handleTemp}/>
             )}
         </>
         )
