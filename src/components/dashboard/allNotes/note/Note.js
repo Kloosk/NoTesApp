@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 import DeleteBtn from "../deleteBtn/DeleteBtn";
@@ -79,9 +79,11 @@ const Title = styled(Textarea)`
 `;
 const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,num,titleTransform,textTransform,alignDesc}) => {
     const [darkmode,setDarkmode] = useState(false);
+    const textRef = useRef(null);
     useEffect(() => {
         localStorage.getItem('darkmode') !== null && setDarkmode(true);
-    },[]);
+        textRef.current.innerHTML = text;
+    },[text]);
     return (
         <Container border={border} borderSize={borderSize}>
             <Options>
@@ -94,9 +96,7 @@ const Note = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,
             </Options>
 
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}>
-                {text}
-            </Desc>
+            <Desc ref={textRef} font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}/>
         </Container>
     );
 };

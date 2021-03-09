@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import styled from 'styled-components'
 import {focusDesc, rightTrue, setDesc, setMove} from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
@@ -19,40 +19,60 @@ const Container = styled.div`
   ::placeholder { 
     color: ${props => props.textcolor};
   }
-  div{
-      height: auto;
-      width: auto;
-  }
 `;
 const InputDesc = ({edit}) => {
     const dispatch = useDispatch();
     const {textSize,textColor,textBg,font,text,textTransform,alignDesc} = useSelector(state => state.note);
     const [temp,setTemp] = useState('');
-    const handleMove = (e) => {
+    const editRef = useRef(null);
+
+    useEffect(() => {
+        if(edit){
+            editRef.current.innerHTML = text;
+        }
+    },[edit]);
+    const handleMove = () => {
         dispatch(setMove(-200));
         dispatch(rightTrue());
         dispatch(focusDesc());
     };
     const handlePaste = (e) => {
         if(e.clipboardData.types[0] === "text/html") {
+            // const containerWidth = containerRef.current.clientWidth-20+"px";
+
             let image = (e.clipboardData || window.clipboardData).getData("text/html");
+            //searching img tag
             image = image.match(/<img.*?src="(.*?)"[^\>]+>/g);
 
+            //conver string to node
             let temp = document.createElement('div');
             temp.innerHTML= image[0];
             image = temp.firstChild;
-            console.log(image.style);
-            const wrapperDiv = document.createElement("div");
-            wrapperDiv.style.setProperty("border","4px solid red");
-            wrapperDiv.appendChild(image);
+            image.style.setProperty("max-width",'100%');
+            // image.style.setProperty("height",containerWidth);
 
+            // //create wrapper for im
+            // const wrapperDiv = document.createElement("div");
+            // // wrapperDiv.style.setProperty("width",containerWidth);
+            // // wrapperDiv.style.setProperty("height",containerWidth);
+            // wrapperDiv.style.setProperty("display","inline-block");
+            // wrapperDiv.style.setProperty("border","4px solid red");
+            // wrapperDiv.appendChild(image);
+
+            //insert in correct place
             const selection = window.getSelection();
             if (!selection.rangeCount) return false;
             selection.deleteFromDocument();
-            selection.getRangeAt(0).insertNode(wrapperDiv);
+            selection.getRangeAt(0).insertNode(image);
 
             e.preventDefault();
         }
+    };
+    const handleTemp = e => {
+        setTemp(e.target.innerHTML);
+    };
+    const handleBlur = () => {
+        dispatch(setDesc(temp));
     };
     useEffect(() => {
         setTemp(text);
@@ -60,14 +80,15 @@ const InputDesc = ({edit}) => {
     return(
         <>
             {edit ? (
-                <Container contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
-                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} value={temp}
-                           onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
-            ):(
-                <Container contentEditable="true" spellCheck="false" onClick={handleMove} onPaste={handlePaste} texttransform={textTransform} font={font}
+                <Container ref={editRef} contentEditable="true" spellCheck="false" onClick={handleMove}
+                           onPaste={handlePaste} texttransform={textTransform} font={font}
                            textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
-                           placeholder="Your text" maxLength="800" value={temp}
-                           onBlur={() => dispatch(setDesc(temp))} onChange={e => setTemp(e.target.value)}/>
+                           onBlur={handleBlur} onInput={handleTemp}/>
+            ):(
+                <Container contentEditable="true" spellCheck="false" onClick={handleMove}
+                           onPaste={handlePaste} texttransform={textTransform} font={font}
+                           textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}
+                           onBlur={handleBlur} onInput={handleTemp}/>
             )}
         </>
         )

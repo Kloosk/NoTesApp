@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components'
 import Textarea from "react-expanding-textarea";
 
@@ -13,7 +13,7 @@ const Container = styled.div`
   position: relative;
   margin: 30px;
 `;
-const Desc = styled(Textarea)`
+const Desc = styled.div`
   width: 100%;
   color: ${props => props.textcolor};
   background: ${props => props.textbg};
@@ -52,10 +52,14 @@ const Name = styled.p`
   color: ${props => props.color};
 `;
 const NotePublic = ({title,text,titleColor,titleBg,textColor,textBg,border,borderSize,font,textSize,titleSize,titleTransform,textTransform,alignDesc,name}) => {
+    const textRef = useRef(null);
+    useEffect(() => {
+        textRef.current.innerHTML = text;
+    },[text]);
     return (
         <Container border={border} borderSize={borderSize}>
             <Title readOnly disabled spellCheck="false" font={font} titletransform={titleTransform} titlecolor={titleColor} titlebg={titleBg} titlesize={titleSize} defaultValue={title}/>
-            <Desc readOnly disabled spellCheck="false" font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc} defaultValue={text}/>
+            <Desc ref={textRef} font={font} texttransform={textTransform} textsize={textSize} textcolor={textColor} textbg={textBg} aligndesc={alignDesc}/>
             <Name color={textColor}>{name}</Name>
         </Container>
     );
