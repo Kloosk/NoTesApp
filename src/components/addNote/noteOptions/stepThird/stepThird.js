@@ -4,6 +4,7 @@ import ColorPicker from "../../../colorPicker/ColorPicker";
 import {fontOff, fontOn, setBorder, setFont, setStatus }from "../../../../redux";
 import {useDispatch, useSelector} from "react-redux";
 import BorderSize from "./BorderSize";
+import DropFile from "../../../dropzone/DropFile";
 
 const Container = styled.div`
  left: 300vw;
@@ -190,6 +191,9 @@ const StepThird = ({move}) => {
             <Flex>
                 <P><Span>P</Span>rivate</P>
                 <Checkbox ref={checkRef} onChange={handleChange} type="checkbox" checked={currentStatus}/>
+            </Flex>
+            <Flex>
+                <DropFile/>
             </Flex>
         </Container>
     );

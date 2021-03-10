@@ -36,3 +36,6 @@ What i learned:<br/>
 -Fixed name change<br/>
 2.4.1<br/>
 -Added lazy loading<br/>
+
+3.0.0<br/>
+-Added image support in Note<br/>
