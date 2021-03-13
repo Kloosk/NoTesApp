@@ -9,8 +9,7 @@ export const useAdd = () => {
     const history = useHistory();
     const dispatch = useDispatch();
     return useMutation(
-        (data) =>  axios.post("https://notesappserver.herokuapp.com/api/notes/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}})
-            .then(res => res.data),
+        (data) =>  axios.post("https://notesappserver.herokuapp.com/api/notes/add", data,{headers: {'auth-token': localStorage.getItem("jwtToken")}}),
         {
             onSuccess: async () => {
                 await queryClient.refetchQueries(['notes']);
