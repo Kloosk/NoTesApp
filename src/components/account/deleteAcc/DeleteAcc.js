@@ -98,15 +98,14 @@ const DeleteAcc = ({dark}) => {
     const handleClick = () => {
          setAlert(true);
     };
-    const handleYes = () => {
-        axios.delete('https://notesappserver.herokuapp.com/api/users/removeacc',{headers: {'auth-token': localStorage.getItem("jwtToken")}})
-            .then(res => {
-                setAlert(false);
-                history.push("/logout");
-            })
-            .catch(err => {
-                console.log(err);
-            });
+    const handleYes = async () => {
+        try{
+            await axios.delete('https://notesappserver.herokuapp.com/api/users/removeacc',{headers: {'auth-token': localStorage.getItem("jwtToken")}})
+            setAlert(false);
+            history.push("/logout");
+        }catch (e) {
+            console.log(e);
+        }
     };
     const handleNo = () => {
       setAlert(false);
